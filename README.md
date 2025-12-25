@@ -81,6 +81,9 @@ I specialize in:
 </div>
 
 ---
+<div align="center">
+  <sub>© 2025 Amit Kumar — AI & DS engineering.</sub>
+</div>
 
 
 ## 💻 TERMINAL :: LIVE STATUS
@@ -93,12 +96,10 @@ $ current_focus
 > Artificial Intelligence | Machine Learning | Full Stack
 
 $ system_health
-> ██████████ 100% OPERATIONAL
+> 100% OPERATIONAL
 
 $ long_term_goal
 > AI Engineer @ Global Scale
 
 
-<div align="center">
-  <sub>© 2025 Amit Kumar — AI & DS engineering.</sub>
-</div>
+
