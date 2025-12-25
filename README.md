@@ -1,4 +1,4 @@
-# 👾 AMIT KUMAR  
+# 👨‍💻 AMIT KUMAR  
 ### AI Engineer • Machine Learning • Full Stack Developer
 
 <div align="center">
@@ -34,6 +34,55 @@ I specialize in:
 
 ---
 
+## 📊 Experimental & Coding Metrics
+
+<div align="center">
+  <img height="160" src="https://github-readme-stats.vercel.app/api?username=Amitkumar2801&show_icons=true&hide_border=true"/>
+  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Amitkumar2801&layout=compact&hide_border=true"/>
+</div>
+
+<div align="center">
+  <img src="https://leetcard.jacoblin.cool/Amitkumar2801?theme=dark&font=JetBrains%20Mono"/>
+</div>
+
+---
+
+## ⚙️ Technical Competence
+
+**Languages:** Python, JavaScript, C  
+**ML Stack:** NumPy, Pandas, Scikit-Learn, Deep Learning  
+**Web:** React, Next.js, NestJS  
+**DevOps:** Git, Docker, AWS, Linux  
+**Database:** MySQL  
+
+---
+
+## 🧾 Academic & Industry Exposure
+
+- **AI/ML Intern** — Infosys Springboard 3.0  
+- **Machine Learning Intern** — NIELIT Patna  
+- **Diploma (AI/ML)** — Government Polytechnic Barh *(Ongoing)*  
+
+---
+
+
+## 🌐 Contact
+
+<div align="center">
+  <a href="https://www.linkedin.com/in/amit-kumar-835a73345/">
+    <img src="https://img.shields.io/badge/LinkedIn-Professional-blue?style=for-the-badge&logo=linkedin"/>
+  </a>
+  <a href="mailto:amitkumar.arwal28@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-Research%20Contact-red?style=for-the-badge&logo=gmail"/>
+  </a>
+  <a href="https://leetcode.com/u/Amitkumar2801/">
+    <img src="https://img.shields.io/badge/LeetCode-Coding%20Metrics-orange?style=for-the-badge&logo=leetcode"/>
+  </a>
+</div>
+
+---
+
+
 ## 💻 TERMINAL :: LIVE STATUS
 
 ```bash
@@ -48,3 +97,8 @@ $ system_health
 
 $ long_term_goal
 > AI Engineer @ Global Scale
+
+
+<div align="center">
+  <sub>© 2025 Amit Kumar — AI & DS engineering.</sub>
+</div>
