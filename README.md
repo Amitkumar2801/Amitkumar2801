@@ -1,40 +1,207 @@
-HTML<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=00f2ff&height=120&section=header"/>
-  
-  <h1 align="center">⚡ SYSTEM ONLINE: <span style="color:#00f2ff">AMIT KUMAR</span> ⚡</h1>
-  
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=23C42B&center=true&vCenter=true&width=600&lines=Initializing+AI%2FML+Protocols...;Loading+Full+Stack+Modules...;Target%3A+Innovation+2026;Status%3A+READY_TO_CODE" alt="Typing SVG" />
-  </a>
-</div>
-
-<br/>
+<!-- ==================== CORE HEADER: NEURON INTERFACE ==================== -->
 
 <div align="center">
-  <a href="https://www.linkedin.com/in/amit-kumar-835a73345/" target="_blank">
-    <img src="https://img.shields.io/badge/LINKEDIN-CONNECT_NOW-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" height="35"/>
-  </a>
-  &nbsp;&nbsp;
-  <a href="https://leetcode.com/u/Amitkumar2801/" target="_blank">
-    <img src="https://img.shields.io/badge/LEETCODE-VIEW_STATS-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" height="35"/>
-  </a>
-  &nbsp;&nbsp;
-  <a href="mailto:amitkumar.gpb.ai@gmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/GMAIL-CONTACT_ME-EA4335?style=for-the-badge&logo=gmail&logoColor=white" height="35"/>
-  </a>
+<img src="https://www.google.com/search?q=https://capsule-render.vercel.app/api%3Ftype%3Drect%26color%3D00f2ff%26height%3D150%26section%3Dheader%26text%3DAMIT%2520KUMAR%26fontSize%3D70%26fontAlignY%3D40%26animation%3Dtwinkling%26desc%3DAI/ML%2520ENGINEER%2520|%20FULL%20STACK%20DEVELOPER&descSize=20&descAlignY=65" width="100%"/>
+
+<!-- DYNAMIC TYPING: STATUS CHECK -->
+
+<a href="https://git.io/typing-svg">
+<img src="https://www.google.com/search?q=https://readme-typing-svg.herokuapp.com%3Ffont%3DOrbitron%26weight%3D600%26size%3D24%26pause%3D1000%26color%3D23C42B%26center%3Dtrue%26vCenter%3Dtrue%26width%3D600%26lines%3DInitializing%2BAI%2BCore...%3BLevel%2B2%2BDeveloper%2BDetected%3BSyncing%2BNeural%2BNetworks...%3BReady%2Bto%2BBuild%2Bthe%2BFuture" alt="Typing SVG" />
+</a>
 </div>
 
-<br/>
+<!-- ==================== ACTION BAR: FAST CONNECT ==================== -->
 
----
+<div align="center">
+<a href="https://www.linkedin.com/in/amit-kumar-835a73345/" target="_blank">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/LINKEDIN-SYSTEM_LINK-0077B5%3Fstyle%3Dfor-the-badge%26logo%3Dlinkedin%26logoColor%3Dwhite" height="35"/>
+</a>
+&nbsp;&nbsp;
+<a href="https://leetcode.com/u/Amitkumar2801/" target="_blank">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/LEETCODE-DATA_LOG-FFA116%3Fstyle%3Dfor-the-badge%26logo%3Dleetcode%26logoColor%3Dblack" height="35"/>
+</a>
+&nbsp;&nbsp;
+<a href="mailto:amitkumar.gpb.ai@gmail.com" target="_blank">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/GMAIL-ENCRYPTED_MAIL-EA4335%3Fstyle%3Dfor-the-badge%26logo%3Dgmail%26logoColor%3Dwhite" height="35"/>
+</a>
+</div>
 
-<h3>📟 Terminal Access: <code>user@amit:~$ whoami</code></h3>
+<!-- ==================== SYSTEM BIO: TERMINAL ACCESS ==================== -->
 
-```text
-> IDENTITY:    Amit Kumar
-> CLASS:       AI/ML Engineer & Full Stack Developer
-> BASE:        Patna, Bihar, India
-> EDUCATION:   Diploma in AI & ML (Govt. Polytechnic Barh)
-> GUILDS:      Infosys Springboard | NIELIT Patna
-> CURRENT_OBJ: Building Scalable Systems for the Future.
-<table border="0" width="100%"><tr><td width="50%" valign="top"><h3>🛠️ Tech Arsenal</h3><b>💻 Core Languages</b><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/><img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white"/><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/><b>⚛️ Frameworks & Libraries</b><img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB"/><img src="https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white"/><img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white"/><b>🤖 AI & Data Science</b><img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white"/><img src="https://img.shields.io/badge/NumPy-777BB4?style=flat-square&logo=numpy&logoColor=white"/><img src="https://img.shields.io/badge/Scikit_Learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white"/><b>🗄️ Databases & Tools</b><img src="https://www.google.com/search?q=https://img.shields.io/badge/MongoDB-47A248%3Fstyle%3Dflat-square%26logo%3Dmongodb%26logoColor%3Dwhite"/><img src="https://img.shields.io/badge/MySQL-005C84?style=flat-square&logo=mysql&logoColor=white"/><img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white"/><img src="https://www.google.com/search?q=https://img.shields.io/badge/VS_Code-007ACC%3Fstyle%3Dflat-square%26logo%3Dvisual-studio-code%26logoColor%3Dwhite"/></td><td width="50%" valign="top"><h3>📊 Performance Metrics</h3><p align="center"><img src="https://www.google.com/search?q=https://github-readme-stats.vercel.app/api%3Fusername%3DAmitkumar2801%26show_icons%3Dtrue%26theme%3Dtokyonight%26hide_border%3Dtrue%26bg_color%3D0D1117%26title_color%3D00F0FF%26icon_color%3D00F0FF" width="100%"/></p><p align="center"><img src="https://www.google.com/search?q=https://github-readme-stats.vercel.app/api/top-langs/%3Fusername%3DAmitkumar2801%26layout%3Dcompact%26theme%3Dtokyonight%26hide_border%3Dtrue%26bg_color%3D0D1117%26title_color%3D00F0FF" width="100%"/></p></td></tr></table><h3>🏆 Deployment Ready Projects</h3>📂 Project📝 Description🔧 Stack🧠 Skill Matcher ResumeAI-powered tool to parse resumes & match skills.Python AI/ML🎬 Netflix CloneHigh-fidelity frontend streaming UI.React CSS🐦 Social ClonesTwitter & Spotify functional replicas.MERN Next.js<h3 align="center">🧩 Algorithmic Mastery</h3><div align="center"><a href="https://leetcode.com/u/Amitkumar2801/"><img src="https://www.google.com/search?q=https://leetcard.jacoblin.cool/Amitkumar2801%3Ftheme%3Ddark%26font%3DFira%2520Code%26ext%3Dheatmap" width="85%" alt="LeetCode Stats" /></a></div><div align="center"><img src="https://www.google.com/search?q=https://github.com/Amitkumar2801/Amitkumar2801/blob/output/github-contribution-grid-snake.svg" alt="Snake Animation"/></div><div align="center"><img src="https://www.google.com/search?q=https://komarev.com/ghpvc/%3Fusername%3DAmitkumar2801%26label%3DPROFILE%2BVIEWS%26color%3D00F0FF%26style%3Dflat-square" alt="Views"/></div><div align="center"><img src="https://www.google.com/search?q=https://capsule-render.vercel.app/api%3Ftype%3Dwaving%26color%3D00f2ff%26height%3D60%26section%3Dfooter"/></div>
+<table width="100%" border="0">
+<tr>
+<td width="60%" valign="top">
+<h3>📟 User Identity: <code>amit_kumar.sys</code></h3>
+<p align="left">
+I am a <b>Diploma student in AI & ML</b> with a vision to build scalable, intelligent systems.
+Whether it's training neural networks or architecting full-stack clones,
+I treat every line of code as a mission to optimize reality.
+</p>
+<ul>
+<li><b>Current XP:</b> AI Research & Full Stack Development</li>
+<li><b>Base:</b> Govt. Polytechnic Barh (Patna, Bihar)</li>
+<li><b>Languages:</b> Hindi (Native), English (Professional)</li>
+<li><b>Attributes:</b> Problem Solving, Leadership, Agility</li>
+</ul>
+</td>
+<td width="40%" valign="center">
+<img src="https://www.google.com/search?q=https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNGI4YmRjNDU1Njk3YmZkYmYzYmZlZGJmYmFmYmFmYmFmYmFmYmFmJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" style="border-radius:15px; border: 2px solid #00f2ff;"/>
+</td>
+</tr>
+</table>
+
+<!-- ==================== SKILL TREE: TECH ARSENAL ==================== -->
+
+<h3 align="center">⚔️ Skill Tree: Arsenal 2026</h3>
+
+<div align="center">
+
+Frontend & Design
+
+Backend & Logic
+
+AI & Data Science
+
+Databases & Ops
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!-- ==================== QUEST LOG: EXPERIENCE ==================== -->
+
+<h3 align="center">📜 Quest Log: Missions Completed</h3>
+
+<div align="center">
+
+Mission Type
+
+Organization
+
+Role
+
+Achievements
+
+Elite Internship
+
+Infosys Springboard
+
+AI/ML Intern
+
+Developed core skills in AI logic & deployment.
+
+Specialized Training
+
+NIELIT Patna
+
+Machine Learning Intern
+
+Built predictive models & processed complex datasets.
+
+Academic Quest
+
+GP Barh, Patna
+
+AI/ML Diploma
+
+Mastering the fundamentals of Intelligence.
+
+</div>
+
+<!-- ==================== THE LAB: PROJECTS ==================== -->
+
+<h3 align="center">🧪 The Lab: Neural Projects</h3>
+
+<table border="0" width="100%">
+<tr>
+<td width="33%">
+<b>🤖 Skill Matcher AI</b>
+
+
+
+
+<p><small>Advanced resume parsing engine using NLP to match job roles instantly.</small></p>
+<code>Python</code> <code>AI/ML</code>
+</td>
+<td width="33%">
+<b>🎬 Netflix Cinema UI</b>
+
+
+
+
+<p><small>High-performance streaming interface with real-time dynamic routing.</small></p>
+<code>React</code> <code>Tailwind</code>
+</td>
+<td width="33%">
+<b>🎵 Social Echoes</b>
+
+
+
+
+<p><small>Full-scale replicas of Twitter & Spotify for architecture analysis.</small></p>
+<code>MERN Stack</code> <code>Next.js</code>
+</td>
+</tr>
+</table>
+
+<!-- ==================== PERFORMANCE: STATS ==================== -->
+
+<h3 align="center">📊 System Performance Metrics</h3>
+
+<div align="center">
+<img src="https://www.google.com/search?q=https://github-readme-stats.vercel.app/api%3Fusername%3DAmitkumar2801%26show_icons%3Dtrue%26theme%3Dtokyonight%26hide_border%3Dtrue%26bg_color%3D0D1117%26title_color%3D00f2ff%26icon_color%3D00f2ff" height="170"/>
+<img src="https://www.google.com/search?q=https://github-readme-stats.vercel.app/api/top-langs/%3Fusername%3DAmitkumar2801%26layout%3Dcompact%26theme%3Dtokyonight%26hide_border%3Dtrue%26bg_color%3D0D1117%26title_color%3D00f2ff" height="170"/>
+</div>
+
+<div align="center">
+<a href="https://leetcode.com/u/Amitkumar2801/">
+<img src="https://www.google.com/search?q=https://leetcard.jacoblin.cool/Amitkumar2801%3Ftheme%3Ddark%26font%3DOrbitron%26ext%3Dheatmap" width="85%" />
+</a>
+</div>
+
+<!-- ==================== FOOTER: SNAKE & VIEWS ==================== -->
+
+<div align="center">
+<h3>🐍 Network Contribution Grid</h3>
+<img src="https://www.google.com/search?q=https://github.com/Amitkumar2801/Amitkumar2801/blob/output/github-contribution-grid-snake.svg" alt="Snake Animation" width="100%"/>
+</div>
+
+<div align="center">
+<img src="https://www.google.com/search?q=https://komarev.com/ghpvc/%3Fusername%3DAmitkumar2801%26label%3DSYSTEM%2BVISITORS%26color%3D00f2ff%26style%3Dfor-the-badge" />
+
+
+
+
+
+<img src="https://www.google.com/search?q=https://capsule-render.vercel.app/api%3Ftype%3Dwaving%26color%3D00f2ff%26height%3D60%26section%3Dfooter"/>
+</div>
