@@ -1,5 +1,5 @@
 # 👨‍💻 AMIT KUMAR  
-### AI Engineer • Machine Learning • Full Stack Developer  
+### AI Engineer • Machine Learning • Full Stack Developer
 
 <div align="center">
 
@@ -49,11 +49,11 @@ I specialize in:
 
 ## ⚙️ Technical Competence
 
-- **Languages:** Python, JavaScript, C  
-- **ML Stack:** NumPy, Pandas, Scikit-Learn, Deep Learning  
-- **Web:** React, Next.js, NestJS  
-- **DevOps:** Git, Docker, AWS, Linux  
-- **Database:** MySQL  
+**Languages:** Python, JavaScript, C  
+**ML Stack:** NumPy, Pandas, Scikit-Learn, Deep Learning  
+**Web:** React, Next.js, NestJS  
+**DevOps:** Git, Docker, AWS, Linux  
+**Database:** MySQL  
 
 ---
 
@@ -64,6 +64,7 @@ I specialize in:
 - **Diploma (AI/ML)** — Government Polytechnic Barh *(Ongoing)*  
 
 ---
+
 
 ## 🌐 Contact
 
@@ -80,12 +81,22 @@ I specialize in:
 </div>
 
 ---
-
 <div align="center">
   <sub>© 2025 Amit Kumar — AI & DS engineering.</sub>
 </div>
 
----
 
 ## 💻 TERMINAL :: LIVE STATUS
 
+```bash
+$ whoami
+> Amit Kumar
+
+$ current_focus
+> Artificial Intelligence | Machine Learning | Full Stack
+
+$ system_health
+> 100% OPERATIONAL
+
+$ long_term_goal
+> AI Engineer @ Global Scale
