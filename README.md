@@ -47,10 +47,9 @@ I specialize in:
   <img src="https://leetcard.jacoblin.cool/Amitkumar2801?theme=dark&font=JetBrains%20Mono&ext=heatmap" alt="LeetCode Stats" />
   <br>
   <br>
-  <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&style=flat-square&color=ffffff&label=PROFILE+VIEWS" alt="Profile Views" />
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://komarev.com/ghpvc/?username=Amitkumar2801&style=flat-square&color=0056D2&label=PROFILE+VIEWS"
-    <img alt="Profile Views" src="https://komarev.com/ghpvc/?username=Amitkumar2801&style=flat-square&color=00F0FF&label=PROFILE+VIEWS">
+    <source media="(prefers-color-scheme: dark)" srcset="https://komarev.com/ghpvc/?username=Amitkumar2801&style=for-the-badge&color=ff0000&label=PROFILE+VIEWS" />
+    <img alt="Profile Views" src="https://komarev.com/ghpvc/?username=Amitkumar2801&style=for-the-badge&color=000000&label=PROFILE+VIEWS" />
   </picture>
 </div>
 
