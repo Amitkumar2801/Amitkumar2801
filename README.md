@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=random&height=250&section=header&text=AMIT%20KUMAR&fontSize=70&fontAlignY=35&animation=fadeIn&fontColor=ffffff&desc=AI%20Engineer%20%E2%80%A2%20Machine%20Learning%20%E2%80%A2%20Full%20Stack&descAlignY=60&descSize=20" alt="Header" />
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=22&pause=1000&color=ffffff&background=00000000&center=true&vCenter=true&width=600&lines=System+Boot_Sequence...;User:+Amit+Kumar+%5BAI_Dev%5D;Loading+Skills:+ML+%E2%80%A2+Web+%E2%80%A2+Cloud;Mission:+Engineering+Intelligence" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=22&pause=1000&color=00F0FF&background=00000000&center=true&vCenter=true&width=600&lines=%3E_Initializing_Neural_Link...;%3E_Identity:+Amit_Kumar_%5BAI_Architect%5D;%3E_Stack:+Python_%7C_React_%7C_Cloud_Native;%3E_Mission:+Building_Scalable_Intelligence" alt="Typing SVG" />
 
 </div>
 
@@ -33,7 +33,7 @@ I specialize in:
 <div align="center">
   <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="600" alt="Coding Animation" />
   <br>
-  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=19&pause=1000&color=ffffff&background=00000000&center=true&vCenter=true&width=600&lines=Running+Training_Epochs...;Optimizing+Loss_Function...;Deploying+Scalable_Architecture...;Status:+In_The_Zone_%F0%9F%9A%80" alt="Coding Status" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=19&pause=1000&color=00F0FF&background=00000000&center=true&vCenter=true&width=600&lines=%3E_Compiling_Source_Code...;%3E_Debugging_Reality_Matrix...;%3E_Caffeine_Level:+99%25_Loading...;%3E_Status:+Creating_The_Impossible_%F0%9F%9A%80" alt="Coding Status" />
 </div>
 
 ---
