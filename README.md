@@ -2,58 +2,50 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,25,30&height=250&section=header&text=AMIT%20KUMAR&fontSize=70&fontAlignY=35&animation=fadeIn&fontColor=ffffff&desc=AI%20Engineer%20%E2%80%A2%20Machine%20Learning%20%E2%80%A2%20Full%20Stack&descAlignY=60&descSize=20" alt="Header" />
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=22&pause=1000&color=F7B801&background=00000000&center=true&vCenter=true&width=600&lines=Initializing+Neural+Interface...;Access+Granted+%E2%9C%94;Welcome+to+Amit+Kumar's+Workspace;Building+AI+that+thinks+%26+scales" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=22&pause=1000&color=FF3333&background=00000000&center=true&vCenter=true&width=600&lines=Initializing+Neural+Interface...;Access+Granted+%E2%9C%94;Welcome+to+Amit+Kumar's+Workspace;Building+AI+that+thinks+%26+scales" alt="Typing SVG" />
 
 </div>
 
 ---
 
-<table align="center" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="55%" valign="top">
-      <h3>🤖 AI BOT :: SYSTEM_INIT</h3>
-      <blockquote>
-        "Hello, Human. I am <b>AK-Core</b>, an AI system engineered by <i>Amit Kumar</i>. My primary objective is to <b>design intelligent systems</b>, <b>optimize real-world data</b>, and <b>deploy scalable applications</b> that survive both production and reality."
-      </blockquote>
-      <br>
-      <h3>🧠 IDENTITY :: PROFESSIONAL_MODE</h3>
-      <p>
-        I’m an <b>AI & Machine Learning Engineer</b> with strong <b>Full Stack</b> foundations, currently studying <b>Artificial Intelligence & Machine Learning</b> at <b>Government Polytechnic Barh</b>.
-      </p>
-      <p>
-        I specialize in:
-        <br>➤ Turning <b>raw data → predictive intelligence</b>
-        <br>➤ Designing <b>ML pipelines</b> that actually deploy
-        <br>➤ Building <b>clean, scalable web systems</b>
-        <br>➤ Thinking like an engineer, not just a coder
-      </p>
-      <p>
-        📍 <b>Location:</b> Patna, India <br>
-        🎓 <b>Diploma:</b> AI / ML (Ongoing)
-      </p>
-    </td>
-    <td width="45%" align="center" valign="center">
-      <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" alt="Coding Animation" />
-      <br>
-      <div align="center">
-        <i>"Balancing College & Code"</i>
-      </div>
-    </td>
-  </tr>
-</table>
+## 🤖 AI BOT :: SYSTEM_INIT
+
+```text
+> [INIT] SYSTEM ONLINE...
+> [MSG]  "Hello, Human. I am AK-Core, an AI system engineered by Amit Kumar."
+> [OBJ]  "My primary objective is to design intelligent systems, optimize real-world data,"
+> [GOAL] "and deploy scalable applications that survive both production and reality."
+```
+
+## 🧠 IDENTITY :: PROFESSIONAL_MODE
+
+I’m an **AI & Machine Learning Engineer** with strong **Full Stack** foundations, currently studying **Artificial Intelligence & Machine Learning** at **Government Polytechnic Barh**.
+
+I specialize in:
+- Turning **raw data → predictive intelligence**
+- Designing **ML pipelines** that actually deploy
+- Building **clean, scalable web systems**
+- Thinking like an engineer, not just a coder
+
+📍 **Location:** Patna, India  
+🎓 **Diploma:** AI / ML (Ongoing)
+
+<div align="center">
+  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="600" alt="Coding Animation" />
+</div>
 
 ---
 
 ## 📊 METRICS & ANALYTICS
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Amitkumar2801&bg_color=0D1117&color=00FF41&line=00FF41&point=FFFFFF&area=true&hide_border=true" alt="Activity Graph" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Amitkumar2801&bg_color=0D1117&color=FF3333&line=FF3333&point=FFFFFF&area=true&hide_border=true" alt="Activity Graph" />
   <br>
   <br>
   <img src="https://leetcard.jacoblin.cool/Amitkumar2801?theme=dark&font=JetBrains%20Mono&ext=heatmap" alt="LeetCode Stats" />
   <br>
   <br>
-  <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&style=flat-square&color=00FF41&label=PROFILE+VIEWS" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&style=flat-square&color=FF3333&label=PROFILE+VIEWS" alt="Profile Views" />
 </div>
 
 ---
