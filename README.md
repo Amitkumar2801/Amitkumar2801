@@ -92,14 +92,17 @@ I specialize in:
 ## 💻 TERMINAL :: LIVE STATUS
 
 ```bash
-$ whoami
-> Amit Kumar
+root@amit-ai:~$ ./init_profile.py
+> [INFO] Loading Neural Networks... [OK]
+> [INFO] Mounting Knowledge Base... [OK]
 
-$ current_focus
-> Artificial Intelligence | Machine Learning | Full Stack
+root@amit-ai:~$ whoami
+> Amit Kumar [AI_ENGINEER]
 
-$ system_health
-> 100% OPERATIONAL
+root@amit-ai:~$ cat /var/log/current_focus
+> Artificial Intelligence | Machine Learning | Full Stack Architecture
 
-$ long_term_goal
-> AI Engineer @ Global Scale
+root@amit-ai:~$ check_status --verbose
+> MENTAL_STATE:   FLOW_MODE 🚀
+> CAFFEINE_LEVEL: ██████████ 99%
+> MISSION:        Building AI that scales globally.
