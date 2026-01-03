@@ -97,9 +97,7 @@ I specialize in:
 </div>
 
 ---
-<div align="center">
-  <sub><b>© 2025 Amit Kumar</b> — <i>AI & DS Engineering</i></sub>
-</div>
+
 
 
 ## 💻 TERMINAL :: LIVE STATUS
