@@ -73,9 +73,15 @@ I specialize in:
 
 ## 🧾 EXPERIENCE :: LOGS
 
-- **AI/ML Intern** — Infosys Springboard 3.0  
-- **Machine Learning Intern** — NIELIT Patna  
-- **Diploma (AI/ML)** — Government Polytechnic Barh *(Ongoing)*  
+<div align="center">
+
+| 📅 **TIMELINE** | 🏢 **ORGANIZATION** | 👨‍💻 **ROLE** | 🚀 **STATUS** |
+| :---: | :---: | :---: | :---: |
+| **2025** | <img src="https://img.shields.io/badge/Infosys_Springboard-007CC3?style=for-the-badge&logo=infosys&logoColor=white" /> | <img src="https://img.shields.io/badge/AI%2FML_Intern-000000?style=for-the-badge&logo=openai&logoColor=white" /> | <img src="https://img.shields.io/badge/COMPLETED-32CD32?style=for-the-badge" /> |
+| **2025** | <img src="https://img.shields.io/badge/NIELIT_Patna-F7931E?style=for-the-badge&logo=codepen&logoColor=white" /> | <img src="https://img.shields.io/badge/ML_Intern-000000?style=for-the-badge&logo=python&logoColor=white" /> | <img src="https://img.shields.io/badge/COMPLETED-32CD32?style=for-the-badge" /> |
+| **2024-27** | <img src="https://img.shields.io/badge/Govt_Polytechnic-FFD700?style=for-the-badge&logo=google-scholar&logoColor=black" /> | <img src="https://img.shields.io/badge/Diploma_(AI%2FML)-000000?style=for-the-badge&logo=jupyter&logoColor=white" /> | <img src="https://img.shields.io/badge/LOADING...-FF4500?style=for-the-badge" /> |
+
+</div>
 
 ---
 
