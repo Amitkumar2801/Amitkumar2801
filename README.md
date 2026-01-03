@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,25,30&height=250&section=header&text=AMIT%20KUMAR&fontSize=70&fontAlignY=35&animation=fadeIn&fontColor=ffffff&desc=AI%20Engineer%20%E2%80%A2%20Machine%20Learning%20%E2%80%A2%20Full%20Stack&descAlignY=60&descSize=20" alt="Header" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=random&height=250&section=header&text=AMIT%20KUMAR&fontSize=70&fontAlignY=35&animation=fadeIn&fontColor=ffffff&desc=AI%20Engineer%20%E2%80%A2%20Machine%20Learning%20%E2%80%A2%20Full%20Stack&descAlignY=60&descSize=20" alt="Header" />
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=22&pause=1000&color=FF3333&background=00000000&center=true&vCenter=true&width=600&lines=Initializing+Neural+Interface...;Access+Granted+%E2%9C%94;Welcome+to+Amit+Kumar's+Workspace;Building+AI+that+thinks+%26+scales" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=22&pause=1000&color=ffffff&background=00000000&center=true&vCenter=true&width=600&lines=System+Boot_Sequence...;User:+Amit+Kumar+%5BAI_Dev%5D;Loading+Skills:+ML+%E2%80%A2+Web+%E2%80%A2+Cloud;Mission:+Engineering+Intelligence" alt="Typing SVG" />
 
 </div>
 
@@ -32,6 +32,8 @@ I specialize in:
 
 <div align="center">
   <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="600" alt="Coding Animation" />
+  <br>
+  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=19&pause=1000&color=ffffff&background=00000000&center=true&vCenter=true&width=600&lines=Running+Training_Epochs...;Optimizing+Loss_Function...;Deploying+Scalable_Architecture...;Status:+In_The_Zone_%F0%9F%9A%80" alt="Coding Status" />
 </div>
 
 ---
@@ -39,13 +41,13 @@ I specialize in:
 ## 📊 METRICS & ANALYTICS
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Amitkumar2801&bg_color=0D1117&color=FF3333&line=FF3333&point=FFFFFF&area=true&hide_border=true" alt="Activity Graph" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Amitkumar2801&bg_color=0D1117&color=ffffff&line=ffffff&point=FFFFFF&area=true&hide_border=true" alt="Activity Graph" />
   <br>
   <br>
   <img src="https://leetcard.jacoblin.cool/Amitkumar2801?theme=dark&font=JetBrains%20Mono&ext=heatmap" alt="LeetCode Stats" />
   <br>
   <br>
-  <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&style=flat-square&color=FF3333&label=PROFILE+VIEWS" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&style=flat-square&color=ffffff&label=PROFILE+VIEWS" alt="Profile Views" />
 </div>
 
 ---
