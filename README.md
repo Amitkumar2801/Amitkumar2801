@@ -40,6 +40,9 @@ I specialize in:
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Amitkumar2801&bg_color=0D1117&color=00FF41&line=00FF41&point=FFFFFF&area=true&hide_border=true" alt="Activity Graph" />
   <br>
   <br>
+  <img src="https://leetcard.jacoblin.cool/Amitkumar2801?theme=dark&font=JetBrains%20Mono&ext=heatmap" alt="LeetCode Stats" />
+  <br>
+  <br>
   <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&style=flat-square&color=00FF41&label=PROFILE+VIEWS" alt="Profile Views" />
 </div>
 
@@ -49,7 +52,7 @@ I specialize in:
 
 <div align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=py,js,c,tensorflow,sklearn,pandas,numpy,react,nextjs,nestjs,git,docker,aws,linux,mysql&theme=dark&perline=7" alt="My Skills" />
+    <img src="https://skillicons.dev/icons?i=py,js,c,tensorflow,sklearn,pandas,numpy,fastapi,react,nextjs,nestjs,git,docker,aws,linux,mysql&theme=dark&perline=7" alt="My Skills" />
   </a>
 </div>
 
