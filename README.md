@@ -37,8 +37,15 @@ I specialize in:
 ## 📊 METRICS & ANALYTICS
 
 <div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=Amitkumar2801&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub Stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Amitkumar2801&layout=compact&theme=tokyonight&hide_border=true" alt="Top Languages" />
+d  <a href="https://github.com/Amitkumar2801">
+    <img height="165" src="https://github-readme-stats.vercel.app/api?username=Amitkumar2801&show_icons=true&theme=radical" alt="GitHub Stats" />
+  </a>
+  <a href="https://github.com/Amitkumar2801">
+    <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Amitkumar2801&layout=compact&theme=radical" alt="Top Languages" />
+  </a>
+  <img src="https://github-profile-trophy.vercel.app/?username=Amitkumar2801&theme=radical&no-frame=true&margin-w=4" alt="GitHub Trophies" />
+  <br>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Amitkumar2801&theme=radical&hide_border=true" alt="GitHub Streak" />
 </div>
 
 <div align="center">
