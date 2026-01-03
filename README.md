@@ -37,20 +37,10 @@ I specialize in:
 ## 📊 METRICS & ANALYTICS
 
 <div align="center">
-d  <a href="https://github.com/Amitkumar2801">
-    <img height="165" src="https://github-readme-stats.vercel.app/api?username=Amitkumar2801&show_icons=true&theme=radical" alt="GitHub Stats" />
-  </a>
-  <a href="https://github.com/Amitkumar2801">
-    <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Amitkumar2801&layout=compact&theme=radical" alt="Top Languages" />
-  </a>
-  <img src="https://github-profile-trophy.vercel.app/?username=Amitkumar2801&theme=radical&no-frame=true&margin-w=4" alt="GitHub Trophies" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Amitkumar2801&bg_color=0D1117&color=00FF41&line=00FF41&point=FFFFFF&area=true&hide_border=true" alt="Activity Graph" />
   <br>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Amitkumar2801&theme=radical&hide_border=true" alt="GitHub Streak" />
-</div>
-
-<div align="center">
   <br>
-  <img src="https://leetcard.jacoblin.cool/Amitkumar2801?theme=dark&font=JetBrains%20Mono&ext=heatmap" />
+  <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&style=flat-square&color=00FF41&label=PROFILE+VIEWS" alt="Profile Views" />
 </div>
 
 ---
@@ -58,22 +48,9 @@ d  <a href="https://github.com/Amitkumar2801">
 ## ⚙️ TECH_STACK :: ARSENAL
 
 <div align="center">
-
-### Languages
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
-
-### Machine Learning & AI
-![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![Scikit-Learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white) ![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)
-
-### Web Development
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white)
-
-### DevOps & Tools
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-
-### Database
-![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
-
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=py,js,c,tensorflow,sklearn,pandas,numpy,react,nextjs,nestjs,git,docker,aws,linux,mysql&theme=dark&perline=7" alt="My Skills" />
+  </a>
 </div>
 
 ---
