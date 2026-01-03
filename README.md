@@ -1,36 +1,46 @@
-# 👨‍💻 AMIT KUMAR
-### 🚀 AI Engineer • Machine Learning • Full Stack Developer
-
 <div align="center">
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=24&pause=1000&color=00FF41&background=0D1117&center=true&vCenter=true&width=800&lines=Initializing+Neural+Interface...;Access+Granted+%E2%9C%94;Welcome+to+Amit+Kumar's+Cyber+Workspace;Building+AI+that+thinks+%26+scales" alt="Typing SVG" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,25,30&height=250&section=header&text=AMIT%20KUMAR&fontSize=70&fontAlignY=35&animation=fadeIn&fontColor=ffffff&desc=AI%20Engineer%20%E2%80%A2%20Machine%20Learning%20%E2%80%A2%20Full%20Stack&descAlignY=60&descSize=20" alt="Header" />
+
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=22&pause=1000&color=F7B801&background=00000000&center=true&vCenter=true&width=600&lines=Initializing+Neural+Interface...;Access+Granted+%E2%9C%94;Welcome+to+Amit+Kumar's+Workspace;Building+AI+that+thinks+%26+scales" alt="Typing SVG" />
 
 </div>
 
 ---
 
-## 🤖 AI BOT :: SYSTEM_INIT
-
-> **Hello, Human.**  
-> I am **AK-Core**, an AI system engineered by *Amit Kumar*.  
-> My primary objective is to **design intelligent systems**,  
-> **optimize real-world data**, and **deploy scalable applications**  
-> that survive both production and reality.
-
----
-
-## 🧠 IDENTITY :: PROFESSIONAL_MODE
-
-I’m an **AI & Machine Learning Engineer** with strong **Full Stack** foundations, currently studying **Artificial Intelligence & Machine Learning** at **Government Polytechnic Barh**.
-
-I specialize in:
-- Turning **raw data → predictive intelligence**
-- Designing **ML pipelines** that actually deploy
-- Building **clean, scalable web systems**
-- Thinking like an engineer, not just a coder
-
-📍 **Location:** Patna, India
-🎓 **Diploma:** AI / ML (Ongoing)
+<table align="center" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="55%" valign="top">
+      <h3>🤖 AI BOT :: SYSTEM_INIT</h3>
+      <blockquote>
+        "Hello, Human. I am <b>AK-Core</b>, an AI system engineered by <i>Amit Kumar</i>. My primary objective is to <b>design intelligent systems</b>, <b>optimize real-world data</b>, and <b>deploy scalable applications</b> that survive both production and reality."
+      </blockquote>
+      <br>
+      <h3>🧠 IDENTITY :: PROFESSIONAL_MODE</h3>
+      <p>
+        I’m an <b>AI & Machine Learning Engineer</b> with strong <b>Full Stack</b> foundations, currently studying <b>Artificial Intelligence & Machine Learning</b> at <b>Government Polytechnic Barh</b>.
+      </p>
+      <p>
+        I specialize in:
+        <br>➤ Turning <b>raw data → predictive intelligence</b>
+        <br>➤ Designing <b>ML pipelines</b> that actually deploy
+        <br>➤ Building <b>clean, scalable web systems</b>
+        <br>➤ Thinking like an engineer, not just a coder
+      </p>
+      <p>
+        📍 <b>Location:</b> Patna, India <br>
+        🎓 <b>Diploma:</b> AI / ML (Ongoing)
+      </p>
+    </td>
+    <td width="45%" align="center" valign="center">
+      <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" alt="Coding Animation" />
+      <br>
+      <div align="center">
+        <i>"Balancing College & Code"</i>
+      </div>
+    </td>
+  </tr>
+</table>
 
 ---
 
