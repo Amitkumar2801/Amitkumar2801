@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=random&height=250&section=header&text=AMIT%20KUMAR&fontSize=70&fontAlignY=35&animation=fadeIn&fontColor=ffffff&desc=AI%20Engineer%20%E2%80%A2%20Machine%20Learning%20%E2%80%A2%20Full%20Stack&descAlignY=60&descSize=20" alt="Header" />
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=22&pause=1000&color=00F0FF&background=00000000&center=true&vCenter=true&width=600&lines=%3E_Initializing_Neural_Link...;%3E_Identity:+Amit_Kumar_%5BAI_Architect%5D;%3E_Stack:+Python_%7C_React_%7C_Cloud_Native;%3E_Mission:+Building_Scalable_Intelligence" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=22&pause=1000&color=00F0FF&background=000000&center=true&vCenter=true&width=600&lines=%3E_+System_Boot_Sequence...;%3E_+Identity:+Amit_Kumar_%5BAI_Architect%5D;%3E_+Stack:+Python_%7C_React_%7C_Cloud_Native;%3E_+Mission:+Building_Scalable_Intelligence_%E2%9A%A1" alt="Typing SVG" />
 
 </div>
 
@@ -33,7 +33,7 @@ I specialize in:
 <div align="center">
   <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="600" alt="Coding Animation" />
   <br>
-  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=19&pause=1000&color=00F0FF&background=00000000&center=true&vCenter=true&width=600&lines=%3E_Compiling_Source_Code...;%3E_Debugging_Reality_Matrix...;%3E_Caffeine_Level:+99%25_Loading...;%3E_Status:+Creating_The_Impossible_%F0%9F%9A%80" alt="Coding Status" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=19&pause=1000&color=00F0FF&background=000000&center=true&vCenter=true&width=600&lines=%3E_+Compiling_Source_Code...;%3E_+Debugging_Reality_Matrix...;%3E_+Caffeine_Level:+99%25_Loading...;%3E_+Status:+Creating_The_Impossible_%F0%9F%9A%80" alt="Coding Status" />
 </div>
 
 ---
@@ -48,6 +48,10 @@ I specialize in:
   <br>
   <br>
   <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&style=flat-square&color=ffffff&label=PROFILE+VIEWS" alt="Profile Views" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://komarev.com/ghpvc/?username=Amitkumar2801&style=flat-square&color=0056D2&label=PROFILE+VIEWS"
+    <img alt="Profile Views" src="https://komarev.com/ghpvc/?username=Amitkumar2801&style=flat-square&color=00F0FF&label=PROFILE+VIEWS">
+  </picture>
 </div>
 
 ---
