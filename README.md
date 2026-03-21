@@ -8,15 +8,6 @@
 
 ---
 
-## 🤖 AI BOT :: SYSTEM_INIT
-
-```text
-> [INIT] SYSTEM ONLINE...
-> [MSG]  "Hello, Human. I am AK-Core, an AI system engineered by Amit Kumar."
-> [OBJ]  "My primary objective is to design intelligent systems, optimize real-world data,"
-> [GOAL] "and deploy scalable applications that survive both production and reality."
-```
-
 ## 🧠 IDENTITY :: PROFESSIONAL_MODE
 
 I’m an **AI & Machine Learning Engineer** with strong **Full Stack** foundations, currently studying **Artificial Intelligence & Machine Learning** at **Government Polytechnic Barh**.
