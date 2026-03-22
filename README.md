@@ -24,7 +24,7 @@ I specialize in:
 <div align="center">
   <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="600" alt="Coding Animation" />
   <br>
-  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=19&pause=1000&color=00F0FF&background=000000&center=true&vCenter=true&width=600&lines=%3E_+Compiling_Source_Code...;%3E_+Debugging_Reality_Matrix...;%3E_+Caffeine_Level:+99%25_Loading...;%3E_+Status:+Creating_The_Impossible_%F0%9F%9A%80" alt="Coding Status" />
+ 
 </div>
 
 ---
