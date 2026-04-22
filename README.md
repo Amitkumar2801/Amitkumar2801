@@ -55,17 +55,17 @@ CLOUD/DEVOP ██████████████       70% GROWING
 `// tech.arsenal`
 ---
 **ＬＡＮＧＵＡＧＥＳ**<br>
-`Python` &nbsp; `JavaScript` &nbsp; `C` &nbsp; `HTML5` &nbsp; `CSS3`
+<img src="https://img.shields.io/badge/Python-E8F3FA?style=flat&logo=python&logoColor=3776AB" alt="Python"> <img src="https://img.shields.io/badge/JavaScript-FFF9D2?style=flat&logo=javascript&logoColor=F7DF1E" alt="JavaScript"> <img src="https://img.shields.io/badge/C-F0F4F8?style=flat&logo=c&logoColor=00599C" alt="C"> <img src="https://img.shields.io/badge/HTML5-FCE9E2?style=flat&logo=html5&logoColor=E34F26" alt="HTML5"> <img src="https://img.shields.io/badge/CSS3-E0F0FE?style=flat&logo=css3&logoColor=1572B6" alt="CSS3">
 
 <br>
 
 **ＡＩ · ＭＬ · ＤＡＴＡ**<br>
-`TensorFlow` &nbsp; `Scikit-Learn` &nbsp; `Pandas` &nbsp; `NumPy` &nbsp; `Matplotlib` &nbsp; `Power BI`
+<img src="https://img.shields.io/badge/TensorFlow-FFF0E0?style=flat&logo=tensorflow&logoColor=FF6F00" alt="TensorFlow"> <img src="https://img.shields.io/badge/Scikit_Learn-FFF5E6?style=flat&logo=scikit-learn&logoColor=F7931E" alt="Scikit-Learn"> <img src="https://img.shields.io/badge/Pandas-EAE4EE?style=flat&logo=pandas&logoColor=150458" alt="Pandas"> <img src="https://img.shields.io/badge/NumPy-E2EDF4?style=flat&logo=numpy&logoColor=013243" alt="NumPy"> <img src="https://img.shields.io/badge/Matplotlib-EFEFEF?style=flat&logo=matplotlib&logoColor=11557c" alt="Matplotlib"> <img src="https://img.shields.io/badge/Power_BI-FFF4C2?style=flat&logo=powerbi&logoColor=F2C811" alt="Power BI">
 
 <br>
 
 **ＷＥＢ · ＣＬＯＵＤ · ＴＯＯＬＳ**<br>
-`React` &nbsp; `Next.js` &nbsp; `FastAPI` &nbsp; `NestJS` &nbsp; `Docker` &nbsp; `AWS` &nbsp; `MySQL` &nbsp; `MongoDB` &nbsp; `Linux` &nbsp; `Git`
+<img src="https://img.shields.io/badge/React-E5F6FD?style=flat&logo=react&logoColor=61DAFB" alt="React"> <img src="https://img.shields.io/badge/Next.js-E6E6E6?style=flat&logo=next.js&logoColor=000000" alt="Next.js"> <img src="https://img.shields.io/badge/FastAPI-E0F5F2?style=flat&logo=fastapi&logoColor=009688" alt="FastAPI"> <img src="https://img.shields.io/badge/NestJS-FCE1E8?style=flat&logo=nestjs&logoColor=E0234E" alt="NestJS"> <img src="https://img.shields.io/badge/Docker-E5F3FD?style=flat&logo=docker&logoColor=2496ED" alt="Docker"> <img src="https://img.shields.io/badge/AWS-FFF4DF?style=flat&logo=amazon-aws&logoColor=232F3E" alt="AWS"> <img src="https://img.shields.io/badge/MySQL-E6F2F5?style=flat&logo=mysql&logoColor=4479A1" alt="MySQL"> <img src="https://img.shields.io/badge/MongoDB-E8F5E9?style=flat&logo=mongodb&logoColor=47A248" alt="MongoDB"> <img src="https://img.shields.io/badge/Linux-FFF6D5?style=flat&logo=linux&logoColor=FCC624" alt="Linux"> <img src="https://img.shields.io/badge/Git-FDEBE8?style=flat&logo=git&logoColor=F05032" alt="Git">
 
 <br><br>
 
@@ -77,23 +77,16 @@ CLOUD/DEVOP ██████████████       70% GROWING
 
 <br><br>
 
-`// visitor_count.live`
 ---
 <div align="center">
   <br>
-  <code>PROFILE VISITS DETECTED — ALL SESSIONS PRESERVED</code>
-  <br>
-  <br>
-  <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&label=L%20I%20V%20E%20%C2%B7%20C%20N%20T&color=0a66c2&labelColor=e6f0ff&style=for-the-badge" alt="Visitor Count" />
-  <br>
-  <br>
-  <code>komarev.com/ghpvc — visits never reset — add to README as badge</code>
+  <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&label=%E2%9A%A1%20PROFILE%20VIEWS&color=3b82f6&labelColor=eef2ff&style=for-the-badge" alt="Visitor Count" />
   <br>
 </div>
 
 <br><br>
 
-`// uplink.connect`
+CONNECT WITH ME
 ---
 <div align="center">
   <a href="https://www.linkedin.com/in/amit-kumar-835a73345/"><img src="https://img.shields.io/badge/LinkedIn-e6f0ff?style=flat&logo=linkedin&logoColor=0a66c2&color=e6f0ff"/></a>&nbsp;
