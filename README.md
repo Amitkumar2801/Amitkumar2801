@@ -10,43 +10,37 @@
 
 <br><br>
 
-`// system.init`
----
-
-```bash
-amit@ai-core:~$ sudo ./boot_intelligence.sh --mode=ULTRA
-[INIT] Spinning up neural mesh......... ONLINE
-[LOAD] Injecting 10,000+ training hrs... DONE
-[SYNC] Linking Python · React · TensorFlow READY
-[WARN] Ego level exceeding safe limits.... IGNORED
-
-amit@ai-core:~$ cat manifesto.txt
-"I don't just write code. I architect intelligence."
-"Every dataset is a story. I find the signal in the noise."
-"From Bihar to global – building AI that actually ships."
-
-amit@ai-core:~$ htop --filter=skills
-ML PIPELINE ████████████████████ 90% EXPERT
-REACT/NEXT  ████████████████     80% ADVANCED
-DATA ANALYS ██████████████████   88% STRONG
-CLOUD/DEVOP ██████████████       70% GROWING
-```
-
-<br><br>
-
 `// ai_agent.runtime`
 ---
-<div align="center">
-  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="400" alt="AI Agent Animation" />
-</div>
+<table width="100%">
+  <tr>
+    <td width="40%" align="center">
+      <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="250" alt="AI Agent Animation" />
+    </td>
+    <td width="60%">
+      <code>// DATA SCIENCE PROFICIENCY</code><br><br>
+      <code>Python / ML </code> <img src="https://geps.dev/progress/90?color=0066cc" height="14" /> <code>90%</code><br>
+      <code>TensorFlow&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/80?color=6f42c1" height="14" /> <code>80%</code><br>
+      <code>Pandas/NumPy</code> <img src="https://geps.dev/progress/88?color=28a745" height="14" /> <code>88%</code><br>
+      <code>Scikit-Learn</code> <img src="https://geps.dev/progress/85?color=0066cc" height="14" /> <code>85%</code><br>
+      <code>React/Next&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/78?color=d63384" height="14" /> <code>78%</code><br>
+      <code>FastAPI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/75?color=6f42c1" height="14" /> <code>75%</code><br>
+      <code>Docker/AWS&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/68?color=28a745" height="14" /> <code>68%</code><br>
+      <code>Power BI&nbsp;&nbsp;&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/72?color=d63384" height="14" /> <code>72%</code>
+    </td>
+  </tr>
+</table>
 
 <br><br>
 
 `// github.contributions`
 ---
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Amitkumar2801&bg_color=f8f9fa&color=6a5acd&line=3b82f6&point=f9a826&area=true&hide_border=true&title_color=6a5acd" alt="Activity Graph" />
-  <br><br>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Amitkumar2801&bg_color=f8f9fa&color=7b61ff&line=3b82f6&point=f9a826&area=true&hide_border=true&custom_title=AMIT%20KUMAR'S%20CONTRIBUTION%20GRAPH%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20PEAK:%209%20commits&title_color=6a5acd" alt="Activity Graph" />
+  <br>
+  <h2> <code>&nbsp; 47 &nbsp;</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>&nbsp; 9 &nbsp;</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>&nbsp; 2.2 &nbsp;</code> </h2>
+  <code>TOTAL COMMITS</code> &nbsp;&nbsp;&nbsp;&nbsp; <code>PEAK DAY</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <code>AVG/DAY</code>
+  <br><br><br>
   <img src="https://leetcard.jacoblin.cool/Amitkumar2801?theme=light&font=JetBrains%20Mono&ext=heatmap" alt="LeetCode Stats" />
 </div>
 
