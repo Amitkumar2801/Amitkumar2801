@@ -12,27 +12,25 @@
 
 `// ai_agent.runtime`
 ---
-<div align="center">
-<table width="100%" align="center" style="border: none; background-color: transparent;">
+<table width="100%">
   <tr>
-    <td width="40%" align="center" style="border: none; padding-right: 20px;">
+    <td width="40%" align="center">
       <code>A.I CHAMGADAR</code><br><br>
-      <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" width="180" alt="A.I CHAMGADAR Robot" />
+      <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" width="220" alt="A.I CHAMGADAR Robot" />
     </td>
-    <td width="60%" style="border: none; padding-left: 20px;">
+    <td width="60%">
       <code>// DATA SCIENCE PROFICIENCY</code><br><br>
-      <code>Python / ML </code> <img src="https://geps.dev/progress/90?color=0066cc" height="14" /> <code>90%</code><br>
-      <code>TensorFlow&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/80?color=6f42c1" height="14" /> <code>80%</code><br>
-      <code>Pandas/NumPy</code> <img src="https://geps.dev/progress/88?color=28a745" height="14" /> <code>88%</code><br>
-      <code>Scikit-Learn</code> <img src="https://geps.dev/progress/85?color=0066cc" height="14" /> <code>85%</code><br>
-      <code>React/Next&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/78?color=d63384" height="14" /> <code>78%</code><br>
-      <code>FastAPI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/75?color=6f42c1" height="14" /> <code>75%</code><br>
-      <code>Docker/AWS&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/68?color=28a745" height="14" /> <code>68%</code><br>
-      <code>Power BI&nbsp;&nbsp;&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/72?color=d63384" height="14" /> <code>72%</code>
+      <code>Python / ML </code> <img src="https://geps.dev/progress/90?color=0066cc" height="18" /> <code>90%</code><br>
+      <code>TensorFlow&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/80?color=6f42c1" height="18" /> <code>80%</code><br>
+      <code>Pandas/NumPy</code> <img src="https://geps.dev/progress/88?color=28a745" height="18" /> <code>88%</code><br>
+      <code>Scikit-Learn</code> <img src="https://geps.dev/progress/85?color=0066cc" height="18" /> <code>85%</code><br>
+      <code>React/Next&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/78?color=d63384" height="18" /> <code>78%</code><br>
+      <code>FastAPI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/75?color=6f42c1" height="18" /> <code>75%</code><br>
+      <code>Docker/AWS&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/68?color=28a745" height="18" /> <code>68%</code><br>
+      <code>Power BI&nbsp;&nbsp;&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/72?color=d63384" height="18" /> <code>72%</code>
     </td>
   </tr>
 </table>
-</div>
 
 <br><br>
 
