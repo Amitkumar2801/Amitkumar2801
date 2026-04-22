@@ -1,51 +1,86 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=random&height=250&section=header&text=AMIT%20KUMAR&fontSize=70&fontAlignY=35&animation=fadeIn&fontColor=ffffff&desc=AI%20Engineer%20%E2%80%A2%20Machine%20Learning%20%E2%80%A2%20Full%20Stack&descAlignY=60&descSize=20" alt="Header" />
+<img src="https://capsule-render.vercel.app/api?type=transparent&height=150&section=header&text=AMIT%20KUMAR&fontSize=75&fontAlignY=50&fontColor=6a5acd&desc=AI%20ENGINEER%20%E2%80%A2%20MACHINE%20LEARNING%20%E2%80%A2%20FULL%20STACK&descAlignY=90&descSize=16" alt="Header" />
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=22&pause=1000&color=00F0FF&background=000000&center=true&vCenter=true&width=600&lines=%3E_+System_Boot_Sequence...;%3E_+Identity:+Amit_Kumar_%5BAI_Architect%5D;%3E_+Stack:+Python_%7C_React_%7C_Cloud_Native;%3E_+Mission:+Building_Scalable_Intelligence_%E2%9A%A1" alt="Typing SVG" />
-
-</div>
-
----
-
-## 🧠 IDENTITY :: PROFESSIONAL_MODE
-
-I’m an **AI & Machine Learning Engineer** with strong **Full Stack** foundations, currently studying **Artificial Intelligence & Machine Learning** at **Government Polytechnic Barh**.
-
-I specialize in:
-- Turning **raw data → predictive intelligence**
-- Designing **ML pipelines** that actually deploy
-- Building **clean, scalable web systems**
-- Thinking like an engineer, not just a coder
-
-📍 **Location:** Patna, India  
-🎓 **Diploma:** AI / ML (Ongoing)
-
-<div align="center">
-  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="600" alt="Coding Animation" />
-  <br>
- 
-</div>
-
----
-
-## 📊 METRICS & ANALYTICS
-
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Amitkumar2801&bg_color=0D1117&color=ffffff&line=ffffff&point=FFFFFF&area=true&hide_border=true" alt="Activity Graph" />
-  <br>
-  <br>
-  <img src="https://leetcard.jacoblin.cool/Amitkumar2801?theme=dark&font=JetBrains%20Mono&ext=heatmap" alt="LeetCode Stats" />
-  <br>
-  <br>
-  <br>
-</div>
-
----
-
-## 👁️‍🗨️ `visitor_count.live`
 <br>
+
+<code>● ONLINE</code> &nbsp; <code>PATNA, INDIA</code> &nbsp; <code>GOVT POLYTECHNIC BARH</code> &nbsp; <code>2024 — 2027</code>
+
+</div>
+
+<br><br>
+
+`// system.init`
+---
+
+```bash
+amit@ai-core:~$ sudo ./boot_intelligence.sh --mode=ULTRA
+[INIT] Spinning up neural mesh......... ONLINE
+[LOAD] Injecting 10,000+ training hrs... DONE
+[SYNC] Linking Python · React · TensorFlow READY
+[WARN] Ego level exceeding safe limits.... IGNORED
+
+amit@ai-core:~$ cat manifesto.txt
+"I don't just write code. I architect intelligence."
+"Every dataset is a story. I find the signal in the noise."
+"From Bihar to global – building AI that actually ships."
+
+amit@ai-core:~$ htop --filter=skills
+ML PIPELINE ████████████████████ 90% EXPERT
+REACT/NEXT  ████████████████     80% ADVANCED
+DATA ANALYS ██████████████████   88% STRONG
+CLOUD/DEVOP ██████████████       70% GROWING
+```
+
+<br><br>
+
+`// ai_agent.runtime`
+---
 <div align="center">
+  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="400" alt="AI Agent Animation" />
+</div>
+
+<br><br>
+
+`// github.contributions`
+---
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Amitkumar2801&bg_color=f8f9fa&color=6a5acd&line=3b82f6&point=f9a826&area=true&hide_border=true&title_color=6a5acd" alt="Activity Graph" />
+  <br><br>
+  <img src="https://leetcard.jacoblin.cool/Amitkumar2801?theme=light&font=JetBrains%20Mono&ext=heatmap" alt="LeetCode Stats" />
+</div>
+
+<br><br>
+
+`// tech.arsenal`
+---
+**ＬＡＮＧＵＡＧＥＳ**<br>
+`Python` &nbsp; `JavaScript` &nbsp; `C` &nbsp; `HTML5` &nbsp; `CSS3`
+
+<br>
+
+**ＡＩ · ＭＬ · ＤＡＴＡ**<br>
+`TensorFlow` &nbsp; `Scikit-Learn` &nbsp; `Pandas` &nbsp; `NumPy` &nbsp; `Matplotlib` &nbsp; `Power BI`
+
+<br>
+
+**ＷＥＢ · ＣＬＯＵＤ · ＴＯＯＬＳ**<br>
+`React` &nbsp; `Next.js` &nbsp; `FastAPI` &nbsp; `NestJS` &nbsp; `Docker` &nbsp; `AWS` &nbsp; `MySQL` &nbsp; `MongoDB` &nbsp; `Linux` &nbsp; `Git`
+
+<br><br>
+
+`// experience.log`
+---
+**╰┈➤ 2025** · **AI/ML Intern** @ *Infosys Springboard* `[COMPLETED]`<br>
+**╰┈➤ 2025** · **ML Intern** @ *NIELIT Patna* `[COMPLETED]`<br>
+**╰┈➤ 2024-27** · **Diploma (AI/ML)** @ *Govt Polytechnic Barh* `[LOADING...]`<br>
+
+<br><br>
+
+`// visitor_count.live`
+---
+<div align="center">
+  <br>
   <code>PROFILE VISITS DETECTED — ALL SESSIONS PRESERVED</code>
   <br>
   <br>
@@ -56,80 +91,18 @@ I specialize in:
   <br>
 </div>
 
----
+<br><br>
 
-## ⚙️ TECH_STACK :: ARSENAL
+`// uplink.connect`
+---
+<div align="center">
+  <a href="https://www.linkedin.com/in/amit-kumar-835a73345/"><img src="https://img.shields.io/badge/LinkedIn-e6f0ff?style=flat&logo=linkedin&logoColor=0a66c2&color=e6f0ff"/></a>&nbsp;
+  <a href="mailto:amitkumar.arwal28@gmail.com"><img src="https://img.shields.io/badge/Gmail-e6f0ff?style=flat&logo=gmail&logoColor=ea4335&color=e6f0ff"/></a>&nbsp;
+  <a href="https://leetcode.com/u/Amitkumar2801/"><img src="https://img.shields.io/badge/LeetCode-e6f0ff?style=flat&logo=leetcode&logoColor=f9a826&color=e6f0ff"/></a>&nbsp;
+  <a href="https://www.instagram.com/its._chamgadar?igsh=MW9tbzdseWFtOW5o"><img src="https://img.shields.io/badge/Instagram-e6f0ff?style=flat&logo=instagram&logoColor=e4405f&color=e6f0ff"/></a>
+</div>
+<br><br>
 
 <div align="center">
-
-### 💻 Languages
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-
-### 🧠 AI, ML & Data Visualization
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white) ![Scikit-Learn](https://img.shields.io/badge/scikit_learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white) ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black) ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-
-### 🌐 Web Development & Frameworks
-![React](https://img.shields.io/badge/React-20232a?style=for-the-badge&logo=react&logoColor=61DAFB) ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-
-### 🗄️ Databases
-![MySQL](https://img.shields.io/badge/MySQL-000000?style=for-the-badge&logo=mysql&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white) ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
-
-### 🛠️ Tools, DevOps & Editors
-![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black) ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-
+  <code>AMIT KUMAR · AI ENGINEER · PATNA, INDIA · SYSTEM ONLINE</code>
 </div>
-
----
-
-## 🧾 EXPERIENCE :: LOGS
-
-<div align="center">
-
-| 📅 **TIMELINE** | 🏢 **ORGANIZATION** | 👨‍💻 **ROLE** | 🚀 **STATUS** |
-| :---: | :---: | :---: | :---: |
-| **2025** | <img src="https://img.shields.io/badge/Infosys_Springboard-007CC3?style=for-the-badge&logo=infosys&logoColor=white" /> | <img src="https://img.shields.io/badge/AI%2FML_Intern-000000?style=for-the-badge&logo=openai&logoColor=white" /> | <img src="https://img.shields.io/badge/COMPLETED-32CD32?style=for-the-badge" /> |
-| **2025** | <img src="https://img.shields.io/badge/NIELIT_Patna-F7931E?style=for-the-badge&logo=codepen&logoColor=white" /> | <img src="https://img.shields.io/badge/ML_Intern-000000?style=for-the-badge&logo=python&logoColor=white" /> | <img src="https://img.shields.io/badge/COMPLETED-32CD32?style=for-the-badge" /> |
-| **2024-27** | <img src="https://img.shields.io/badge/Govt_Polytechnic-FFD700?style=for-the-badge&logo=google-scholar&logoColor=black" /> | <img src="https://img.shields.io/badge/Diploma_(AI%2FML)-000000?style=for-the-badge&logo=jupyter&logoColor=white" /> | <img src="https://img.shields.io/badge/LOADING...-FF4500?style=for-the-badge" /> |
-
-</div>
-
----
-
-## 🌐 UPLINK :: CONNECT
-
-<div align="center">
-  <a href="https://www.linkedin.com/in/amit-kumar-835a73345/">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
-  </a>
-  <a href="mailto:amitkumar.arwal28@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
-  </a>
-  <a href="https://leetcode.com/u/Amitkumar2801/">
-    <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black"/>
-  </a>
-  <a href="https://www.instagram.com/its._chamgadar?igsh=MW9tbzdseWFtOW5o">
-    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
-  </a>
-</div>
-
----
-
-
-
-## 💻 TERMINAL :: LIVE STATUS
-
-```bash
-root@amit-ai:~$ ./init_profile.py
-> [INFO] Loading Neural Networks... [OK]
-> [INFO] Mounting Knowledge Base... [OK]
-
-root@amit-ai:~$ whoami
-> Amit Kumar [AI_ENGINEER]
-
-root@amit-ai:~$ cat /var/log/current_focus
-> Artificial Intelligence | Machine Learning | Full Stack Architecture
-
-root@amit-ai:~$ check_status --verbose
-> MENTAL_STATE:   FLOW_MODE 🚀
-> CAFFEINE_LEVEL: ██████████ 99%
-> MISSION:        Building AI that scales globally.
