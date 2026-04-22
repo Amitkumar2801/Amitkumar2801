@@ -13,13 +13,13 @@
 `// ai_agent.runtime`
 ---
 <div align="center">
-<table align="center" style="border: none; background-color: transparent;">
+<table width="100%" align="center" style="border: none; background-color: transparent;">
   <tr>
-    <td align="center" style="border: none; padding-right: 20px;">
+    <td width="40%" align="center" style="border: none; padding-right: 20px;">
       <code>A.I CHAMGADAR</code><br><br>
       <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" width="180" alt="A.I CHAMGADAR Robot" />
     </td>
-    <td style="border: none; padding-left: 20px;">
+    <td width="60%" style="border: none; padding-left: 20px;">
       <code>// DATA SCIENCE PROFICIENCY</code><br><br>
       <code>Python / ML </code> <img src="https://geps.dev/progress/90?color=0066cc" height="14" /> <code>90%</code><br>
       <code>TensorFlow&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/80?color=6f42c1" height="14" /> <code>80%</code><br>
@@ -41,11 +41,11 @@
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Amitkumar2801&bg_color=f8f9fa&color=7b61ff&line=3b82f6&point=f9a826&area=true&hide_border=true&custom_title=AMIT%20KUMAR'S%20CONTRIBUTION%20GRAPH%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20PEAK:%209%20commits&title_color=6a5acd" alt="Activity Graph" />
   <br>
-  <img src="https://img.shields.io/badge/TOTAL_COMMITS-47-f4f7fe?style=for-the-badge&labelColor=f4f7fe&color=f4f7fe&logoColor=000" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/PEAK_DAY-9-f4f7fe?style=for-the-badge&labelColor=f4f7fe&color=f4f7fe&logoColor=000" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://img.shields.io/badge/AVG/DAY-2.2-f4f7fe?style=for-the-badge&labelColor=f4f7fe&color=f4f7fe&logoColor=000" />
+  <img src="https://img.shields.io/badge/TOTAL%20COMMITS-47-0a66c2?style=for-the-badge&labelColor=e6f0ff" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/PEAK%20DAY-9-0a66c2?style=for-the-badge&labelColor=e6f0ff" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/AVG%2FDAY-2.2-0a66c2?style=for-the-badge&labelColor=e6f0ff" />
   <br><br><br>
-  <img src="https://leetcard.jacoblin.cool/Amitkumar2801?theme=light&font=JetBrains%20Mono&ext=heatmap" alt="LeetCode Stats" />
+  <img src="https://leetcard.jacoblin.cool/Amitkumar2801?theme=light&font=JetBrains%20Mono&ext=heatmap" width="100%" alt="LeetCode Stats" />
 </div>
 
 <br><br>
