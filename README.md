@@ -17,6 +17,7 @@
     <td width="40%" align="center">
       <code>A.I CHAMGADAR</code><br><br>
       <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" width="220" alt="A.I CHAMGADAR Robot" />
+      <br><img src="https://capsule-render.vercel.app/api?type=transparent&color=transparent&height=1" width="350" />
     </td>
     <td width="60%">
       <code>// DATA SCIENCE PROFICIENCY</code><br><br>
@@ -28,6 +29,7 @@
       <code>FastAPI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/75?color=6f42c1" height="18" /> <code>75%</code><br>
       <code>Docker/AWS&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/68?color=28a745" height="18" /> <code>68%</code><br>
       <code>Power BI&nbsp;&nbsp;&nbsp;&nbsp;</code> <img src="https://geps.dev/progress/72?color=d63384" height="18" /> <code>72%</code>
+      <br><img src="https://capsule-render.vercel.app/api?type=transparent&color=transparent&height=1" width="500" />
     </td>
   </tr>
 </table>
