@@ -38,10 +38,22 @@ I specialize in:
   <img src="https://leetcard.jacoblin.cool/Amitkumar2801?theme=dark&font=JetBrains%20Mono&ext=heatmap" alt="LeetCode Stats" />
   <br>
   <br>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://komarev.com/ghpvc/?username=Amitkumar2801&style=for-the-badge&color=ff0000&label=PROFILE+VIEWS" />
-    <img alt="Profile Views" src="https://komarev.com/ghpvc/?username=Amitkumar2801&style=for-the-badge&color=000000&label=PROFILE+VIEWS" />
-  </picture>
+  <br>
+</div>
+
+---
+
+## 👁️‍🗨️ `visitor_count.live`
+<br>
+<div align="center">
+  <code>PROFILE VISITS DETECTED — ALL SESSIONS PRESERVED</code>
+  <br>
+  <br>
+  <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&label=L%20I%20V%20E%20%C2%B7%20C%20N%20T&color=0a66c2&labelColor=e6f0ff&style=for-the-badge" alt="Visitor Count" />
+  <br>
+  <br>
+  <code>komarev.com/ghpvc — visits never reset — add to README as badge</code>
+  <br>
 </div>
 
 ---
