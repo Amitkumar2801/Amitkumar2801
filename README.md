@@ -190,10 +190,7 @@
 
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&color=gradient&customColorList=0,2,4&animation=twinkling" />
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&color=gradient&customColorList=12,20,25&animation=twinkling" alt="Footer Wave" />
-</picture>
+
 
 <code>AMIT KUMAR · AI ENGINEER · PATNA, INDIA · SYSTEM ONLINE</code>
 
