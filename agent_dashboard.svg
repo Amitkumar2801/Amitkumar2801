@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="100%" height="100%">
+  <defs>
+    <!-- Import Google Font -->
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700;800&amp;display=swap');
+      
+      * {
+        font-family: 'JetBrains Mono', monospace;
+      }
+      
+      /* Neon Glow Drop Shadows */
+      .glow-purple { filter: drop-shadow(0px 0px 6px rgba(167, 139, 250, 0.6)); }
+      .glow-cyan { filter: drop-shadow(0px 0px 6px rgba(6, 182, 212, 0.6)); }
+      .glow-green { filter: drop-shadow(0px 0px 6px rgba(16, 185, 129, 0.6)); }
+      
+      /* Animations for Skill Progress Bars */
+      @keyframes growPython { from { width: 0; } to { width: 432px; } } /* 90% of 480 */
+      @keyframes growTF { from { width: 0; } to { width: 384px; } }     /* 80% of 480 */
+      @keyframes growPandas { from { width: 0; } to { width: 422.4px; } } /* 88% of 480 */
+      @keyframes growScikit { from { width: 0; } to { width: 408px; } }   /* 85% of 480 */
+      @keyframes growReact { from { width: 0; } to { width: 374.4px; } }  /* 78% of 480 */
+      @keyframes growFastAPI { from { width: 0; } to { width: 360px; } }  /* 75% of 480 */
+      @keyframes growDocker { from { width: 0; } to { width: 326.4px; } } /* 68% of 480 */
+      @keyframes growPowerBI { from { width: 0; } to { width: 345.6px; } } /* 72% of 480 */
+
+      .fill-python { animation: growPython 1.8s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+      .fill-tf { animation: growTF 1.8s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+      .fill-pandas { animation: growPandas 1.8s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+      .fill-scikit { animation: growScikit 1.8s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+      .fill-react { animation: growReact 1.8s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+      .fill-fastapi { animation: growFastAPI 1.8s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+      .fill-docker { animation: growDocker 1.8s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+      .fill-powerbi { animation: growPowerBI 1.8s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; }
+
+      /* Floating Animation for Robot Smilie */
+      @keyframes floatRobot {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-8px) rotate(1.5deg); }
+      }
+      .floating-agent {
+        animation: floatRobot 4s ease-in-out infinite;
+        transform-origin: 185px 175px;
+      }
+
+      /* Scanning Line Animation */
+      @keyframes scanline {
+        0% { y: 15px; opacity: 0.1; }
+        50% { opacity: 0.4; }
+        100% { y: 485px; opacity: 0.1; }
+      }
+      .scanner-bar {
+        animation: scanline 6s linear infinite;
+      }
+
+      /* Pulsing Status Dot */
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; filter: drop-shadow(0 0 6px #10b981); }
+      }
+      .pulse-dot {
+        animation: pulseGlow 2s infinite;
+      }
+
+      /* Equalizer Wave Animations */
+      @keyframes waveH1 { 0%, 100% { height: 10px; y: 430px; } 50% { height: 35px; y: 405px; } }
+      @keyframes waveH2 { 0%, 100% { height: 15px; y: 425px; } 50% { height: 45px; y: 395px; } }
+      @keyframes waveH3 { 0%, 100% { height: 8px; y: 432px; } 50% { height: 28px; y: 412px; } }
+      
+      .wave-1 { animation: waveH1 1.2s ease-in-out infinite; }
+      .wave-2 { animation: waveH2 0.8s ease-in-out infinite; }
+      .wave-3 { animation: waveH3 1.5s ease-in-out infinite; }
+      .wave-4 { animation: waveH1 0.9s ease-in-out infinite; }
+      .wave-5 { animation: waveH2 1.4s ease-in-out infinite; }
+    </style>
+
+    <!-- Gradients -->
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#db2777" />
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+  </defs>
+
+  <!-- Core Dashboard Background Card -->
+  <rect x="15" y="15" width="970" height="470" rx="16" fill="#080710" stroke="#8b5cf6" stroke-width="1.5" stroke-opacity="0.3" />
+  
+  <!-- Cyberpunk grid matrix line decoration -->
+  <line x1="370" y1="40" x2="370" y2="460" stroke="#8b5cf6" stroke-opacity="0.15" stroke-dasharray="6 4" />
+
+  <!-- Scanning Green Laser Line -->
+  <rect class="scanner-bar" x="18" y="15" width="964" height="2" fill="#8b5cf6" opacity="0.3" />
+
+  <!-- ==================== LEFT AREA: ROBOT DIAGNOSTICS ==================== -->
+  
+  <!-- Robot Graphic Wrapper (floating animation) -->
+  <g class="floating-agent">
+    <!-- Circle Tech Ring -->
+    <circle cx="185" cy="165" r="90" fill="none" stroke="#8b5cf6" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="5 5" />
+    <circle cx="185" cy="165" r="82" fill="none" stroke="#ec4899" stroke-width="1" stroke-opacity="0.15" />
+    <!-- Smilie Image Node -->
+    <image href="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" x="100" y="80" width="170" height="170" />
+  </g>
+
+  <!-- Title Badge for Left Pane -->
+  <rect x="75" y="275" width="220" height="28" rx="6" fill="#151324" stroke="#8b5cf6" stroke-width="1" stroke-opacity="0.4" />
+  <text x="185" y="294" font-size="12" fill="#d8b4fe" font-weight="700" text-anchor="middle" letter-spacing="1">A.I CHAMGADAR CORE</text>
+
+  <!-- Diagnostic Terminal stats -->
+  <!-- Stats row 1 -->
+  <text x="60" y="335" font-size="11" fill="#94a3b8" font-weight="700">STATUS: </text>
+  <circle class="pulse-dot" cx="120" cy="331" r="5" fill="#10b981" />
+  <text x="133" y="335" font-size="11" fill="#10b981" font-weight="700">ACTIVE</text>
+  
+  <!-- Stats row 2 -->
+  <text x="60" y="360" font-size="11" fill="#94a3b8" font-weight="700">NEURAL LINK: </text>
+  <text x="150" y="360" font-size="11" fill="#a78bfa" font-weight="700">NOMINAL (14ms)</text>
+
+  <!-- Stats row 3 -->
+  <text x="60" y="385" font-size="11" fill="#94a3b8" font-weight="700">PROCESS LOAD: </text>
+  <text x="158" y="385" font-size="11" fill="#ec4899" font-weight="700">14.8 TFLOPS</text>
+
+  <!-- Dynamic Frequency Audio wave lines (Left bottom) -->
+  <g opacity="0.8">
+    <rect class="wave-1" x="90" y="420" width="4" height="20" rx="2" fill="#8b5cf6" />
+    <rect class="wave-2" x="102" y="420" width="4" height="20" rx="2" fill="#ec4899" />
+    <rect class="wave-3" x="114" y="420" width="4" height="20" rx="2" fill="#a78bfa" />
+    <rect class="wave-4" x="126" y="420" width="4" height="20" rx="2" fill="#8b5cf6" />
+    <rect class="wave-5" x="138" y="420" width="4" height="20" rx="2" fill="#ec4899" />
+    
+    <rect class="wave-2" x="220" y="420" width="4" height="20" rx="2" fill="#ec4899" />
+    <rect class="wave-4" x="232" y="420" width="4" height="20" rx="2" fill="#8b5cf6" />
+    <rect class="wave-1" x="244" y="420" width="4" height="20" rx="2" fill="#a78bfa" />
+    <rect class="wave-5" x="256" y="420" width="4" height="20" rx="2" fill="#ec4899" />
+    <rect class="wave-3" x="268" y="420" width="4" height="20" rx="2" fill="#8b5cf6" />
+  </g>
+  <text x="185" y="460" font-size="9" fill="#475569" font-weight="700" text-anchor="middle">SYNAPSE BANDWIDTH FREQ</text>
+
+
+  <!-- ==================== RIGHT AREA: SKILL MONITOR ==================== -->
+  
+  <text x="410" y="55" font-size="16" fill="#a78bfa" font-weight="800" letter-spacing="1.5">// DATA SCIENCE PROFICIENCY</text>
+  <line x1="410" y1="67" x2="940" y2="67" stroke="#8b5cf6" stroke-opacity="0.3" stroke-width="1.5" />
+
+  <!-- 1. Python / ML -->
+  <g transform="translate(0, 0)">
+    <text x="410" y="100" font-size="12" fill="#e2e8f0" font-weight="700">Python / Machine Learning</text>
+    <text x="890" y="100" font-size="12" fill="#a78bfa" font-weight="800">90%</text>
+    <rect x="410" y="108" width="480" height="10" rx="5" fill="#161525" />
+    <rect class="fill-python glow-purple" x="410" y="108" height="10" rx="5" fill="url(#purpleGrad)" />
+  </g>
+
+  <!-- 2. TensorFlow -->
+  <g transform="translate(0, 48)">
+    <text x="410" y="100" font-size="12" fill="#e2e8f0" font-weight="700">TensorFlow Deep Learning</text>
+    <text x="890" y="100" font-size="12" fill="#60a5fa" font-weight="800">80%</text>
+    <rect x="410" y="108" width="480" height="10" rx="5" fill="#161525" />
+    <rect class="fill-tf glow-cyan" x="410" y="108" height="10" rx="5" fill="url(#cyanGrad)" />
+  </g>
+
+  <!-- 3. Pandas / NumPy -->
+  <g transform="translate(0, 96)">
+    <text x="410" y="100" font-size="12" fill="#e2e8f0" font-weight="700">Pandas / NumPy Data Wrangling</text>
+    <text x="890" y="100" font-size="12" fill="#34d399" font-weight="800">88%</text>
+    <rect x="410" y="108" width="480" height="10" rx="5" fill="#161525" />
+    <rect class="fill-pandas glow-green" x="410" y="108" height="10" rx="5" fill="url(#greenGrad)" />
+  </g>
+
+  <!-- 4. Scikit-Learn -->
+  <g transform="translate(0, 144)">
+    <text x="410" y="100" font-size="12" fill="#e2e8f0" font-weight="700">Scikit-Learn Predictive Modeling</text>
+    <text x="890" y="100" font-size="12" fill="#a78bfa" font-weight="800">85%</text>
+    <rect x="410" y="108" width="480" height="10" rx="5" fill="#161525" />
+    <rect class="fill-scikit glow-purple" x="410" y="108" height="10" rx="5" fill="url(#purpleGrad)" />
+  </g>
+
+  <!-- 5. React / Next.js -->
+  <g transform="translate(0, 192)">
+    <text x="410" y="100" font-size="12" fill="#e2e8f0" font-weight="700">React / Next.js Web Dev</text>
+    <text x="890" y="100" font-size="12" fill="#60a5fa" font-weight="800">78%</text>
+    <rect x="410" y="108" width="480" height="10" rx="5" fill="#161525" />
+    <rect class="fill-react glow-cyan" x="410" y="108" height="10" rx="5" fill="url(#cyanGrad)" />
+  </g>
+
+  <!-- 6. FastAPI -->
+  <g transform="translate(0, 240)">
+    <text x="410" y="100" font-size="12" fill="#e2e8f0" font-weight="700">FastAPI Backend Architectures</text>
+    <text x="890" y="100" font-size="12" fill="#34d399" font-weight="800">75%</text>
+    <rect x="410" y="108" width="480" height="10" rx="5" fill="#161525" />
+    <rect class="fill-fastapi glow-green" x="410" y="108" height="10" rx="5" fill="url(#greenGrad)" />
+  </g>
+
+  <!-- 7. Docker / AWS -->
+  <g transform="translate(0, 288)">
+    <text x="410" y="100" font-size="12" fill="#e2e8f0" font-weight="700">Docker &amp; Cloud (AWS)</text>
+    <text x="890" y="100" font-size="12" fill="#a78bfa" font-weight="800">68%</text>
+    <rect x="410" y="108" width="480" height="10" rx="5" fill="#161525" />
+    <rect class="fill-docker glow-purple" x="410" y="108" height="10" rx="5" fill="url(#purpleGrad)" />
+  </g>
+
+  <!-- 8. Power BI -->
+  <g transform="translate(0, 336)">
+    <text x="410" y="100" font-size="12" fill="#e2e8f0" font-weight="700">Power BI Data Visualizations</text>
+    <text x="890" y="100" font-size="12" fill="#60a5fa" font-weight="800">72%</text>
+    <rect x="410" y="108" width="480" height="10" rx="5" fill="#161525" />
+    <rect class="fill-powerbi glow-cyan" x="410" y="108" height="10" rx="5" fill="url(#cyanGrad)" />
+  </g>
+
+  <!-- Dashboard footer timestamp -->
+  <text x="940" y="460" font-size="9" fill="#475569" font-weight="700" text-anchor="end">SYSTEM TELEMETRY SYNCHRONIZED SECONDS AGO · V4.6</text>
+</svg>

@@ -67,62 +67,9 @@
 `// ai_agent.runtime`
 ---
 
-<table width="100%">
-  <tr>
-    <td width="40%" align="center">
-      <code>A.I CHAMGADAR</code><br><br>
-      <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" width="220" alt="A.I CHAMGADAR Robot" />
-      <br><br>
-      <img src="https://capsule-render.vercel.app/api?type=transparent&color=transparent&height=1" width="350" />
-    </td>
-    <td width="60%">
-      <code>// DATA SCIENCE PROFICIENCY</code><br><br>
-      <table width="100%" style="border: none; background-color: transparent;">
-        <tr>
-          <td width="25%" style="border: none;"><code>Python / ML</code></td>
-          <td width="60%" style="border: none;"><img src="https://geps.dev/progress/90?color=3b82f6" width="100%" height="22" /></td>
-          <td width="15%" style="border: none;" align="right"><code>90%</code></td>
-        </tr>
-        <tr>
-          <td style="border: none;"><code>TensorFlow</code></td>
-          <td style="border: none;"><img src="https://geps.dev/progress/80?color=8b5cf6" width="100%" height="22" /></td>
-          <td style="border: none;" align="right"><code>80%</code></td>
-        </tr>
-        <tr>
-          <td style="border: none;"><code>Pandas/NumPy</code></td>
-          <td style="border: none;"><img src="https://geps.dev/progress/88?color=10b981" width="100%" height="22" /></td>
-          <td style="border: none;" align="right"><code>88%</code></td>
-        </tr>
-        <tr>
-          <td style="border: none;"><code>Scikit-Learn</code></td>
-          <td style="border: none;"><img src="https://geps.dev/progress/85?color=3b82f6" width="100%" height="22" /></td>
-          <td style="border: none;" align="right"><code>85%</code></td>
-        </tr>
-        <tr>
-          <td style="border: none;"><code>React/Next</code></td>
-          <td style="border: none;"><img src="https://geps.dev/progress/78?color=ec4899" width="100%" height="22" /></td>
-          <td style="border: none;" align="right"><code>78%</code></td>
-        </tr>
-        <tr>
-          <td style="border: none;"><code>FastAPI</code></td>
-          <td style="border: none;"><img src="https://geps.dev/progress/75?color=8b5cf6" width="100%" height="22" /></td>
-          <td style="border: none;" align="right"><code>75%</code></td>
-        </tr>
-        <tr>
-          <td style="border: none;"><code>Docker/AWS</code></td>
-          <td style="border: none;"><img src="https://geps.dev/progress/68?color=10b981" width="100%" height="22" /></td>
-          <td style="border: none;" align="right"><code>68%</code></td>
-        </tr>
-        <tr>
-          <td style="border: none;"><code>Power BI</code></td>
-          <td style="border: none;"><img src="https://geps.dev/progress/72?color=ec4899" width="100%" height="22" /></td>
-          <td style="border: none;" align="right"><code>72%</code></td>
-        </tr>
-      </table>
-      <br><img src="https://capsule-render.vercel.app/api?type=transparent&color=transparent&height=1" width="500" />
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <img src="agent_dashboard.svg" width="100%" alt="A.I Chamgadar Skill Dashboard" />
+</div>
 
 <br><br>
 
