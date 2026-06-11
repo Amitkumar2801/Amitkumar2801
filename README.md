@@ -32,7 +32,7 @@
       <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&label=%E2%9A%A1+PROFILE+VIEWS&color=bc34fa&labelColor=15052d&style=for-the-badge" height="42" alt="Visitor Count" />
     </td>
     <td style="border: none; background: transparent; padding: 10px;" valign="middle">
-      <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/glitch.html">
+      <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/meltdown.html">
         <img src="https://img.shields.io/badge/⚡%20CRITICAL-DETONATE-00ffcc?style=for-the-badge&logo=hackthebox&logoColor=black" height="35" alt="Detonate Core" />
       </a>
     </td>
