@@ -24,7 +24,7 @@
 <table align="center" style="border: none; border-collapse: collapse; background: transparent;">
   <tr style="border: none; background: transparent;">
     <td style="border: none; background: transparent; padding: 10px;" valign="middle">
-      <a href="https://amitkumar2801.github.io/Amitkumar2801/glitch.html">
+      <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/glitch.html">
         <img src="https://img.shields.io/badge/🚨%20OVERCLOCK-SYSTEM-ff0055?style=for-the-badge&logo=opsgenie&logoColor=white" height="35" alt="Overclock System" />
       </a>
     </td>
@@ -32,7 +32,7 @@
       <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&label=%E2%9A%A1+PROFILE+VIEWS&color=bc34fa&labelColor=15052d&style=for-the-badge" height="42" alt="Visitor Count" />
     </td>
     <td style="border: none; background: transparent; padding: 10px;" valign="middle">
-      <a href="https://amitkumar2801.github.io/Amitkumar2801/glitch.html">
+      <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/glitch.html">
         <img src="https://img.shields.io/badge/⚡%20CRITICAL-DETONATE-00ffcc?style=for-the-badge&logo=hackthebox&logoColor=black" height="35" alt="Detonate Core" />
       </a>
     </td>
