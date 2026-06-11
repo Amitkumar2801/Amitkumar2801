@@ -122,7 +122,7 @@
 
 `// experience.log`
 ---
-**╰┈➤ 2025** · **AI/ML Intern** @ *Infosys Springboard* `[COMPLETED]`<br>
+**╰┈➤ 2025** · **AI/ML Intern** @ *Infosys * `[COMPLETED]`<br>
 **╰┈➤ 2025** · **ML Intern** @ *NIELIT Patna* `[COMPLETED]`<br>
 **╰┈➤ 2024-27** · **Diploma (AI/ML)** @ *Govt Polytechnic Barh* `[LOADING...]`<br>
 
@@ -165,17 +165,14 @@
 
 ---
 <div align="center">
-  <br>
-  <code>// SYSTEM.TELEMETRY</code><br><br>
-  <i>Monitoring live developer engagement · Analyzing global repository traffic · Tracking unique sessions.</i>
-  <br><br>
+  Welcome Devloper
   <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&label=UNIQUE%20SESSIONS&color=8b5cf6&labelColor=1e1b4b&style=for-the-badge" alt="Visitor Count" />
   <br>
 </div>
 
 <br><br>
 
-`// uplink.connect`
+Connect With Me
 ---
 <div align="center">
   <a href="https://www.linkedin.com/in/amit-kumar-835a73345/"><img src="https://img.shields.io/badge/LinkedIn-1e3a5f?style=for-the-badge&logo=linkedin&logoColor=38bdf8"/></a>&nbsp;
