@@ -122,59 +122,23 @@
 
 `// experience.log`
 ---
-**╰┈➤ 2025** · **AI/ML Intern** @ *Infosys * `[COMPLETED]`<br>
-**╰┈➤ 2025** · **ML Intern** @ *NIELIT Patna* `[COMPLETED]`<br>
-**╰┈➤ 2024-27** · **Diploma (AI/ML)** @ *Govt Polytechnic Barh* `[LOADING...]`<br>
+╰┈➤ 2025** · **AI/ML Intern** @ *Infosys * `[COMPLETED]`<br>
+╰┈➤ 2025** · **ML Intern** @ *NIELIT Patna* `[COMPLETED]`<br>
+╰┈➤ 2024-27** · **Diploma (AI/ML)** @ *Govt Polytechnic Barh* `[LOADING...]`<br>
+╰┈➤ 2026** . **AI Intern** @ internmitra [On Going]<br>
 
 <br><br>
 
 
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/🎵%20CHAMGADAR'S%20VIBE%20STATION-0d1117?style=for-the-badge&logo=spotify&logoColor=1DB954&labelColor=0d1117" />
-  <img src="https://img.shields.io/badge/🎵%20CHAMGADAR'S%20VIBE%20STATION-ffffff?style=for-the-badge&logo=spotify&logoColor=1DB954&labelColor=f8f8f8" />
-</picture>
 
-<br>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/♪%20Curated%20by%20Amit%20Kumar%20·%20Chill%20%2F%20Study%20%2F%20Vibe%20Playlist%20♪-111111?style=flat-square&logoColor=1DB954" />
-  <img src="https://img.shields.io/badge/♪%20Curated%20by%20Amit%20Kumar%20·%20Chill%20%2F%20Study%20%2F%20Vibe%20Playlist%20♪-f0f0f0?style=flat-square&logoColor=1DB954" />
-</picture>
 
-<br><br>
 
-<a href="https://open.spotify.com/playlist/7zkJuF1s74bAAqYsFbobMd?si=c12e76d68b404bc5">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/%20%20%20⏮%20%20%20-1a1a1a?style=for-the-badge" />
-    <img src="https://img.shields.io/badge/%20%20%20⏮%20%20%20-e0e0e0?style=for-the-badge" />
-  </picture>
-</a>&nbsp;&nbsp;
-<a href="https://open.spotify.com/playlist/7zkJuF1s74bAAqYsFbobMd?si=c12e76d68b404bc5">
-  <img src="https://img.shields.io/badge/%20%20▶%20%20PLAY%20ON%20SPOTIFY%20%20-1DB954?style=for-the-badge&logo=spotify&logoColor=white" />
-</a>&nbsp;&nbsp;
-<a href="https://open.spotify.com/playlist/7zkJuF1s74bAAqYsFbobMd?si=c12e76d68b404bc5">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/%20%20%20⏭%20%20%20-1a1a1a?style=for-the-badge" />
-    <img src="https://img.shields.io/badge/%20%20%20⏭%20%20%20-e0e0e0?style=for-the-badge" />
-  </picture>
-</a>
 
-<br><br>
+   
 
-<a href="https://open.spotify.com/playlist/7zkJuF1s74bAAqYsFbobMd?si=c12e76d68b404bc5">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/🎧%20Open%20Full%20Playlist%20in%20Spotify%20App-191414?style=flat-square&logo=spotify&logoColor=1DB954" />
-    <img src="https://img.shields.io/badge/🎧%20Open%20Full%20Playlist%20in%20Spotify%20App-f5f5f5?style=flat-square&logo=spotify&logoColor=1DB954" />
-  </picture>
-</a>
 
-<br>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━-0d1117?style=flat-square" />
-  <img src="https://img.shields.io/badge/━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━-f0f0f0?style=flat-square" />
-</picture>
 
 </div>
 
