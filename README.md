@@ -131,34 +131,61 @@
 `// now.playing`
 ---
 <div align="center">
-<table width="100%">
-  <tr>
-    <td align="center" style="border-radius: 16px; padding: 20px;">
-      <img src="https://img.shields.io/badge/🎵%20CHAMGADAR'S%20VIBE%20STATION-000000?style=for-the-badge&logo=spotify&logoColor=1DB954&labelColor=0d1117" width="60%" />
-      <br><br>
-      <img src="https://img.shields.io/badge/━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━-0d1117?style=flat-square" width="100%" />
-      <br>
-      <img src="https://img.shields.io/badge/♪%20%20%20Curated%20by%20Amit%20Kumar%20%7C%20Chill%20%2F%20Study%20%2F%20Vibe%20Playlist%20%20%20♪-111111?style=flat-square&logoColor=1DB954" />
-      <br>
-      <img src="https://img.shields.io/badge/━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━-0d1117?style=flat-square" width="100%" />
-      <br><br>
-      <a href="https://open.spotify.com/playlist/7zkJuF1s74bAAqYsFbobMd?si=c12e76d68b404bc5">
-        <img src="https://img.shields.io/badge/%20%20%20⏮%20%20%20-1a1a1a?style=for-the-badge" />
-      </a>&nbsp;&nbsp;
-      <a href="https://open.spotify.com/playlist/7zkJuF1s74bAAqYsFbobMd?si=c12e76d68b404bc5">
-        <img src="https://img.shields.io/badge/%20%20▶%20%20PLAY%20ON%20SPOTIFY%20%20-1DB954?style=for-the-badge&logo=spotify&logoColor=white" />
-      </a>&nbsp;&nbsp;
-      <a href="https://open.spotify.com/playlist/7zkJuF1s74bAAqYsFbobMd?si=c12e76d68b404bc5">
-        <img src="https://img.shields.io/badge/%20%20%20⏭%20%20%20-1a1a1a?style=for-the-badge" />
-      </a>
-      <br><br>
-      <a href="https://open.spotify.com/playlist/7zkJuF1s74bAAqYsFbobMd?si=c12e76d68b404bc5">
-        <img src="https://img.shields.io/badge/🎧%20Open%20Full%20Playlist%20in%20Spotify%20App-191414?style=flat-square&logo=spotify&logoColor=1DB954" />
-      </a>
-      <br><br>
-    </td>
-  </tr>
-</table>
+
+<!-- ░░ DARK MODE SPOTIFY CARD ░░ -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━-0d1117?style=flat-square&logoColor=1DB954" />
+  <img src="https://img.shields.io/badge/━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━-f0f0f0?style=flat-square" />
+</picture>
+
+<br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/🎵%20CHAMGADAR'S%20VIBE%20STATION-0d1117?style=for-the-badge&logo=spotify&logoColor=1DB954&labelColor=0d1117" />
+  <img src="https://img.shields.io/badge/🎵%20CHAMGADAR'S%20VIBE%20STATION-ffffff?style=for-the-badge&logo=spotify&logoColor=1DB954&labelColor=f8f8f8" />
+</picture>
+
+<br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/♪%20Curated%20by%20Amit%20Kumar%20·%20Chill%20%2F%20Study%20%2F%20Vibe%20Playlist%20♪-111111?style=flat-square&logoColor=1DB954" />
+  <img src="https://img.shields.io/badge/♪%20Curated%20by%20Amit%20Kumar%20·%20Chill%20%2F%20Study%20%2F%20Vibe%20Playlist%20♪-f0f0f0?style=flat-square&logoColor=1DB954" />
+</picture>
+
+<br><br>
+
+<a href="https://open.spotify.com/playlist/7zkJuF1s74bAAqYsFbobMd?si=c12e76d68b404bc5">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/%20%20%20⏮%20%20%20-1a1a1a?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/%20%20%20⏮%20%20%20-e0e0e0?style=for-the-badge" />
+  </picture>
+</a>&nbsp;&nbsp;
+<a href="https://open.spotify.com/playlist/7zkJuF1s74bAAqYsFbobMd?si=c12e76d68b404bc5">
+  <img src="https://img.shields.io/badge/%20%20▶%20%20PLAY%20ON%20SPOTIFY%20%20-1DB954?style=for-the-badge&logo=spotify&logoColor=white" />
+</a>&nbsp;&nbsp;
+<a href="https://open.spotify.com/playlist/7zkJuF1s74bAAqYsFbobMd?si=c12e76d68b404bc5">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/%20%20%20⏭%20%20%20-1a1a1a?style=for-the-badge" />
+    <img src="https://img.shields.io/badge/%20%20%20⏭%20%20%20-e0e0e0?style=for-the-badge" />
+  </picture>
+</a>
+
+<br><br>
+
+<a href="https://open.spotify.com/playlist/7zkJuF1s74bAAqYsFbobMd?si=c12e76d68b404bc5">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/🎧%20Open%20Full%20Playlist%20in%20Spotify%20App-191414?style=flat-square&logo=spotify&logoColor=1DB954" />
+    <img src="https://img.shields.io/badge/🎧%20Open%20Full%20Playlist%20in%20Spotify%20App-f5f5f5?style=flat-square&logo=spotify&logoColor=1DB954" />
+  </picture>
+</a>
+
+<br>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━-0d1117?style=flat-square" />
+  <img src="https://img.shields.io/badge/━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━-f0f0f0?style=flat-square" />
+</picture>
+
 </div>
 
 <br><br>
