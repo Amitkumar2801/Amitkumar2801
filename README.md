@@ -25,11 +25,7 @@
       <code>A.I CHAMGADAR</code><br><br>
       <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" width="220" alt="A.I CHAMGADAR Robot" />
       <br><br>
-      <a href="https://open.spotify.com/playlist/7zkJuF1s74bAAqYsFbobMd?si=c12e76d68b404bc5">
-        <img src="https://img.shields.io/badge/MY%20PLAYLIST-1DB954?style=for-the-badge&logo=spotify&logoColor=white&labelColor=0d0d0d" alt="Spotify Playlist" />
-      </a>
-      <br><small><i>▶ click to play on Spotify</i></small>
-      <br><img src="https://capsule-render.vercel.app/api?type=transparent&color=transparent&height=1" width="350" />
+      <img src="https://capsule-render.vercel.app/api?type=transparent&color=transparent&height=1" width="350" />
     </td>
     <td width="60%">
       <code>// DATA SCIENCE PROFICIENCY</code><br><br>
@@ -132,6 +128,41 @@
 
 <br><br>
 
+`// now.playing`
+---
+<div align="center">
+<table width="100%">
+  <tr>
+    <td align="center" style="border-radius: 16px; padding: 20px;">
+      <img src="https://img.shields.io/badge/🎵%20CHAMGADAR'S%20VIBE%20STATION-000000?style=for-the-badge&logo=spotify&logoColor=1DB954&labelColor=0d1117" width="60%" />
+      <br><br>
+      <img src="https://img.shields.io/badge/━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━-0d1117?style=flat-square" width="100%" />
+      <br>
+      <img src="https://img.shields.io/badge/♪%20%20%20Curated%20by%20Amit%20Kumar%20%7C%20Chill%20%2F%20Study%20%2F%20Vibe%20Playlist%20%20%20♪-111111?style=flat-square&logoColor=1DB954" />
+      <br>
+      <img src="https://img.shields.io/badge/━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━-0d1117?style=flat-square" width="100%" />
+      <br><br>
+      <a href="https://open.spotify.com/playlist/7zkJuF1s74bAAqYsFbobMd?si=c12e76d68b404bc5">
+        <img src="https://img.shields.io/badge/%20%20%20⏮%20%20%20-1a1a1a?style=for-the-badge" />
+      </a>&nbsp;&nbsp;
+      <a href="https://open.spotify.com/playlist/7zkJuF1s74bAAqYsFbobMd?si=c12e76d68b404bc5">
+        <img src="https://img.shields.io/badge/%20%20▶%20%20PLAY%20ON%20SPOTIFY%20%20-1DB954?style=for-the-badge&logo=spotify&logoColor=white" />
+      </a>&nbsp;&nbsp;
+      <a href="https://open.spotify.com/playlist/7zkJuF1s74bAAqYsFbobMd?si=c12e76d68b404bc5">
+        <img src="https://img.shields.io/badge/%20%20%20⏭%20%20%20-1a1a1a?style=for-the-badge" />
+      </a>
+      <br><br>
+      <a href="https://open.spotify.com/playlist/7zkJuF1s74bAAqYsFbobMd?si=c12e76d68b404bc5">
+        <img src="https://img.shields.io/badge/🎧%20Open%20Full%20Playlist%20in%20Spotify%20App-191414?style=flat-square&logo=spotify&logoColor=1DB954" />
+      </a>
+      <br><br>
+    </td>
+  </tr>
+</table>
+</div>
+
+<br><br>
+
 ---
 <div align="center">
   <br>
@@ -150,7 +181,9 @@
   <a href="https://www.linkedin.com/in/amit-kumar-835a73345/"><img src="https://img.shields.io/badge/LinkedIn-1e3a5f?style=for-the-badge&logo=linkedin&logoColor=38bdf8"/></a>&nbsp;
   <a href="mailto:amitkumar.arwal28@gmail.com"><img src="https://img.shields.io/badge/Gmail-431407?style=for-the-badge&logo=gmail&logoColor=f97316"/></a>&nbsp;
   <a href="https://leetcode.com/u/Amitkumar2801/"><img src="https://img.shields.io/badge/LeetCode-312e08?style=for-the-badge&logo=leetcode&logoColor=F7DF1E"/></a>&nbsp;
-  <a href="https://www.instagram.com/its._chamgadar?igsh=MW9tbzdseWFtOW5o"><img src="https://img.shields.io/badge/Instagram-4a044e?style=for-the-badge&logo=instagram&logoColor=f9a8d4"/></a>&nbsp;
+  <br><br>
+  <a href="https://www.instagram.com/its._chamgadar?igsh=MW9tbzdseWFtOW5o"><img src="https://img.shields.io/badge/Instagram%20①-4a044e?style=for-the-badge&logo=instagram&logoColor=f9a8d4"/></a>&nbsp;
+  <a href="https://www.instagram.com/its_.chamgadar?igsh=eGtzZmphdW9yOTBu"><img src="https://img.shields.io/badge/Instagram%20②-6b21a8?style=for-the-badge&logo=instagram&logoColor=f0abfc"/></a>&nbsp;
   <a href="https://open.spotify.com/playlist/7zkJuF1s74bAAqYsFbobMd?si=c12e76d68b404bc5"><img src="https://img.shields.io/badge/Spotify-064e3b?style=for-the-badge&logo=spotify&logoColor=1DB954"/></a>
 </div>
 <br><br>
