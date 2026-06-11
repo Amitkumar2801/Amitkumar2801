@@ -125,17 +125,9 @@
 <img src="https://img.shields.io/badge/AVG%2FDAY-2.2-10b981?style=for-the-badge&labelColor=064e3b" />
 <br><br>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://leetcard.jacoblin.cool/Amitkumar2801?theme=dark&font=JetBrains%20Mono&ext=heatmap" />
-  <img src="https://leetcard.jacoblin.cool/Amitkumar2801?theme=light&font=JetBrains%20Mono&ext=heatmap" width="100%" alt="LeetCode Stats" />
-</picture>
 
-</div>
 
-<br><br>
 
-`// tech.arsenal`
----
 
 **ＬＡＮＧＵＡＧＥＳ**<br>
 <img src="https://img.shields.io/badge/Python-1e1b4b?style=flat&logo=python&logoColor=60a5fa" alt="Python"> <img src="https://img.shields.io/badge/JavaScript-312e08?style=flat&logo=javascript&logoColor=F7DF1E" alt="JavaScript"> <img src="https://img.shields.io/badge/C-1e293b?style=flat&logo=c&logoColor=60a5fa" alt="C"> <img src="https://img.shields.io/badge/HTML5-431407?style=flat&logo=html5&logoColor=f97316" alt="HTML5"> <img src="https://img.shields.io/badge/CSS3-1e3a5f?style=flat&logo=css3&logoColor=38bdf8" alt="CSS3">
