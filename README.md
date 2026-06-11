@@ -21,11 +21,23 @@
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=22&pause=1000&color=6a5acd&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=50&lines=%F0%9F%91%8B+Welcome+Developer!+You+are+Visitor+No.+%E2%80%A2%E2%80%A2%E2%80%A2" alt="Welcome" />
 </picture>
 
-<br>
-
-<img src="https://komarev.com/ghpvc/?username=Amitkumar2801&label=%E2%9A%A1+PROFILE+VIEWS&color=blueviolet&labelColor=1e1b4b&style=for-the-badge" alt="Visitor Count" />
-
-<br>
+<table align="center" style="border: none; border-collapse: collapse; background: transparent;">
+  <tr style="border: none; background: transparent;">
+    <td style="border: none; background: transparent; padding: 10px;" valign="middle">
+      <a href="https://amitkumar2801.github.io/Amitkumar2801/glitch.html">
+        <img src="https://img.shields.io/badge/🚨%20OVERCLOCK-SYSTEM-ff0055?style=for-the-badge&logo=opsgenie&logoColor=white" height="35" alt="Overclock System" />
+      </a>
+    </td>
+    <td style="border: none; background: transparent; padding: 10px;" valign="middle">
+      <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&label=%E2%9A%A1+PROFILE+VIEWS&color=bc34fa&labelColor=15052d&style=for-the-badge" height="42" alt="Visitor Count" />
+    </td>
+    <td style="border: none; background: transparent; padding: 10px;" valign="middle">
+      <a href="https://amitkumar2801.github.io/Amitkumar2801/glitch.html">
+        <img src="https://img.shields.io/badge/⚡%20CRITICAL-DETONATE-00ffcc?style=for-the-badge&logo=hackthebox&logoColor=black" height="35" alt="Detonate Core" />
+      </a>
+    </td>
+  </tr>
+</table>
 
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" width="30" />&nbsp;
 <img src="https://img.shields.io/badge/Thanks%20for%20stopping%20by!-ec4899?style=flat-square" />&nbsp;

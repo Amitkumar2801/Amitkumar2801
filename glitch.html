@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.I CHAMGADAR // CRITICAL OVERLOAD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050508;
+            --accent-color: #8b5cf6;
+            --accent-glow: rgba(139, 92, 246, 0.4);
+            --danger-color: #ef4444;
+            --danger-glow: rgba(239, 68, 68, 0.4);
+            --success-color: #10b981;
+            --success-glow: rgba(16, 185, 129, 0.4);
+            --text-color: #e2e8f0;
+            --grid-color: rgba(139, 92, 246, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body, html {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'JetBrains Mono', monospace;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Scanline Overlay */
+        body::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 9999;
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+        }
+
+        /* Vignette & Flicker */
+        .crt-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, transparent 55%, rgba(0,0,0,0.8) 100%);
+            z-index: 9998;
+            pointer-events: none;
+        }
+
+        /* Matrix Canvas Background */
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.15;
+            transition: opacity 1s ease;
+        }
+
+        /* UI Container */
+        .wrapper {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        /* Top Bar Info */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .sys-title {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            text-shadow: 0 0 10px var(--accent-glow);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sys-status {
+            font-size: 0.8rem;
+            color: var(--success-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--success-color);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--success-glow);
+            animation: pulse 2s infinite;
+        }
+
+        /* Main Workspace layout */
+        .main-layout {
+            display: flex;
+            flex: 1;
+            gap: 20px;
+            min-height: 0;
+        }
+
+        /* Left Side Panel - System Logs & Controller */
+        .control-panel {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-height: 0;
+        }
+
+        .card {
+            background: rgba(10, 10, 18, 0.6);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(8px);
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .card-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            border-bottom: 1px dashed rgba(139, 92, 246, 0.2);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Console Log Window */
+        .console-log {
+            flex: 1;
+            background: rgba(5, 5, 8, 0.85);
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            border-radius: 4px;
+            padding: 12px;
+            font-size: 0.8rem;
+            overflow-y: auto;
+            color: #a78bfa;
+            line-height: 1.5;
+            min-height: 0;
+        }
+
+        .console-line {
+            margin-bottom: 6px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .console-time {
+            color: rgba(226, 232, 240, 0.4);
+        }
+
+        .console-tag {
+            font-weight: 700;
+        }
+
+        .console-tag.info { color: #60a5fa; }
+        .console-tag.warn { color: #fbbf24; }
+        .console-tag.error { color: var(--danger-color); }
+        .console-tag.success { color: var(--success-color); }
+
+        /* Quick actions card */
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .btn {
+            background: rgba(139, 92, 246, 0.05);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            color: var(--text-color);
+            padding: 12px;
+            border-radius: 6px;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background: rgba(139, 92, 246, 0.15);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 12px rgba(139, 92, 246, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn-danger {
+            background: rgba(239, 68, 68, 0.05);
+            border-color: rgba(239, 68, 68, 0.25);
+            color: #fca5a5;
+        }
+
+        .btn-danger:hover {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: var(--danger-color);
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.35);
+            color: #ffffff;
+            animation: pulse-danger 1s infinite alternate;
+        }
+
+        /* Right Side Panel - System Stats */
+        .stat-panel {
+            flex: 0.8;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: rgba(226, 232, 240, 0.6);
+        }
+
+        .stat-value {
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        /* CPU Gauge Loader bar */
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(226, 232, 240, 0.05);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 45%;
+            background: linear-gradient(90deg, var(--accent-color), #ec4899);
+            border-radius: 4px;
+            box-shadow: 0 0 8px var(--accent-glow);
+            transition: width 0.4s ease;
+        }
+
+        /* Robot Display Graphic */
+        .neural-link-graphic {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed rgba(139, 92, 246, 0.15);
+            border-radius: 6px;
+            background: rgba(139, 92, 246, 0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .grid-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: 20px 20px;
+            background-image: 
+                linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+        }
+
+        .neural-link-graphic img {
+            width: 120px;
+            z-index: 2;
+            filter: drop-shadow(0 0 15px var(--accent-glow));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* ░░ GLITCH & HANG OVERLAY SCREEN ░░ */
+        .glitch-screen {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 5, 25, 0.96);
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            display: none; /* Hidden by default */
+            font-family: 'JetBrains Mono', monospace;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .glitch-code {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            color: rgba(239, 68, 68, 0.15);
+            font-size: 0.7rem;
+            text-align: left;
+            padding: 15px;
+            overflow: hidden;
+            pointer-events: none;
+            line-height: 1.4;
+            word-break: break-all;
+            white-space: pre-wrap;
+            z-index: 1;
+        }
+
+        .glitch-content {
+            position: relative;
+            z-index: 5;
+            max-width: 600px;
+            background: rgba(5, 5, 8, 0.9);
+            border: 2px solid var(--danger-color);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(239, 68, 68, 0.3);
+        }
+
+        .glitch-header {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--danger-color);
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px var(--danger-glow);
+            animation: glitch-flicker 0.2s infinite;
+        }
+
+        .glitch-text {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .timer-box {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-color);
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--danger-color);
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            box-shadow: inset 0 0 15px rgba(239, 68, 68, 0.2);
+        }
+
+        .glitch-footer {
+            font-size: 0.8rem;
+            color: rgba(226, 232, 240, 0.4);
+            animation: blink 1s infinite;
+        }
+
+        /* ░░ SHAKE & ANIMATIONS ░░ */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.6; }
+        }
+
+        @keyframes pulse-danger {
+            0% { box-shadow: 0 0 5px rgba(239, 68, 68, 0.2); }
+            100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.5); }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        @keyframes glitch-flicker {
+            0% { opacity: 1; transform: skew(0deg); }
+            10% { opacity: 0.8; transform: skew(-1deg); }
+            20% { opacity: 1; transform: skew(0deg); }
+            25% { opacity: 0.5; transform: skew(3deg); }
+            30% { opacity: 1; transform: skew(0deg); }
+            80% { opacity: 0.9; transform: skew(-2deg); }
+            90% { opacity: 0.2; transform: skew(4deg); }
+            100% { opacity: 1; transform: skew(0deg); }
+        }
+
+        .screen-shake {
+            animation: shake 0.15s infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(0px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(2px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(2px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+
+        /* Sound Alert Button Overlay (Initial Interaction Gate) */
+        .gate-screen {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--bg-color);
+            z-index: 20000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .gate-card {
+            max-width: 450px;
+            background: rgba(10, 10, 18, 0.8);
+            border: 1px solid var(--accent-color);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 30px var(--accent-glow);
+            backdrop-filter: blur(10px);
+        }
+
+        .gate-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            animation: pulse 2.5s infinite;
+        }
+
+        .gate-title {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gate-desc {
+            font-size: 0.85rem;
+            color: rgba(226, 232, 240, 0.7);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .gate-btn {
+            background: var(--accent-color);
+            border: none;
+            color: #ffffff;
+            font-weight: 700;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-family: inherit;
+            cursor: pointer;
+            box-shadow: 0 0 15px var(--accent-glow);
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gate-btn:hover {
+            transform: scale(1.05);
+            background: #9d76fa;
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CRT Visual effect nodes -->
+    <div class="crt-overlay"></div>
+
+    <!-- Background Canvas for Matrix Digital Rain -->
+    <canvas id="matrixCanvas"></canvas>
+
+    <!-- Initial Access Screen (Unlocks Web Audio Context) -->
+    <div id="gateScreen" class="gate-screen">
+        <div class="gate-card">
+            <div class="gate-icon">🔮</div>
+            <h2 class="gate-title">System Link Request</h2>
+            <p class="gate-desc">Establishing a quantum link with <strong>A.I CHAMGADAR</strong> core module. Interactive sound elements and matrix visuals will be activated.</p>
+            <button id="connectBtn" class="gate-btn">ESTABLISH LINK</button>
+        </div>
+    </div>
+
+    <!-- HANG / GLITCH OVERLAY SCREEN -->
+    <div id="glitchScreen" class="glitch-screen">
+        <div id="glitchCode" class="glitch-code"></div>
+        <div class="glitch-content">
+            <h1 class="glitch-header">☠️ KERNEL HANG ☠️</h1>
+            <p class="glitch-text">
+                A critical buffer overflow was simulated. The CPU registers have locked up.<br>
+                Core temperatures stabilizing... Cooling down systems.
+            </p>
+            <div id="countdownBox" class="timer-box">10.00s</div>
+            <p class="glitch-footer">RESTORE PROTOCOLS RUNNING IN BACKGROUND · PLEASE STAND BY</p>
+        </div>
+    </div>
+
+    <!-- UI Core wrapper -->
+    <div class="wrapper">
+        <header>
+            <div class="sys-title">
+                <span>🤖 A.I CHAMGADAR // CORE_V4.6</span>
+            </div>
+            <div class="sys-status">
+                <div class="status-dot"></div>
+                <span id="statusText">SYSTEM NEURAL: CONNECTED</span>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <!-- Left Side -->
+            <div class="control-panel">
+                <div class="card" style="flex: 1.5;">
+                    <div class="card-title">
+                        <span>📡 Live System Telemetry / Operations</span>
+                        <span style="font-size: 0.7rem; color: rgba(226,232,240,0.4)">PID: 10472</span>
+                    </div>
+                    <div id="terminalConsole" class="console-log">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">🚨 System Hardware Control</div>
+                    <div class="actions-grid">
+                        <button class="btn" onclick="triggerNormalAction('Diagnostic run completed. Sector health at 100%.')">🔍 Run Diagnostics</button>
+                        <button class="btn" onclick="triggerNormalAction('Quantum neural weight synced successfully.')">🧠 Sync Weights</button>
+                        <button class="btn" onclick="triggerNormalAction('Decryption key matches SHA-256 block.')">🔑 SHA-256 Decrypt</button>
+                        <button id="hackBtn" class="btn btn-danger" onclick="triggerHackedGlitch()">⚡ OVERCLOCK CORE (DANGER)</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="stat-panel">
+                <div class="card" style="flex: 1.2;">
+                    <div class="card-title">⚡ Resource Monitors</div>
+                    
+                    <div class="stat-row">
+                        <span class="stat-label">CPU Core Frequency:</span>
+                        <span id="cpuFreq" class="stat-value">3.82 GHz</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="cpuFill" class="progress-fill" style="width: 48%"></div>
+                    </div>
+
+                    <div style="margin-top: 15px;"></div>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Synaptic Load Capacity:</span>
+                        <span id="loadVal" class="stat-value">22.4 TFLOPS</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="loadFill" class="progress-fill" style="width: 35%; background: linear-gradient(90deg, #10b981, #3b82f6)"></div>
+                    </div>
+
+                    <div style="margin-top: 15px;"></div>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Neural Model Weights:</span>
+                        <span class="stat-value">FP16 Matrix V4.0</span>
+                    </div>
+                </div>
+
+                <div class="card" style="flex: 1;">
+                    <div class="card-title">🖼️ Neural link visualization</div>
+                    <div class="neural-link-graphic">
+                        <div class="grid-bg"></div>
+                        <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" alt="A.I Robot Graphic">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WEB AUDIO & INTERACTIVE LOGIC -->
+    <script>
+        // Matrix Rain Setup
+        const canvas = document.getElementById("matrixCanvas");
+        const ctx = canvas.getContext("2d");
+        let animationFrameId;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener("resize", resizeCanvas);
+        resizeCanvas();
+
+        const chars = "ｦｧｨｩｪｫｬｭｮｯｰｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ1234567890ABCDEF";
+        const charArr = chars.split("");
+        const fontSize = 14;
+        let columns = canvas.width / fontSize;
+        let drops = Array(Math.floor(columns)).fill(1);
+
+        function drawMatrix() {
+            ctx.fillStyle = "rgba(5, 5, 8, 0.08)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "#8b5cf6";
+            ctx.font = fontSize + "px monospace";
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = charArr[Math.floor(Math.random() * charArr.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        // Web Audio Synthesizer Node
+        let audioCtx = null;
+
+        function initAudio() {
+            if (audioCtx) return;
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            audioCtx = new AudioContext();
+        }
+
+        // Sound Synthesis helper functions
+        function synthSound(freq, duration, type = 'sine', volume = 0.1) {
+            if (!audioCtx) return;
+            try {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                
+                osc.type = type;
+                osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+                
+                gain.gain.setValueAtTime(volume, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                osc.start();
+                osc.stop(audioCtx.currentTime + duration);
+            } catch(e) { console.warn("Audio node blocked", e); }
+        }
+
+        function playBootChime() {
+            synthSound(440, 0.1, 'triangle', 0.15);
+            setTimeout(() => synthSound(554.37, 0.1, 'triangle', 0.15), 100);
+            setTimeout(() => synthSound(659.25, 0.15, 'triangle', 0.15), 200);
+            setTimeout(() => synthSound(880, 0.3, 'sine', 0.2), 300);
+        }
+
+        function playKeySound() {
+            // Typing tick synth
+            synthSound(1800 + Math.random()*400, 0.02, 'triangle', 0.05);
+        }
+
+        function playStaticBursts() {
+            if (!audioCtx) return;
+            // Synthesize short white noise bursts for electric crackle
+            const bufferSize = audioCtx.sampleRate * 0.15; // 0.15 seconds
+            const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+            const data = buffer.getChannelData(0);
+            
+            for (let i = 0; i < bufferSize; i++) {
+                data[i] = Math.random() * 2 - 1;
+            }
+
+            const noiseNode = audioCtx.createBufferSource();
+            noiseNode.buffer = buffer;
+
+            const noiseFilter = audioCtx.createBiquadFilter();
+            noiseFilter.type = 'bandpass';
+            noiseFilter.frequency.value = 1000;
+
+            const gain = audioCtx.createGain();
+            gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
+
+            noiseNode.connect(noiseFilter);
+            noiseFilter.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            noiseNode.start();
+        }
+
+        // Repeating warning alarm
+        let alarmInterval;
+        function startWarningAlarm() {
+            let high = true;
+            if (alarmInterval) clearInterval(alarmInterval);
+            
+            alarmInterval = setInterval(() => {
+                synthSound(high ? 880 : 587.33, 0.25, 'sawtooth', 0.08);
+                high = !high;
+            }, 300);
+        }
+
+        function stopWarningAlarm() {
+            if (alarmInterval) {
+                clearInterval(alarmInterval);
+                alarmInterval = null;
+            }
+        }
+
+        function playSuccessMelody() {
+            synthSound(523.25, 0.12, 'sine', 0.15); // C5
+            setTimeout(() => synthSound(659.25, 0.12, 'sine', 0.15), 120); // E5
+            setTimeout(() => synthSound(783.99, 0.12, 'sine', 0.15), 240); // G5
+            setTimeout(() => synthSound(1046.50, 0.4, 'sine', 0.2), 360); // C6
+        }
+
+        // Terminal Output Logger logic
+        const consoleEl = document.getElementById("terminalConsole");
+        const initLogs = [
+            { type: 'info', text: "Initializing Core kernel load sequence..." },
+            { type: 'info', text: "Loading quantum synaptech model: V4.6" },
+            { type: 'success', text: "Neural weight matrix bound successfully. 12.8M params verified." },
+            { type: 'success', text: "Loaded driver modules: INSTAGRAM_1, INSTAGRAM_2, LEETCODE_API" },
+            { type: 'success', text: "Secure link established with remote client: patna.gp_barh.in" },
+            { type: 'info', text: "Ready. Command line active. System online." }
+        ];
+
+        function addLogLine(type, text) {
+            const time = new Date().toLocaleTimeString();
+            const logLine = document.createElement("div");
+            logLine.className = "console-line";
+            
+            logLine.innerHTML = `
+                <span class="console-time">[${time}]</span>
+                <span class="console-tag ${type}">[${type.toUpperCase()}]</span>
+                <span>${text}</span>
+            `;
+            consoleEl.appendChild(logLine);
+            consoleEl.scrollTop = consoleEl.scrollHeight;
+            playKeySound();
+        }
+
+        // Simulating continuous typing CPU background changes
+        setInterval(() => {
+            const freq = (3.5 + Math.random() * 1.2).toFixed(2);
+            document.getElementById("cpuFreq").textContent = freq + " GHz";
+            document.getElementById("cpuFill").style.width = ((parseFloat(freq) - 3.5)/1.2 * 60 + 20) + "%";
+            
+            if(Math.random() > 0.8) {
+                const loads = ["21.2", "25.8", "31.9", "18.4", "27.1"];
+                const pick = loads[Math.floor(Math.random()*loads.length)];
+                document.getElementById("loadVal").textContent = pick + " TFLOPS";
+                document.getElementById("loadFill").style.width = (parseFloat(pick)/35 * 100) + "%";
+            }
+        }, 1500);
+
+        // Standard actions
+        function triggerNormalAction(message) {
+            addLogLine('info', 'Invoking manual instruction request...');
+            setTimeout(() => {
+                addLogLine('success', message);
+            }, 300);
+        }
+
+        // 🚨 CRITICAL SIMULATED HANG / GLITCH SEQUENCE 🚨
+        let activeGlitch = false;
+
+        function triggerHackedGlitch() {
+            if (activeGlitch) return;
+            activeGlitch = true;
+
+            addLogLine('warn', 'OVERCLOCK WARNING: Threshold values exceeded!');
+            synthSound(150, 0.4, 'sawtooth', 0.25);
+            
+            setTimeout(() => {
+                addLogLine('error', 'CRITICAL OVERHEATING: Sector 0x4B3 locked up.');
+                document.body.classList.add("screen-shake");
+                startWarningAlarm();
+            }, 600);
+
+            setTimeout(() => {
+                // Initiate absolute chaos screen
+                document.body.classList.remove("screen-shake");
+                document.getElementById("glitchScreen").style.display = "flex";
+                startGlitchCodeStreams();
+                runGlitchCountdown();
+            }, 1800);
+        }
+
+        // Fill background of glitch screen with infinite rapid text code streams
+        let glitchCodeInterval;
+        function startGlitchCodeStreams() {
+            const codeBox = document.getElementById("glitchCode");
+            const crashPhrases = [
+                "FATAL EXCEPTION AT 0x0028:C001C24D IN VXD VMM(01) + 0000324D.",
+                "Segmentation fault (core dumped) in process 10472 A.I_CHAMGADAR.",
+                "EAX=00000000 EBX=F0FDF0FD ECX=00000010 EDX=8B5CF600 ESI=0000A78B EDI=002010A0",
+                "CPU 0: KERNEL PANIC: MEMORY CORRUPTION IN SWAP FILE SECTOR 2",
+                "CRITICAL_STRUCTURE_CORRUPTION (0x00000109)",
+                "SYSTEM HANG TRIGGERED: INTERRUPT_EXCEPTION_NOT_HANDLED",
+                "WARNING: NEURAL WEIGHT MATRIX LEAK IN MEMORY BUFFER...",
+                "HACK ATTEMPT DETECTED: FORCE LOCKING PROCESSOR CORES",
+                "OVERVOLTAGE STATE: 1.65V (CRITICAL limit is 1.35V)",
+                "CRASH_OVERFLOW SYSTEM SUSPENDED..."
+            ];
+
+            glitchCodeInterval = setInterval(() => {
+                playStaticBursts();
+                let fullString = "";
+                for(let i=0; i<35; i++) {
+                    fullString += crashPhrases[Math.floor(Math.random()*crashPhrases.length)] + "\n";
+                }
+                codeBox.innerText = fullString;
+            }, 150);
+        }
+
+        // Countdown timer loop for exactly 10 seconds
+        function runGlitchCountdown() {
+            let timeLeft = 10.00;
+            const timerBox = document.getElementById("countdownBox");
+            
+            const timerInterval = setInterval(() => {
+                timeLeft -= 0.08;
+                if(timeLeft <= 0) {
+                    timeLeft = 0;
+                    clearInterval(timerInterval);
+                    clearInterval(glitchCodeInterval);
+                    stopWarningAlarm();
+                    recoverSystem();
+                } else {
+                    // Inject minor random glitch into numbers occasionally
+                    if(Math.random() > 0.95) {
+                        timerBox.innerText = "ERR.xxs";
+                        timerBox.style.color = "var(--danger-color)";
+                    } else {
+                        timerBox.innerText = timeLeft.toFixed(2) + "s";
+                        timerBox.style.color = "var(--text-color)";
+                    }
+                }
+            }, 80);
+        }
+
+        // Reboot recovery
+        function recoverSystem() {
+            document.getElementById("glitchScreen").style.backgroundColor = "rgba(10, 25, 15, 0.98)";
+            document.getElementById("glitchScreen").innerHTML = `
+                <div class="glitch-content" style="border-color: var(--success-color); box-shadow: 0 0 40px rgba(16, 185, 129, 0.3)">
+                    <h1 class="glitch-header" style="color: var(--success-color); text-shadow: 0 0 15px var(--success-glow)">🛡️ CORES RESTORED </h1>
+                    <p class="glitch-text" style="color: #d1fae5">
+                        Kernel buffers purged successfully.<br>
+                        Synaptic connections established. System online.<br>
+                        <strong>Redirecting back to home node...</strong>
+                    </p>
+                </div>
+            `;
+            
+            playSuccessMelody();
+
+            setTimeout(() => {
+                window.location.href = "https://github.com/Amitkumar2801";
+            }, 2500);
+        }
+
+        // Connect button behavior
+        document.getElementById("connectBtn").addEventListener("click", () => {
+            initAudio();
+            document.getElementById("gateScreen").style.display = "none";
+            playBootChime();
+            
+            // Start matrix background loop
+            setInterval(drawMatrix, 40);
+
+            // Print initial sequences with tiny delay
+            let delay = 300;
+            initLogs.forEach(log => {
+                setTimeout(() => addLogLine(log.type, log.text), delay);
+                delay += 400;
+            });
+        });
+    </script>
+</body>
+</html>
