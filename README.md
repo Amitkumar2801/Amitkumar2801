@@ -14,6 +14,26 @@
 
 </div>
 
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=22&pause=1000&color=a78bfa&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=50&lines=%F0%9F%91%8B+Welcome+Developer!+You+are+Visitor+No.+%E2%80%A2%E2%80%A2%E2%80%A2" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=22&pause=1000&color=6a5acd&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=50&lines=%F0%9F%91%8B+Welcome+Developer!+You+are+Visitor+No.+%E2%80%A2%E2%80%A2%E2%80%A2" alt="Welcome" />
+</picture>
+
+<br>
+
+<img src="https://komarev.com/ghpvc/?username=Amitkumar2801&label=%E2%9A%A1+PROFILE+VIEWS&color=blueviolet&labelColor=1e1b4b&style=for-the-badge" alt="Visitor Count" />
+
+<br>
+
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" width="30" />&nbsp;
+<img src="https://img.shields.io/badge/Thanks%20for%20stopping%20by!-ec4899?style=flat-square" />&nbsp;
+<img src="https://img.shields.io/badge/Feel%20free%20to%20explore-3b82f6?style=flat-square" />&nbsp;
+<img src="https://img.shields.io/badge/Star%20⭐%20if%20you%20like%20it!-10b981?style=flat-square" />
+
+</div>
+
 <br><br>
 
 `// ai_agent.runtime`
@@ -140,15 +160,6 @@
 
 
 
-</div>
-
-<br><br>
-
----
-<div align="center">
-  Welcome Devloper
-  <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&label=UNIQUE%20SESSIONS&color=8b5cf6&labelColor=1e1b4b&style=for-the-badge" alt="Visitor Count" />
-  <br>
 </div>
 
 <br><br>
