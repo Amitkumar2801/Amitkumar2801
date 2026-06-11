@@ -64,8 +64,7 @@
 
 <br><br>
 
-`// ai_agent.runtime`
----
+<img src="https://img.shields.io/badge/💻%20AI__AGENT.RUNTIME-080710?style=for-the-badge&labelColor=8b5cf6&color=111" height="28" />
 
 <div align="center">
   <img src="agent_dashboard.svg" width="100%" alt="A.I Chamgadar Skill Dashboard" />
@@ -73,8 +72,7 @@
 
 <br><br>
 
-`// github.contributions`
----
+<img src="https://img.shields.io/badge/📊%20GITHUB.CONTRIBUTIONS-080710?style=for-the-badge&labelColor=bc34fa&color=111" height="28" />
 <div align="center">
 
 <picture>
@@ -107,8 +105,7 @@
 
 <br><br>
 
-`// experience.log`
----
+<img src="https://img.shields.io/badge/📜%20EXPERIENCE.LOG-080710?style=for-the-badge&labelColor=00ffcc&color=111" height="28" />
 ╰┈➤ 2025** · **AI/ML Intern** @ *Infosys * `[COMPLETED]`<br>
 ╰┈➤ 2025** · **ML Intern** @ *NIELIT Patna* `[COMPLETED]`<br>
 ╰┈➤ 2024-27** · **Diploma (AI/ML)** @ *Govt Polytechnic Barh* `[LOADING...]`<br>
@@ -131,8 +128,7 @@
 
 <br><br>
 
-Connect With Me
----
+<img src="https://img.shields.io/badge/🔗%20CONNECT%20WITH%20ME-080710?style=for-the-badge&labelColor=ff0055&color=111" height="28" />
 <div align="center">
   
   <a href="mailto:amitkumar.arwal28@gmail.com"><img src="https://img.shields.io/badge/Gmail-431407?style=for-the-badge&logo=gmail&logoColor=f97316"/></a>&nbsp;
