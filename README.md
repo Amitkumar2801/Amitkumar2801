@@ -33,17 +33,20 @@
 <!-- TOP: Visitor Count (Peak of Christmas Tree) -->
 <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&label=%E2%9A%A1+PROFILE+VIEWS&color=bc34fa&labelColor=15052d&style=for-the-badge" height="46" alt="Visitor Count" />
 <br><br>
+<!-- Call to Action -->
+<code>⚠️ CLICK A SYSTEM NODE BELOW TO INITIALIZE TELEMETRY TEST ⚠️</code>
+<br><br>
 <!-- MIDDLE: Action buttons split left/right -->
 <table align="center" style="border: none; background: transparent; border-collapse: collapse;">
 <tr style="border: none; background: transparent;">
 <td style="border: none; background: transparent; padding: 0 15px;" valign="middle">
 <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/glitch.html">
-<img src="https://img.shields.io/badge/🚨%20OVERCLOCK-SYSTEM-ff0055?style=for-the-badge&logo=opsgenie&logoColor=white" height="35" alt="Overclock System" />
+<img src="https://img.shields.io/badge/🚨%20CLICK%20TO%20OVERCLOCK-SYSTEM-ff0055?style=for-the-badge&logo=opsgenie&logoColor=white" height="38" alt="Click to Overclock System" />
 </a>
 </td>
 <td style="border: none; background: transparent; padding: 0 15px;" valign="middle">
 <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/meltdown.html">
-<img src="https://img.shields.io/badge/⚡%20CRITICAL-DETONATE-00ffcc?style=for-the-badge&logo=hackthebox&logoColor=black" height="35" alt="Detonate Core" />
+<img src="https://img.shields.io/badge/⚡%20CLICK%20TO%20DETONATE-CORE-00ffcc?style=for-the-badge&logo=hackthebox&logoColor=black" height="38" alt="Click to Detonate Core" />
 </a>
 </td>
 </tr>
