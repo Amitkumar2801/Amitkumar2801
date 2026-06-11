@@ -128,17 +128,7 @@
 
 <br><br>
 
-`// now.playing`
----
-<div align="center">
 
-<!-- ░░ DARK MODE SPOTIFY CARD ░░ -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━-0d1117?style=flat-square&logoColor=1DB954" />
-  <img src="https://img.shields.io/badge/━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━-f0f0f0?style=flat-square" />
-</picture>
-
-<br>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/🎵%20CHAMGADAR'S%20VIBE%20STATION-0d1117?style=for-the-badge&logo=spotify&logoColor=1DB954&labelColor=0d1117" />
@@ -202,7 +192,7 @@
 Connect With Me
 ---
 <div align="center">
-  <a href="https://www.linkedin.com/in/amit-kumar-835a73345/"><img src="https://img.shields.io/badge/LinkedIn-1e3a5f?style=for-the-badge&logo=linkedin&logoColor=38bdf8"/></a>&nbsp;
+  
   <a href="mailto:amitkumar.arwal28@gmail.com"><img src="https://img.shields.io/badge/Gmail-431407?style=for-the-badge&logo=gmail&logoColor=f97316"/></a>&nbsp;
   <a href="https://leetcode.com/u/Amitkumar2801/"><img src="https://img.shields.io/badge/LeetCode-312e08?style=for-the-badge&logo=leetcode&logoColor=F7DF1E"/></a>&nbsp;
   <br><br>
