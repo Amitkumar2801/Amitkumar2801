@@ -89,39 +89,6 @@ Deno.serve(async (req) => {
         }
       }
       
-      @keyframes clapping {
-        0% {
-          transform: translateY(150px) scale(0.8);
-          opacity: 0;
-        }
-        20% {
-          transform: translateY(0) scale(1);
-          opacity: 1;
-        }
-        /* Clap 1 */
-        30% { transform: translateY(0) scale(0.85, 1.05); }
-        35% { transform: translateY(0) scale(1.15, 0.95); }
-        /* Clap 2 */
-        40% { transform: translateY(0) scale(0.85, 1.05); }
-        45% { transform: translateY(0) scale(1.15, 0.95); }
-        /* Clap 3 */
-        50% { transform: translateY(0) scale(0.85, 1.05); }
-        55% { transform: translateY(0) scale(1.15, 0.95); }
-        /* Clap 4 */
-        60% { transform: translateY(0) scale(0.85, 1.05); }
-        65% { transform: translateY(0) scale(1.15, 0.95); }
-        /* Clap 5 */
-        70% { transform: translateY(0) scale(0.85, 1.05); }
-        75% { transform: translateY(0) scale(1.15, 0.95); }
-        /* Settle down */
-        85% { transform: translateY(0) scale(0.95, 1.02); }
-        92% { transform: translateY(0) scale(1.02, 0.98); }
-        100% {
-          transform: translateY(0) scale(1, 1);
-          opacity: 1;
-        }
-      }
-      
       @keyframes highlightLastDigit {
         0% {
           transform: translateY(150px) scale(0.7) rotate(-12deg);
@@ -147,7 +114,7 @@ Deno.serve(async (req) => {
       }
       
       .welcome-digit {
-        animation: clapping 2.2s ease-in-out forwards;
+        animation: raiseHand 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         transform-origin: bottom center;
         opacity: 0;
       }
