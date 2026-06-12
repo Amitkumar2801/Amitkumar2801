@@ -20,26 +20,6 @@
 
 </div>
 
-<div align="center">
-<table width="85%" style="border: 2px solid #8b5cf6; border-radius: 12px; border-collapse: collapse; background: #0a0a0c;">
-<tr>
-<td align="center" style="padding: 24px; border: none;">
-<!-- Greeting Typewriter -->
-<picture>
-<source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&pause=1000&color=a78bfa&center=true&vCenter=true&width=600&height=35&lines=%F0%9F%91%8B+Welcome+Developer!+You+are+Visitor+No.+%E2%80%A2%E2%80%A2%E2%80%A2" />
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&pause=1000&color=6a5acd&center=true&vCenter=true&width=600&height=35&lines=%F0%9F%91%8B+Welcome+Developer!+You+are+Visitor+No.+%E2%80%A2%E2%80%A2%E2%80%A2" alt="Welcome" />
-</picture>
-<br><br>
-<!-- BOTTOM: Base badges -->
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" width="25" style="vertical-align: middle;" />&nbsp;
-<img src="https://img.shields.io/badge/Thanks%20for%20stopping%20by!-ec4899?style=flat-square" style="vertical-align: middle;" />&nbsp;
-<img src="https://img.shields.io/badge/Feel%20free%20to%20explore-3b82f6?style=flat-square" style="vertical-align: middle;" />&nbsp;
-<img src="https://img.shields.io/badge/Star%20⭐%20if%20you%20like%20it!-10b981?style=flat-square" style="vertical-align: middle;" />
-</td>
-</tr>
-</table>
-</div>
-
 <br><br>
 
 <img src="https://img.shields.io/badge/💻%20AI__AGENT.RUNTIME-080710?style=for-the-badge&labelColor=8b5cf6&color=111" height="28" />&nbsp;&nbsp;
