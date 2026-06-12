@@ -24,7 +24,7 @@ def main():
         print(f"Error parsing SVG XML: {e}")
         sys.exit(1)
 
-    # Define the CSS animation style block
+    # Define the CSS animation style block with a special animation for the last digit
     style_content = """
     @keyframes raiseHand {
       0% {
@@ -43,8 +43,33 @@ def main():
         opacity: 1;
       }
     }
+    
+    @keyframes highlightLastDigit {
+      0% {
+        transform: translateY(150px) scale(0.7) rotate(-12deg);
+        opacity: 0;
+      }
+      50% {
+        transform: translateY(-40px) scale(1.2) rotate(6deg);
+        opacity: 1;
+      }
+      75% {
+        transform: translateY(10px) scale(0.95) rotate(-3deg);
+      }
+      100% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: 1;
+      }
+    }
+    
     .digit {
       animation: raiseHand 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      transform-origin: bottom center;
+      opacity: 0;
+    }
+    
+    .last-digit {
+      animation: highlightLastDigit 1.2s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
       transform-origin: bottom center;
       opacity: 0;
     }
@@ -57,24 +82,29 @@ def main():
     # Insert the style element at the beginning of the SVG root
     root.insert(0, style_elem)
     
-    # Find all 'use' elements and add classes/animations
-    # In SVG, elements are usually namespace-prefixed during parsing if not registered,
-    # but since we registered '', we can find them. We'll search both with and without namespace.
+    # Find all 'use' elements
     namespaces = {'svg': 'http://www.w3.org/2000/svg'}
     use_elements = root.findall('.//svg:use', namespaces) or root.findall('.//use')
     
+    total_elements = len(use_elements)
     for idx, use_elem in enumerate(use_elements):
-        # Set class
-        use_elem.set('class', 'digit')
-        # Set animation delay for staggering
+        # Stagger the animation delay
         delay = idx * 0.08
         use_elem.set('style', f'animation-delay: {delay:.2f}s;')
+        
+        # If it is the last digit, give it the special class
+        if idx == total_elements - 1:
+            use_elem.set('class', 'last-digit')
+            # Increase the delay slightly for the last digit so it pops up as the grand finale
+            use_elem.set('style', f'animation-delay: {delay + 0.1:.2f}s;')
+        else:
+            use_elem.set('class', 'digit')
         
     # Write the modified XML to counter.svg
     try:
         tree = ET.ElementTree(root)
         tree.write('counter.svg', encoding='utf-8', xml_declaration=True)
-        print("Successfully generated animated counter.svg!")
+        print("Successfully generated animated counter.svg with highlighted last digit!")
     except Exception as e:
         print(f"Error writing counter.svg: {e}")
         sys.exit(1)
