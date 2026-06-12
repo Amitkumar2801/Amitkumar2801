@@ -30,9 +30,6 @@
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&pause=1000&color=6a5acd&center=true&vCenter=true&width=600&height=35&lines=%F0%9F%91%8B+Welcome+Developer!+You+are+Visitor+No.+%E2%80%A2%E2%80%A2%E2%80%A2" alt="Welcome" />
 </picture>
 <br><br>
-<!-- TOP: Visitor Count -->
-<img src="https://komarev.com/ghpvc/?username=Amitkumar2801&label=%E2%9A%A1+PROFILE+VIEWS&color=bc34fa&labelColor=15052d&style=for-the-badge" height="46" alt="Visitor Count" />
-<br><br>
 <!-- BOTTOM: Base badges -->
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" width="25" style="vertical-align: middle;" />&nbsp;
 <img src="https://img.shields.io/badge/Thanks%20for%20stopping%20by!-ec4899?style=flat-square" style="vertical-align: middle;" />&nbsp;
@@ -49,6 +46,8 @@
 <br><br>
 
 <div align="center">
+<img src="https://counter.kuber.studio/Amitkumar2801/flip-clock/count.svg" alt="Visitor Views" />
+<br><br>
 <img src="agent_dashboard.svg" width="100%" alt="A.I Chamgadar Skill Dashboard" />
 <br><br>
 <!-- Click warning & animated index pointer -->
