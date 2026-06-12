@@ -22,12 +22,21 @@
 
 <br><br>
 
-<img src="https://img.shields.io/badge/💻%20AI__AGENT.RUNTIME-080710?style=for-the-badge&labelColor=8b5cf6&color=111" height="28" />&nbsp;&nbsp;
-<img src="https://komarev.com/ghpvc/?username=Amitkumar2801&base=890&color=111111&labelColor=8b5cf6&style=for-the-badge&label=TOTAL+VISIT" height="28" />
+<img src="https://img.shields.io/badge/💻%20AI__AGENT.RUNTIME-080710?style=for-the-badge&labelColor=8b5cf6&color=111" height="28" />
 <br><br>
 
 <div align="center">
-<img src="agent_dashboard.svg" width="100%" alt="A.I Chamgadar Skill Dashboard" />
+  <table bgcolor="#080710" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center" bgcolor="#080710" style="padding: 20px;">
+        <font color="#a78bfa" size="4" face="Courier New"><b>&gt; TOTAL VISIT</b></font>
+        <br><br>
+        <img src="https://kauntah-svg.vercel.app/counter.svg?asset=colorful&offset=1803" height="75" referrerpolicy="origin" />
+      </td>
+    </tr>
+  </table>
+  <br>
+  <img src="agent_dashboard.svg" width="100%" alt="A.I Chamgadar Skill Dashboard" />
 <br><br>
 <!-- Click warning & animated index pointer -->
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Backhand%20Index%20Pointing%20Down.png" width="45" /><br>
