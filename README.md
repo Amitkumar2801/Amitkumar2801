@@ -40,10 +40,10 @@
   <img src="agent_dashboard.svg" width="100%" alt="A.I Chamgadar Skill Dashboard" />
 <!-- CHAMGADAR PlayGround System Section -->
 <br>
-<table bgcolor="#080710" border="0" cellspacing="0" cellpadding="25" width="100%">
+<table background="playground_background.png" bgcolor="#080710" border="0" cellspacing="0" cellpadding="25" width="100%">
   <tr>
-    <td align="center" bgcolor="#080710">
-      <font color="#a78bfa" size="4" face="Courier New"><b>🎮 CHAMGADAR PLAYGROUND SYSTEM 🎮</b></font>
+    <td align="center" background="playground_background.png" bgcolor="#080710">
+      <font color="#00ffcc" size="4" face="Courier New"><b>🎮 CHAMGADAR PLAYGROUND SYSTEM 🎮</b></font>
       <br><br>
       <table align="center" style="border: none; background: transparent; border-collapse: collapse;">
         <tr style="border: none; background: transparent;">
