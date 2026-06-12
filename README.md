@@ -33,20 +33,21 @@
 <!-- TOP: Visitor Count (Peak of Christmas Tree) -->
 <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&label=%E2%9A%A1+PROFILE+VIEWS&color=bc34fa&labelColor=15052d&style=for-the-badge" height="46" alt="Visitor Count" />
 <br><br>
-<!-- Call to Action -->
-<code>⚠️ CLICK A SYSTEM NODE BELOW TO INITIALIZE TELEMETRY TEST ⚠️</code>
+<!-- Call to Action with Animated Pointer -->
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Backhand%20Index%20Pointing%20Down.png" width="45" /><br>
+<code>🔥 CHOOSE A SYSTEM INTRUSION SIMULATOR (CLICK BUTTON TO RUN) 🔥</code>
 <br><br>
 <!-- MIDDLE: Action buttons split left/right -->
 <table align="center" style="border: none; background: transparent; border-collapse: collapse;">
 <tr style="border: none; background: transparent;">
 <td style="border: none; background: transparent; padding: 0 15px;" valign="middle">
 <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/glitch.html">
-<img src="https://img.shields.io/badge/🚨%20CLICK%20TO%20OVERCLOCK-SYSTEM-ff0055?style=for-the-badge&logo=opsgenie&logoColor=white" height="38" alt="Click to Overclock System" />
+<img src="https://img.shields.io/badge/🚨%20LAUNCH%20OVERCLOCK-SIMULATOR-ff0055?style=for-the-badge&logo=opsgenie&logoColor=white" height="38" alt="Launch Overclock Simulator" />
 </a>
 </td>
 <td style="border: none; background: transparent; padding: 0 15px;" valign="middle">
 <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/meltdown.html">
-<img src="https://img.shields.io/badge/⚡%20CLICK%20TO%20DETONATE-CORE-00ffcc?style=for-the-badge&logo=hackthebox&logoColor=black" height="38" alt="Click to Detonate Core" />
+<img src="https://img.shields.io/badge/⚡%20LAUNCH%20MELTDOWN-SIMULATOR-00ffcc?style=for-the-badge&logo=hackthebox&logoColor=black" height="38" alt="Launch Meltdown Simulator" />
 </a>
 </td>
 </tr>
@@ -105,11 +106,28 @@
 
 <br><br>
 
+<br>
 <img src="https://img.shields.io/badge/📜%20EXPERIENCE.LOG-080710?style=for-the-badge&labelColor=00ffcc&color=111" height="28" />
-╰┈➤ 2025** · **AI/ML Intern** @ *Infosys * `[COMPLETED]`<br>
-╰┈➤ 2025** · **ML Intern** @ *NIELIT Patna* `[COMPLETED]`<br>
-╰┈➤ 2024-27** · **Diploma (AI/ML)** @ *Govt Polytechnic Barh* `[LOADING...]`<br>
-╰┈➤ 2026** . **AI Intern** @ internmitra [On Going]<br>
+<br><br>
+
+<table width="100%" style="border-collapse: collapse; border: none;">
+<tr style="border: none; background: transparent;">
+<td width="20%" valign="top" style="border: none; padding: 6px 0;"><code>[ 2026 - ONGOING ]</code></td>
+<td width="80%" style="border: none; padding: 6px 0;"><b>AI Intern</b> · <i>internmitra</i></td>
+</tr>
+<tr style="border: none; background: transparent;">
+<td valign="top" style="border: none; padding: 6px 0;"><code>[ 2024 - 2027 ]</code></td>
+<td style="border: none; padding: 6px 0;"><b>Diploma (AI/ML)</b> · <i>Govt Polytechnic Barh</i></td>
+</tr>
+<tr style="border: none; background: transparent;">
+<td valign="top" style="border: none; padding: 6px 0;"><code>[ 2025 ]</code></td>
+<td style="border: none; padding: 6px 0;"><b>AI/ML Intern</b> · <i>Infosys</i></td>
+</tr>
+<tr style="border: none; background: transparent;">
+<td valign="top" style="border: none; padding: 6px 0;"><code>[ 2025 ]</code></td>
+<td style="border: none; padding: 6px 0;"><b>ML Intern</b> · <i>NIELIT Patna</i></td>
+</tr>
+</table>
 
 <br><br>
 
