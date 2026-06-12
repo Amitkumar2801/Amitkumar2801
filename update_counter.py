@@ -34,6 +34,15 @@ def main():
     displayCount = count + 901
     numStr = str(displayCount).zfill(10)
     
+    # Find where leading zeros end
+    leadingZerosEndIndex = -1
+    for i in range(10):
+        if numStr[i] != '0':
+            leadingZerosEndIndex = i
+            break
+    if leadingZerosEndIndex == -1:
+        leadingZerosEndIndex = 10
+        
     # Generate the SVG containing the correct characters
     imageDefs = ""
     for i in range(10):
@@ -52,7 +61,7 @@ def main():
         if i == 9:
             className = "last-digit"
             finalDelay = delay + 0.1
-        elif digitValue == "0":
+        elif i < leadingZerosEndIndex:
             className = "welcome-digit"
             
         useTags += f'  <use href="#image-{digitValue}" x="{xOffset}" y="0" class="{className}" style="animation-delay: {finalDelay:.2f}s;" />\n'
@@ -78,29 +87,29 @@ def main():
         }
       }
       
-      @keyframes welcomeZero {
+      @keyframes namasteBow {
         0% {
-          transform: translateY(150px) scale(0.8) rotate(0deg);
+          transform: translateY(150px) scale(0.8);
           opacity: 0;
         }
         30% {
-          transform: translateY(0) scale(1) rotate(0deg);
+          transform: translateY(0) scale(1);
           opacity: 1;
         }
         45% {
-          transform: translateY(-12px) rotate(-4deg);
+          /* Respectful Namaste bow: compress vertically and tilt slightly */
+          transform: translateY(0) scale(0.98, 0.82) rotate(-3deg);
         }
-        60% {
-          transform: translateY(0) rotate(4deg);
+        70% {
+          /* Hold the bow */
+          transform: translateY(0) scale(0.98, 0.80) rotate(-3deg);
         }
-        75% {
-          transform: translateY(-8px) rotate(-3deg);
-        }
-        90% {
-          transform: translateY(0) rotate(2deg);
+        85% {
+          /* Rise back up */
+          transform: translateY(0) scale(1, 0.95) rotate(-1deg);
         }
         100% {
-          transform: translateY(0) scale(1) rotate(0deg);
+          transform: translateY(0) scale(1, 1) rotate(0deg);
           opacity: 1;
         }
       }
@@ -130,7 +139,7 @@ def main():
       }
       
       .welcome-digit {
-        animation: welcomeZero 2.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        animation: namasteBow 2.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         transform-origin: bottom center;
         opacity: 0;
       }
