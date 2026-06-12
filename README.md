@@ -38,20 +38,29 @@
   </table>
   <br>
   <img src="agent_dashboard.svg" width="100%" alt="A.I Chamgadar Skill Dashboard" />
-<!-- Action buttons side by side -->
-<table align="center" style="border: none; background: transparent; border-collapse: collapse;">
-<tr style="border: none; background: transparent;">
-<td style="border: none; background: transparent; padding: 0 15px;" valign="middle">
-<a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/glitch.html">
-<img src="https://img.shields.io/badge/🚨%20LAUNCH%20OVERCLOCK-SIMULATOR-ff0055?style=for-the-badge&logo=opsgenie&logoColor=white" height="38" alt="Launch Overclock Simulator" />
-</a>
-</td>
-<td style="border: none; background: transparent; padding: 0 15px;" valign="middle">
-<a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/meltdown.html">
-<img src="https://img.shields.io/badge/⚡%20LAUNCH%20MELTDOWN-SIMULATOR-00ffcc?style=for-the-badge&logo=hackthebox&logoColor=black" height="38" alt="Launch Meltdown Simulator" />
-</a>
-</td>
-</tr>
+<!-- CHAMGADAR PlayGround System Section -->
+<br>
+<table bgcolor="#080710" border="0" cellspacing="0" cellpadding="25" width="100%">
+  <tr>
+    <td align="center" bgcolor="#080710">
+      <font color="#a78bfa" size="4" face="Courier New"><b>🎮 CHAMGADAR PLAYGROUND SYSTEM 🎮</b></font>
+      <br><br>
+      <table align="center" style="border: none; background: transparent; border-collapse: collapse;">
+        <tr style="border: none; background: transparent;">
+          <td style="border: none; background: transparent; padding: 0 15px;" valign="middle">
+            <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/glitch.html">
+              <img src="https://img.shields.io/badge/🚨%20LAUNCH%20OVERCLOCK-SIMULATOR-ff0055?style=for-the-badge&logo=opsgenie&logoColor=white" height="38" alt="Launch Overclock Simulator" />
+            </a>
+          </td>
+          <td style="border: none; background: transparent; padding: 0 15px;" valign="middle">
+            <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/meltdown.html">
+              <img src="https://img.shields.io/badge/⚡%20LAUNCH%20MELTDOWN-SIMULATOR-00ffcc?style=for-the-badge&logo=hackthebox&logoColor=black" height="38" alt="Launch Meltdown Simulator" />
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
 </table>
 </div>
 
