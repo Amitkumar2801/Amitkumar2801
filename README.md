@@ -49,12 +49,12 @@
         <tr style="border: none; background: transparent;">
           <td style="border: none; background: transparent; padding: 0 15px;" valign="middle">
             <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/glitch.html">
-              <img src="https://img.shields.io/badge/🚨%20LAUNCH%20OVERCLOCK-SIMULATOR-ff0055?style=for-the-badge&logo=opsgenie&logoColor=white" height="38" alt="Launch Overclock Simulator" />
+              <img src="button_overclock.svg" height="44" alt="Play Overclock" />
             </a>
           </td>
           <td style="border: none; background: transparent; padding: 0 15px;" valign="middle">
             <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/meltdown.html">
-              <img src="https://img.shields.io/badge/⚡%20LAUNCH%20MELTDOWN-SIMULATOR-00ffcc?style=for-the-badge&logo=hackthebox&logoColor=black" height="38" alt="Launch Meltdown Simulator" />
+              <img src="button_meltdown.svg" height="44" alt="Play Meltdown" />
             </a>
           </td>
         </tr>
