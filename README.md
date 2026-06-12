@@ -40,17 +40,21 @@
   <img src="agent_dashboard.svg" width="100%" alt="A.I Chamgadar Skill Dashboard" />
 <!-- CHAMGADAR PlayGround System Section -->
 <br>
-<div align="center" style="background-color: #1f1f23; padding: 35px 80px; border-radius: 12px; border: 2px solid #3f3f46; display: inline-block;">
-  <font color="#00ffcc" size="4" face="Courier New"><b>🎮 CHAMGADAR PLAYGROUND SYSTEM 🎮</b></font>
-  <br><br>
-  <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/glitch.html" style="text-decoration: none;">
-    <img src="button_overclock.svg" height="46" alt="Play Overclock" />
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/meltdown.html" style="text-decoration: none;">
-    <img src="button_meltdown.svg" height="46" alt="Play Meltdown" />
-  </a>
-</div>
+<table bgcolor="#1f1f23" border="0" cellspacing="0" cellpadding="30" width="100%">
+  <tr>
+    <td align="center" bgcolor="#1f1f23">
+      <font color="#00ffcc" size="4" face="Courier New"><b>🎮 CHAMGADAR PLAYGROUND SYSTEM 🎮</b></font>
+      <br><br>
+      <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/glitch.html" style="text-decoration: none;">
+        <img src="button_overclock.svg" height="46" alt="Play Overclock" />
+      </a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/meltdown.html" style="text-decoration: none;">
+        <img src="button_meltdown.svg" height="46" alt="Play Meltdown" />
+      </a>
+    </td>
+  </tr>
+</table>
 </div>
 
 <br><br>
