@@ -111,24 +111,9 @@
 <img src="https://img.shields.io/badge/📜%20EXPERIENCE.LOG-080710?style=for-the-badge&labelColor=00ffcc&color=111" height="28" />
 <br><br>
 
-<table width="100%" style="border-collapse: collapse; border: none;">
-<tr style="border: none; background: transparent;">
-<td width="20%" valign="top" style="border: none; padding: 6px 0;"><code>[ 2026 - ONGOING ]</code></td>
-<td width="80%" style="border: none; padding: 6px 0;"><b>AI Intern</b> · <i>internmitra</i></td>
-</tr>
-<tr style="border: none; background: transparent;">
-<td valign="top" style="border: none; padding: 6px 0;"><code>[ 2024 - 2027 ]</code></td>
-<td style="border: none; padding: 6px 0;"><b>Diploma (AI/ML)</b> · <i>Govt Polytechnic Barh</i></td>
-</tr>
-<tr style="border: none; background: transparent;">
-<td valign="top" style="border: none; padding: 6px 0;"><code>[ 2025 ]</code></td>
-<td style="border: none; padding: 6px 0;"><b>AI/ML Intern</b> · <i>Infosys</i></td>
-</tr>
-<tr style="border: none; background: transparent;">
-<td valign="top" style="border: none; padding: 6px 0;"><code>[ 2025 ]</code></td>
-<td style="border: none; padding: 6px 0;"><b>ML Intern</b> · <i>NIELIT Patna</i></td>
-</tr>
-</table>
+<div align="center">
+  <img src="experience_roadmap.svg" width="100%" alt="Amit Kumar Experience Roadmap" />
+</div>
 
 <br><br>
 
