@@ -90,29 +90,35 @@ module.exports = async (req, res) => {
         }
       }
       
-      @keyframes namasteBow {
+      @keyframes clapping {
         0% {
           transform: translateY(150px) scale(0.8);
           opacity: 0;
         }
-        30% {
+        20% {
           transform: translateY(0) scale(1);
           opacity: 1;
         }
-        45% {
-          /* Respectful Namaste bow: compress vertically and tilt slightly */
-          transform: translateY(0) scale(0.98, 0.82) rotate(-3deg);
-        }
-        70% {
-          /* Hold the bow */
-          transform: translateY(0) scale(0.98, 0.80) rotate(-3deg);
-        }
-        85% {
-          /* Rise back up */
-          transform: translateY(0) scale(1, 0.95) rotate(-1deg);
-        }
+        /* Clap 1 */
+        30% { transform: translateY(0) scale(0.85, 1.05); }
+        35% { transform: translateY(0) scale(1.15, 0.95); }
+        /* Clap 2 */
+        40% { transform: translateY(0) scale(0.85, 1.05); }
+        45% { transform: translateY(0) scale(1.15, 0.95); }
+        /* Clap 3 */
+        50% { transform: translateY(0) scale(0.85, 1.05); }
+        55% { transform: translateY(0) scale(1.15, 0.95); }
+        /* Clap 4 */
+        60% { transform: translateY(0) scale(0.85, 1.05); }
+        65% { transform: translateY(0) scale(1.15, 0.95); }
+        /* Clap 5 */
+        70% { transform: translateY(0) scale(0.85, 1.05); }
+        75% { transform: translateY(0) scale(1.15, 0.95); }
+        /* Settle down */
+        85% { transform: translateY(0) scale(0.95, 1.02); }
+        92% { transform: translateY(0) scale(1.02, 0.98); }
         100% {
-          transform: translateY(0) scale(1, 1) rotate(0deg);
+          transform: translateY(0) scale(1, 1);
           opacity: 1;
         }
       }
@@ -142,7 +148,7 @@ module.exports = async (req, res) => {
       }
       
       .welcome-digit {
-        animation: namasteBow 2.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        animation: clapping 2.2s ease-in-out forwards;
         transform-origin: bottom center;
         opacity: 0;
       }
