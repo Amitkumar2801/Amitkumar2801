@@ -40,28 +40,17 @@
   <img src="agent_dashboard.svg" width="100%" alt="A.I Chamgadar Skill Dashboard" />
 <!-- CHAMGADAR PlayGround System Section -->
 <br>
-<table background="playground_background.png" bgcolor="#080710" border="0" cellspacing="0" cellpadding="25" width="100%">
-  <tr>
-    <td align="center" background="playground_background.png" bgcolor="#080710">
-      <font color="#00ffcc" size="4" face="Courier New"><b>🎮 CHAMGADAR PLAYGROUND SYSTEM 🎮</b></font>
-      <br><br>
-      <table align="center" style="border: none; background: transparent; border-collapse: collapse;">
-        <tr style="border: none; background: transparent;">
-          <td style="border: none; background: transparent; padding: 0 15px;" valign="middle">
-            <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/glitch.html">
-              <img src="button_overclock.svg" height="44" alt="Play Overclock" />
-            </a>
-          </td>
-          <td style="border: none; background: transparent; padding: 0 15px;" valign="middle">
-            <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/meltdown.html">
-              <img src="button_meltdown.svg" height="44" alt="Play Meltdown" />
-            </a>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
+<div align="center" style="background-color: #1f1f23; padding: 35px 80px; border-radius: 12px; border: 2px solid #3f3f46; display: inline-block;">
+  <font color="#00ffcc" size="4" face="Courier New"><b>🎮 CHAMGADAR PLAYGROUND SYSTEM 🎮</b></font>
+  <br><br>
+  <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/glitch.html" style="text-decoration: none;">
+    <img src="button_overclock.svg" height="46" alt="Play Overclock" />
+  </a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/meltdown.html" style="text-decoration: none;">
+    <img src="button_meltdown.svg" height="46" alt="Play Meltdown" />
+  </a>
+</div>
 </div>
 
 <br><br>
