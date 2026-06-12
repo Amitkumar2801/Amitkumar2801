@@ -29,7 +29,7 @@
   <table bgcolor="#080710" border="0" cellspacing="0" cellpadding="30" width="100%">
     <tr>
       <td align="center" bgcolor="#080710">
-        <font color="#a78bfa" size="4" face="Courier New"><b>&gt; TOTAL VISIT</b></font>
+        <font color="#a78bfa" size="4" face="Courier New"><b>⚡ TOTAL VISITS ⚡</b></font>
         <br><br>
         <!-- Animated visitor counter -->
         <img src="counter.svg" height="85" referrerpolicy="origin" alt="Total Visits" />
