@@ -1,0 +1,36 @@
+name: Update Animated Visitor Counter
+
+on:
+  schedule:
+    - cron: '*/15 * * * *' # Run every 15 minutes
+  workflow_dispatch:      # Allow manual runs
+  push:
+    branches:
+      - main
+    paths:
+      - update_counter.py
+
+permissions:
+  contents: write
+
+jobs:
+  update-counter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run Update Script
+        run: python update_counter.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add counter.svg
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update visitor counter with latest count" && git push)

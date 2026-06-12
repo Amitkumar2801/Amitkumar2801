@@ -26,12 +26,15 @@
 <br><br>
 
 <div align="center">
-  <table bgcolor="#080710" border="0" cellspacing="0" cellpadding="25" width="600">
+  <table bgcolor="#080710" border="0" cellspacing="0" cellpadding="30" width="100%">
     <tr>
       <td align="center" bgcolor="#080710">
         <font color="#a78bfa" size="4" face="Courier New"><b>&gt; TOTAL VISIT</b></font>
         <br><br>
-        <img src="https://kauntah-svg.vercel.app/counter.svg?asset=blue&offset=902" height="85" referrerpolicy="origin" />
+        <!-- Animated visitor counter -->
+        <img src="counter.svg" height="85" referrerpolicy="origin" alt="Total Visits" />
+        <!-- Invisible tracking pixel to increment the live count -->
+        <img src="https://kauntah-svg.vercel.app/counter.svg?asset=blue&amp;offset=902" width="1" height="1" style="display:none !important;" referrerpolicy="origin" alt="" />
       </td>
     </tr>
   </table>
