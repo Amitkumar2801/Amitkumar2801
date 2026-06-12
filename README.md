@@ -30,14 +30,35 @@
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&pause=1000&color=6a5acd&center=true&vCenter=true&width=600&height=35&lines=%F0%9F%91%8B+Welcome+Developer!+You+are+Visitor+No.+%E2%80%A2%E2%80%A2%E2%80%A2" alt="Welcome" />
 </picture>
 <br><br>
-<!-- TOP: Visitor Count (Peak of Christmas Tree) -->
+<!-- TOP: Visitor Count -->
 <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&label=%E2%9A%A1+PROFILE+VIEWS&color=bc34fa&labelColor=15052d&style=for-the-badge" height="46" alt="Visitor Count" />
 <br><br>
-<!-- Call to Action with Animated Pointer -->
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Backhand%20Index%20Pointing%20Down.png" width="45" /><br>
-<code>🔥 CHOOSE A SYSTEM INTRUSION SIMULATOR (CLICK BUTTON TO RUN) 🔥</code>
+<!-- BOTTOM: Base badges -->
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" width="25" style="vertical-align: middle;" />&nbsp;
+<img src="https://img.shields.io/badge/Thanks%20for%20stopping%20by!-ec4899?style=flat-square" style="vertical-align: middle;" />&nbsp;
+<img src="https://img.shields.io/badge/Feel%20free%20to%20explore-3b82f6?style=flat-square" style="vertical-align: middle;" />&nbsp;
+<img src="https://img.shields.io/badge/Star%20⭐%20if%20you%20like%20it!-10b981?style=flat-square" style="vertical-align: middle;" />
+</td>
+</tr>
+</table>
+</div>
+
 <br><br>
-<!-- MIDDLE: Action buttons split left/right -->
+
+<img src="https://img.shields.io/badge/💻%20AI__AGENT.RUNTIME-080710?style=for-the-badge&labelColor=8b5cf6&color=111" height="28" />
+<br><br>
+
+<div align="center">
+<table width="100%" style="border: 2px solid #8b5cf6; border-radius: 12px; border-collapse: collapse; background: #080710;">
+<tr>
+<td align="center" style="padding: 16px; border: none;">
+<img src="agent_dashboard.svg" width="100%" alt="A.I Chamgadar Skill Dashboard" />
+<br><br>
+<!-- Click warning & animated index pointer -->
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Backhand%20Index%20Pointing%20Down.png" width="45" /><br>
+<code>⚠️ DETECTED CRITICAL INTERRUPT PORTS: CLICK A CORE TO LAUNCH INTRUSION SIMULATION ⚠️</code>
+<br><br>
+<!-- Action buttons side by side -->
 <table align="center" style="border: none; background: transparent; border-collapse: collapse;">
 <tr style="border: none; background: transparent;">
 <td style="border: none; background: transparent; padding: 0 15px;" valign="middle">
@@ -52,23 +73,9 @@
 </td>
 </tr>
 </table>
-<br>
-<!-- BOTTOM: Base badges -->
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" width="25" style="vertical-align: middle;" />&nbsp;
-<img src="https://img.shields.io/badge/Thanks%20for%20stopping%20by!-ec4899?style=flat-square" style="vertical-align: middle;" />&nbsp;
-<img src="https://img.shields.io/badge/Feel%20free%20to%20explore-3b82f6?style=flat-square" style="vertical-align: middle;" />&nbsp;
-<img src="https://img.shields.io/badge/Star%20⭐%20if%20you%20like%20it!-10b981?style=flat-square" style="vertical-align: middle;" />
 </td>
 </tr>
 </table>
-</div>
-
-<br><br>
-
-<img src="https://img.shields.io/badge/💻%20AI__AGENT.RUNTIME-080710?style=for-the-badge&labelColor=8b5cf6&color=111" height="28" />
-
-<div align="center">
-  <img src="agent_dashboard.svg" width="100%" alt="A.I Chamgadar Skill Dashboard" />
 </div>
 
 <br><br>
