@@ -49,9 +49,6 @@
 <br><br>
 
 <div align="center">
-<table width="100%" style="border: 2px solid #8b5cf6; border-radius: 12px; border-collapse: collapse; background: #080710;">
-<tr>
-<td align="center" style="padding: 16px; border: none;">
 <img src="agent_dashboard.svg" width="100%" alt="A.I Chamgadar Skill Dashboard" />
 <br><br>
 <!-- Click warning & animated index pointer -->
@@ -70,9 +67,6 @@
 <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/meltdown.html">
 <img src="https://img.shields.io/badge/⚡%20LAUNCH%20MELTDOWN-SIMULATOR-00ffcc?style=for-the-badge&logo=hackthebox&logoColor=black" height="38" alt="Launch Meltdown Simulator" />
 </a>
-</td>
-</tr>
-</table>
 </td>
 </tr>
 </table>
