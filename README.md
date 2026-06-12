@@ -38,11 +38,6 @@
   </table>
   <br>
   <img src="agent_dashboard.svg" width="100%" alt="A.I Chamgadar Skill Dashboard" />
-<br><br>
-<!-- Click warning & animated index pointer -->
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Backhand%20Index%20Pointing%20Down.png" width="45" /><br>
-<code>⚠️ DETECTED CRITICAL INTERRUPT PORTS: CLICK A CORE TO LAUNCH INTRUSION SIMULATION ⚠️</code>
-<br><br>
 <!-- Action buttons side by side -->
 <table align="center" style="border: none; background: transparent; border-collapse: collapse;">
 <tr style="border: none; background: transparent;">
