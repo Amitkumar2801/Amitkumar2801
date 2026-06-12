@@ -26,12 +26,12 @@
 <br><br>
 
 <div align="center">
-  <table bgcolor="#080710" border="0" cellspacing="0" cellpadding="0">
+  <table bgcolor="#080710" border="0" cellspacing="0" cellpadding="25" width="600">
     <tr>
-      <td align="center" bgcolor="#080710" style="padding: 20px;">
+      <td align="center" bgcolor="#080710">
         <font color="#a78bfa" size="4" face="Courier New"><b>&gt; TOTAL VISIT</b></font>
         <br><br>
-        <img src="https://kauntah-svg.vercel.app/counter.svg?asset=colorful&offset=1803" height="75" referrerpolicy="origin" />
+        <img src="https://kauntah-svg.vercel.app/counter.svg?asset=blue&offset=902" height="85" referrerpolicy="origin" />
       </td>
     </tr>
   </table>

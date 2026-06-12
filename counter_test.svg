@@ -1,0 +1,78 @@
+<svg width="680" height="150" viewBox="0 0 680 150" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes raiseHand {
+      0% {
+        transform: translateY(120px) scale(0.8);
+        opacity: 0;
+      }
+      50% {
+        transform: translateY(-15px) scale(1.05);
+        opacity: 1;
+      }
+      70% {
+        transform: translateY(5px) scale(0.98);
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+    .digit {
+      animation: raiseHand 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      transform-origin: bottom center;
+      opacity: 0;
+    }
+  </style>
+
+  <!-- We split the external image into 10 columns and animate them -->
+  <g class="digit" style="animation-delay: 0.0s;">
+    <svg x="0" y="0" width="68" height="150" viewBox="0 0 68 150">
+      <image href="https://kauntah-svg.vercel.app/counter.svg?asset=blue&amp;offset=902" x="0" y="0" width="680" height="150" />
+    </svg>
+  </g>
+  <g class="digit" style="animation-delay: 0.06s;">
+    <svg x="68" y="0" width="68" height="150" viewBox="68 0 68 150">
+      <image href="https://kauntah-svg.vercel.app/counter.svg?asset=blue&amp;offset=902" x="0" y="0" width="680" height="150" />
+    </svg>
+  </g>
+  <g class="digit" style="animation-delay: 0.12s;">
+    <svg x="136" y="0" width="68" height="150" viewBox="136 0 68 150">
+      <image href="https://kauntah-svg.vercel.app/counter.svg?asset=blue&amp;offset=902" x="0" y="0" width="680" height="150" />
+    </svg>
+  </g>
+  <g class="digit" style="animation-delay: 0.18s;">
+    <svg x="204" y="0" width="68" height="150" viewBox="204 0 68 150">
+      <image href="https://kauntah-svg.vercel.app/counter.svg?asset=blue&amp;offset=902" x="0" y="0" width="680" height="150" />
+    </svg>
+  </g>
+  <g class="digit" style="animation-delay: 0.24s;">
+    <svg x="272" y="0" width="68" height="150" viewBox="272 0 68 150">
+      <image href="https://kauntah-svg.vercel.app/counter.svg?asset=blue&amp;offset=902" x="0" y="0" width="680" height="150" />
+    </svg>
+  </g>
+  <g class="digit" style="animation-delay: 0.30s;">
+    <svg x="340" y="0" width="68" height="150" viewBox="340 0 68 150">
+      <image href="https://kauntah-svg.vercel.app/counter.svg?asset=blue&amp;offset=902" x="0" y="0" width="680" height="150" />
+    </svg>
+  </g>
+  <g class="digit" style="animation-delay: 0.36s;">
+    <svg x="408" y="0" width="68" height="150" viewBox="408 0 68 150">
+      <image href="https://kauntah-svg.vercel.app/counter.svg?asset=blue&amp;offset=902" x="0" y="0" width="680" height="150" />
+    </svg>
+  </g>
+  <g class="digit" style="animation-delay: 0.42s;">
+    <svg x="476" y="0" width="68" height="150" viewBox="476 0 68 150">
+      <image href="https://kauntah-svg.vercel.app/counter.svg?asset=blue&amp;offset=902" x="0" y="0" width="680" height="150" />
+    </svg>
+  </g>
+  <g class="digit" style="animation-delay: 0.48s;">
+    <svg x="544" y="0" width="68" height="150" viewBox="544 0 68 150">
+      <image href="https://kauntah-svg.vercel.app/counter.svg?asset=blue&amp;offset=902" x="0" y="0" width="680" height="150" />
+    </svg>
+  </g>
+  <g class="digit" style="animation-delay: 0.54s;">
+    <svg x="612" y="0" width="68" height="150" viewBox="612 0 68 150">
+      <image href="https://kauntah-svg.vercel.app/counter.svg?asset=blue&amp;offset=902" x="0" y="0" width="680" height="150" />
+    </svg>
+  </g>
+</svg>
