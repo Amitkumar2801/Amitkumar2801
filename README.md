@@ -31,10 +31,8 @@
       <td align="center" bgcolor="#080710">
         <font color="#a78bfa" size="4" face="Courier New"><b>⚡ TOTAL VISITS ⚡</b></font>
         <br><br>
-        <!-- Animated visitor counter -->
-        <img src="counter.svg" width="100%" referrerpolicy="origin" alt="Total Visits" />
-        <!-- Invisible tracking pixel to increment the live count -->
-        <img src="https://kauntah-svg.vercel.app/counter.svg?asset=blue&amp;offset=902" width="1" height="1" style="display:none !important;" referrerpolicy="origin" alt="" />
+        <!-- Animated visitor counter (Real-time dynamic server) -->
+        <img src="https://amitkumar2801.amitkumar2801.deno.net" width="100%" referrerpolicy="origin" alt="Total Visits" />
       </td>
     </tr>
   </table>
