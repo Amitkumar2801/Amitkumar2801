@@ -50,6 +50,8 @@ module.exports = async (req, res) => {
       if (i === 9) {
         className = "last-digit";
         finalDelay = delay + 0.1;
+      } else if (digitValue === "0") {
+        className = "welcome-digit";
       }
       
       useTags += `  <use href="#image-${digitValue}" x="${xOffset}" y="0" class="${className}" style="animation-delay: ${finalDelay.toFixed(2)}s;" />\n`;
@@ -76,6 +78,33 @@ module.exports = async (req, res) => {
         }
       }
       
+      @keyframes welcomeZero {
+        0% {
+          transform: translateY(150px) scale(0.8) rotate(0deg);
+          opacity: 0;
+        }
+        30% {
+          transform: translateY(0) scale(1) rotate(0deg);
+          opacity: 1;
+        }
+        45% {
+          transform: translateY(-12px) rotate(-4deg);
+        }
+        60% {
+          transform: translateY(0) rotate(4deg);
+        }
+        75% {
+          transform: translateY(-8px) rotate(-3deg);
+        }
+        90% {
+          transform: translateY(0) rotate(2deg);
+        }
+        100% {
+          transform: translateY(0) scale(1) rotate(0deg);
+          opacity: 1;
+        }
+      }
+      
       @keyframes highlightLastDigit {
         0% {
           transform: translateY(150px) scale(0.7) rotate(-12deg);
@@ -96,6 +125,12 @@ module.exports = async (req, res) => {
       
       .digit {
         animation: raiseHand 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        transform-origin: bottom center;
+        opacity: 0;
+      }
+      
+      .welcome-digit {
+        animation: welcomeZero 2.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         transform-origin: bottom center;
         opacity: 0;
       }
