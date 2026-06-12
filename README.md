@@ -42,12 +42,11 @@
 
 <br><br>
 
-<img src="https://img.shields.io/badge/💻%20AI__AGENT.RUNTIME-080710?style=for-the-badge&labelColor=8b5cf6&color=111" height="28" />
+<img src="https://img.shields.io/badge/💻%20AI__AGENT.RUNTIME-080710?style=for-the-badge&labelColor=8b5cf6&color=111" height="28" />&nbsp;&nbsp;
+<img src="https://komarev.com/ghpvc/?username=Amitkumar2801&base=890&color=111111&labelColor=8b5cf6&style=for-the-badge&label=TOTAL+VISIT" height="28" />
 <br><br>
 
 <div align="center">
-<img src="https://counter.kuber.studio/Amitkumar2801/flip-clock/count.svg" alt="Visitor Views" />
-<br><br>
 <img src="agent_dashboard.svg" width="100%" alt="A.I Chamgadar Skill Dashboard" />
 <br><br>
 <!-- Click warning & animated index pointer -->
