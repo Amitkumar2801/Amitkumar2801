@@ -472,17 +472,6 @@
             animation: pulseLight 3s infinite alternate;
         }
 
-        /* LED Stumps / Bails Styling */
-        @keyframes flashLED {
-            0% { fill: #ff4400; filter: drop-shadow(0 0 2px #ff4400); }
-            50% { fill: #ff0033; filter: drop-shadow(0 0 8px #ff0033); }
-            100% { fill: #ffcc00; filter: drop-shadow(0 0 15px #ffcc00); }
-        }
-
-        .led-active {
-            animation: flashLED 0.15s infinite alternate;
-        }
-
         /* Cinematic Intro Overlay */
         .intro-overlay {
             position: fixed;
@@ -507,9 +496,24 @@
             max-width: 500px;
             width: 100%;
         }
+
+        /* Screen Shake Animation */
+        @keyframes shake {
+            0% { transform: translate(0, 0); }
+            10% { transform: translate(-8px, 6px); }
+            30% { transform: translate(7px, -7px); }
+            50% { transform: translate(-6px, 5px); }
+            70% { transform: translate(5px, -4px); }
+            90% { transform: translate(-3px, 3px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        .shake-active {
+            animation: shake 0.35s ease-out;
+        }
     </style>
 </head>
-<body>
+<body id="mainBody">
     <!-- Cinematic Intro Overlay (Autoplay click-unlocker) -->
     <div class="intro-overlay" id="introOverlay">
         <div class="intro-box">
@@ -545,7 +549,7 @@
         <p id="celebrateTimer" style="color: #ffaa80; font-size: 0.95rem; font-family: 'JetBrains Mono', monospace; z-index: 10; margin-top: 15px; letter-spacing: 1.5px;"></p>
     </div>
 
-    <!-- Cricket Stadium Exit Overlay -->
+    <!-- Cricket Record batting Swing Screen Overlay -->
     <div class="stadium-overlay" id="shutdownScreen">
         <!-- Stadium Lights backglow -->
         <div class="floodlights">
@@ -553,50 +557,53 @@
             <div class="light-beam"></div>
         </div>
 
-        <h2 style="color: var(--srh-orange); font-size: 2.2rem; font-weight: 900; letter-spacing: 3px; margin-bottom: 8px; text-shadow: 0 0 15px rgba(255,85,0,0.6);">🏏 INNINGS COMPLETED 🏏</h2>
-        <p style="font-family: 'JetBrains Mono', monospace; color: #ffaa80; font-size: 0.95rem; margin-bottom: 25px; letter-spacing: 1.5px;">STADIUM SYSTEM LOCKDOWN ACTIVE</p>
-
-        <!-- Stumps Flying SVG -->
-        <svg width="220" height="220" viewBox="0 0 200 200" style="margin-bottom: 25px; overflow: visible;">
-            <defs>
-                <filter id="glow-filter" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="3" result="blur" />
-                    <feMerge>
-                        <feMergeNode in="blur" />
-                        <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                </filter>
-            </defs>
-            
-            <!-- Cricket Ball bowling in -->
-            <circle id="cricket-ball" cx="30" cy="145" r="10" fill="#cc0022" stroke="#ffffff" stroke-width="1.5">
-                <animate attributeName="cx" from="30" to="98" dur="0.75s" fill="freeze" keyTimes="0;1" keySplines="0.1 0.8 0.25 1" calcMode="spline" />
-                <animate attributeName="cy" from="145" to="88" dur="0.75s" fill="freeze" keyTimes="0;1" keySplines="0.1 0.8 0.25 1" calcMode="spline" />
-            </circle>
-
-            <!-- Three Wooden Stumps -->
-            <rect id="stump-left" x="78" y="80" width="8" height="90" rx="2" fill="#d49a3b" stroke="#664411" stroke-width="1" />
-            <rect id="stump-middle" x="96" y="80" width="8" height="90" rx="2" fill="#d49a3b" stroke="#664411" stroke-width="1" style="transform-origin: 100px 170px;">
-                <animateTransform attributeName="transform" type="rotate" from="0 100 170" to="16 100 170" begin="0.75s" dur="0.4s" fill="freeze" />
-            </rect>
-            <rect id="stump-right" x="114" y="80" width="8" height="90" rx="2" fill="#d49a3b" stroke="#664411" stroke-width="1" />
-
-            <!-- Flying LED Bails -->
-            <rect id="bail-left" x="80" y="74" width="18" height="5" rx="1.5" fill="#4a2c00" style="transform-origin: 89px 76px;">
-                <animateTransform attributeName="transform" type="translate" from="0 0" to="-22 -40" begin="0.75s" dur="0.55s" fill="freeze" />
-                <animateTransform attributeName="transform" type="rotate" from="0 89 76" to="-55 89 76" begin="0.75s" dur="0.55s" fill="freeze" additive="sum" />
-            </rect>
-            
-            <rect id="bail-right" x="102" y="74" width="18" height="5" rx="1.5" fill="#4a2c00" style="transform-origin: 111px 76px;">
-                <animateTransform attributeName="transform" type="translate" from="0 0" to="26 -50" begin="0.75s" dur="0.55s" fill="freeze" />
-                <animateTransform attributeName="transform" type="rotate" from="0 111 76" to="70 111 76" begin="0.75s" dur="0.55s" fill="freeze" additive="sum" />
-            </rect>
+        <!-- Glass Shatter Crack Lines Overlay -->
+        <svg id="glass-cracks" viewBox="0 0 100 100" width="100%" height="100%" style="position:absolute; top:0; left:0; pointer-events:none; z-index:10; opacity:0; overflow:visible; transition: opacity 0.15s ease-out;">
+            <path d="M 50 50 L 10 20 M 50 50 L 90 15 M 50 50 L 80 85 M 50 50 L 15 80 M 50 50 L 5 45 M 50 50 L 95 55 M 50 50 L 40 5 M 50 50 L 60 95" stroke="#00ffcc" stroke-width="0.8" fill="none" opacity="0.85" />
+            <path d="M 30 35 L 20 5 M 70 32 L 85 45 M 65 67 L 90 90 M 32 65 L 10 95 M 45 27 Q 52 15 65 20 M 60 60 Q 75 75 55 85" stroke="#00ffcc" stroke-width="0.5" fill="none" opacity="0.6" />
+            <circle cx="50" cy="50" r="4" stroke="#00ffcc" stroke-width="0.8" fill="none" opacity="0.9" />
+            <circle cx="50" cy="50" r="10" stroke="#00ffcc" stroke-width="0.6" fill="none" opacity="0.75" />
+            <circle cx="50" cy="50" r="20" stroke="#00ffcc" stroke-width="0.4" fill="none" opacity="0.5" />
         </svg>
 
-        <!-- Scoreboard Panel Frame -->
-        <div style="background: rgba(10, 5, 2, 0.9); border: 3px double #d4af37; border-radius: 12px; padding: 18px 30px; min-width: 300px; box-shadow: 0 0 25px rgba(212,175,55,0.25);">
-            <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: #8c735c; margin-bottom: 6px; letter-spacing: 1px;">STADIUM SCOREBOARD AUTO-EXIT</p>
-            <h3 id="scoreboard-text" style="font-family: 'JetBrains Mono', monospace; font-size: 1.6rem; font-weight: bold; color: #ffcc00; text-shadow: 0 0 8px rgba(255,204,0,0.5);">STANDBY IN 10S</h3>
+        <div class="animation-stage" id="batting-stage" style="position:relative; width:300px; height:240px; z-index:5; display:flex; justify-content:center; align-items:center;">
+            <!-- Batsman Silhouette Swing SVG -->
+            <svg id="batsman-svg" width="220" height="220" viewBox="0 0 100 100" style="overflow:visible; filter: drop-shadow(0 0 8px rgba(255, 85, 0, 0.4));">
+                <line x1="0" y1="90" x2="100" y2="90" stroke="#ff5500" stroke-width="2" opacity="0.3" />
+                
+                <!-- Cricket Ball bowling in -->
+                <circle id="cricket-ball" cx="10" cy="45" r="3" fill="#cc0022" stroke="#ffffff" stroke-width="0.6">
+                    <!-- Phase 1: Ball comes towards bat (0s to 0.45s) -->
+                    <animate attributeName="cx" from="10" to="42" dur="0.45s" begin="0s" fill="freeze" />
+                    <animate attributeName="cy" from="45" to="72" dur="0.45s" begin="0s" fill="freeze" />
+                    
+                    <!-- Phase 2: Ball gets hit and flies into viewer's face (scale-up 0.45s to 1s) -->
+                    <animate attributeName="cx" from="42" to="50" dur="0.55s" begin="0.45s" fill="freeze" keyTimes="0;1" keySplines="0.1 0.8 0.25 1" calcMode="spline" />
+                    <animate attributeName="cy" from="72" to="50" dur="0.55s" begin="0.45s" fill="freeze" keyTimes="0;1" keySplines="0.1 0.8 0.25 1" calcMode="spline" />
+                    <animate attributeName="r" from="3" to="150" dur="0.55s" begin="0.45s" fill="freeze" keyTimes="0;1" keySplines="0.1 0.8 0.25 1" calcMode="spline" />
+                    <animate attributeName="opacity" from="1" to="0" dur="0.05s" begin="0.95s" fill="freeze" />
+                </circle>
+
+                <!-- Batsman Silhouette -->
+                <path id="batsman-body" d="M 52 90 L 50 68 L 40 60 L 45 42 L 54 36 L 50 24 M 45 42 L 34 44 L 28 50 M 54 36 L 62 44 L 66 52" stroke="#ff5500" stroke-width="3" fill="none" stroke-linecap="round" />
+                <circle cx="50" cy="20" r="5" fill="#ff5500" />
+
+                <!-- Cricket Bat Swing -->
+                <line id="cricket-bat" x1="28" y1="50" x2="12" y2="28" stroke="#ffcc00" stroke-width="4.5" stroke-linecap="round" style="transform-origin: 28px 50px;">
+                    <animateTransform attributeName="transform" type="rotate" from="50 28 50" to="-110 28 50" begin="0.25s" dur="0.45s" fill="freeze" keyTimes="0;1" keySplines="0.1 0.8 0.2 1" calcMode="spline" />
+                </line>
+            </svg>
+        </div>
+
+        <!-- Scoreboard Panel Frame (287 World Record) -->
+        <div id="record-scoreboard" style="background: rgba(10, 5, 2, 0.95); border: 3px double #d4af37; border-radius: 12px; padding: 25px 35px; min-width: 320px; box-shadow: 0 0 25px rgba(212,175,55,0.25); z-index: 5; display: none; flex-direction: column; gap: 10px;">
+            <h3 style="font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.6rem; color: #ffcc00; text-shadow: 0 0 10px rgba(255,204,0,0.5); letter-spacing: 1px; margin-bottom: 5px;">🏆 RECORD CONQUERORS 🏆</h3>
+            <div style="background: rgba(255, 85, 0, 0.08); border: 1px dashed #ff5500; padding: 15px; border-radius: 8px;">
+                <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: #ffccb3;">IPL HIGHEST SCORE RECORD</p>
+                <p style="font-family: 'Outfit', sans-serif; font-size: 2.6rem; font-weight: 900; color: #00ffcc; text-shadow: 0 0 15px rgba(0,255,204,0.6); margin: 5px 0;">287 / 3</p>
+                <p style="font-size: 0.8rem; color: #ffd1b3;">SUNRISERS HYDERABAD vs RCB (2024)</p>
+            </div>
+            <p id="scoreboard-text" style="font-family: 'JetBrains Mono', monospace; font-size: 1rem; color: #ffaa80; margin-top: 5px; letter-spacing: 1px;">STANDBY IN 10S</p>
         </div>
     </div>
 
@@ -922,7 +929,6 @@
                 this.init();
                 if(this.ctx.state === 'suspended') this.ctx.resume();
                 const now = this.ctx.currentTime;
-                // C Major Arpeggio Fanfare
                 const notes = [261.63, 329.63, 392.00, 523.25, 659.25, 783.99, 1046.50, 1318.51]; 
                 notes.forEach((freq, index) => {
                     const osc = this.ctx.createOscillator();
@@ -937,23 +943,14 @@
                 });
             }
             
-            // Cricket Synthesized Sounds
-            playStumpHit() {
+            // Glass Shatter & Stadium sounds on exit
+            playGlassShatter() {
                 this.init();
                 if(this.ctx.state === 'suspended') this.ctx.resume();
                 const now = this.ctx.currentTime;
                 
-                const osc = this.ctx.createOscillator();
-                const oscGain = this.ctx.createGain();
-                osc.connect(oscGain); oscGain.connect(this.ctx.destination);
-                osc.type = 'triangle';
-                osc.frequency.setValueAtTime(350, now);
-                osc.frequency.exponentialRampToValueAtTime(70, now + 0.05);
-                oscGain.gain.setValueAtTime(0.3, now);
-                oscGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.05);
-                osc.start(); osc.stop(now + 0.05);
-
-                const bufferSize = this.ctx.sampleRate * 0.35;
+                // 1. High frequency shatter crash noise
+                const bufferSize = this.ctx.sampleRate * 0.45;
                 const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
                 const data = buffer.getChannelData(0);
                 for (let i = 0; i < bufferSize; i++) {
@@ -963,19 +960,30 @@
                 noiseNode.buffer = buffer;
                 
                 const filter = this.ctx.createBiquadFilter();
-                filter.type = 'bandpass';
-                filter.frequency.value = 550;
-                filter.Q.value = 2.5;
+                filter.type = 'highpass';
+                filter.frequency.value = 2400;
 
                 const noiseGain = this.ctx.createGain();
                 noiseNode.connect(filter);
                 filter.connect(noiseGain);
                 noiseGain.connect(this.ctx.destination);
                 
-                noiseGain.gain.setValueAtTime(0.18, now);
-                noiseGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.35);
-                
-                noiseNode.start(now); noiseNode.stop(now + 0.35);
+                noiseGain.gain.setValueAtTime(0.25, now);
+                noiseGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.4);
+                noiseNode.start(now); noiseNode.stop(now + 0.45);
+
+                // 2. High-pitched sharp pings (glass fragments)
+                const frequencies = [1800, 2900, 3950, 4900];
+                frequencies.forEach((freq, idx) => {
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    osc.connect(gain); gain.connect(this.ctx.destination);
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, now + idx * 0.025);
+                    gain.gain.setValueAtTime(0.08, now + idx * 0.025);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.025 + 0.2);
+                    osc.start(); osc.stop(now + idx * 0.025 + 0.2);
+                });
             }
 
             playCheering(duration = 6.0) {
@@ -1201,18 +1209,15 @@
 
         // Autoplay Transmission Start
         function startTransmission() {
-            // Unlock audio
             sfx.init();
             sfx.playClick();
             
-            // Hide intro overlay
             const intro = document.getElementById('introOverlay');
             intro.style.opacity = '0';
             setTimeout(() => {
                 intro.style.display = 'none';
             }, 500);
             
-            // Auto start celebration slideshow
             launchCelebration();
         }
 
@@ -1307,7 +1312,7 @@
                                 <path d="M12 2a6 6 0 00-6 6v3.2c0 .87.35 1.7 1 2.3l2.25 2.1c.42.4.98.6 1.55.6s1.13-.2 1.55-.6L17 13.5c.65-.6.9-1.43.9-2.3V8a6 6 0 00-6-6z" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             <h2 style="color: var(--gold); font-size: 2.2rem; font-weight: 900; margin-bottom: 10px; text-shadow: 0 0 25px rgba(212, 175, 55, 0.75); letter-spacing: 3px;">🏆 CHAMPIONS OF 2016 🏆</h2>
-                            <p style="font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight:900; color: #ff5500; margin-bottom: 15px; letter-spacing: 2.5px; text-shadow: 0 0 8px var(--srh-glow); animation: border-pulse 1s infinite alternate;">🧡 ORANGE ARMY FOR LIFE! 🧡</p>
+                            <p style="font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight:900; color: #ff5500; margin-bottom: 15px; letter-spacing: 2.5px; text-shadow: 0 0 8px var(--srh-glow);">🧡 ORANGE ARMY FOR LIFE! 🧡</p>
                             <p style="font-size: 0.9rem; color: #ffaa80; max-width: 450px; line-height: 1.6; margin-bottom: 10px;">
                                 Defeating KKR in the Eliminator, GL in Qualifier 2, and RCB in their own den in the Grand Final. The spirit of 2016 lives forever!
                             </p>
@@ -1341,19 +1346,30 @@
         function triggerScreenOff() {
             const screenOverlay = document.getElementById('shutdownScreen');
             const scoreboard = document.getElementById('scoreboard-text');
-            const bailLeft = document.getElementById('bail-left');
-            const bailRight = document.getElementById('bail-right');
             
             // Show Cricket theme shutdown screen
             screenOverlay.style.display = 'flex';
             
-            // At 0.75s, the ball strikes the stumps: play click clatter sound, activate LED bails flash, and trigger crowd cheering
+            // Reset animations by resetting SVG (reflow method)
+            const batsmanSvg = document.getElementById('batsman-svg');
+            const newSvg = batsmanSvg.cloneNode(true);
+            batsmanSvg.parentNode.replaceChild(newSvg, batsmanSvg);
+
+            // At 1.0s, the ball shatters the screen: play glass crash sound, activate glass cracks, show world record scoreboard, and shake screen
             setTimeout(() => {
-                sfx.playStumpHit();
-                sfx.playCheering(7.0);
-                bailLeft.classList.add('led-active');
-                bailRight.classList.add('led-active');
-            }, 750);
+                sfx.playGlassShatter();
+                sfx.playCheering(8.0);
+                
+                // Show glass cracks
+                document.getElementById('glass-cracks').style.opacity = '1';
+                
+                // Show record scoreboard, hide swing
+                document.getElementById('batting-stage').style.display = 'none';
+                document.getElementById('record-scoreboard').style.display = 'flex';
+                
+                // Trigger screen shake
+                document.getElementById('mainBody').classList.add('shake-active');
+            }, 1000);
 
             let timeLeft = 10;
             scoreboard.innerText = `STANDBY IN ${timeLeft}S`;
