@@ -74,30 +74,39 @@
             text-shadow: 0 0 8px rgba(255, 85, 0, 0.2);
         }
 
+        /* Highly premium, visible, and clickable button styling */
         .btn-celebrate {
-            background: linear-gradient(135deg, #180d07 0%, #291508 100%);
-            color: var(--gold);
-            border: 2px solid var(--gold);
-            padding: 16px 36px;
+            background: linear-gradient(135deg, #ff5500 0%, #d42a00 100%);
+            color: #ffffff;
+            border: 3px solid #ffcc00;
+            padding: 18px 42px;
             font-family: inherit;
-            font-weight: bold;
-            font-size: 1.15rem;
+            font-weight: 900;
+            font-size: 1.25rem;
             cursor: pointer;
-            border-radius: 40px;
+            border-radius: 50px;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 0 20px var(--gold-glow);
+            box-shadow: 0 0 25px rgba(255, 85, 0, 0.6), inset 0 2px 4px rgba(255,255,255,0.4);
             margin: 25px 0 40px 0;
             z-index: 10;
             position: relative;
             letter-spacing: 2px;
             text-transform: uppercase;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+            animation: pulseBtn 2s infinite;
+        }
+
+        @keyframes pulseBtn {
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 85, 0, 0.5); }
+            50% { transform: scale(1.04); box-shadow: 0 0 35px rgba(255, 85, 0, 0.7), 0 0 15px rgba(255, 204, 0, 0.3); }
+            100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 85, 0, 0.5); }
         }
 
         .btn-celebrate:hover {
-            transform: scale(1.05);
-            background: var(--gold);
-            color: #0b0705;
-            box-shadow: 0 0 35px var(--gold), 0 0 15px rgba(212, 175, 55, 0.4);
+            transform: scale(1.06) translateY(-3px);
+            background: linear-gradient(135deg, #ffaa00 0%, #ff5500 100%);
+            border-color: #ffffff;
+            box-shadow: 0 0 40px #ffaa00, 0 0 20px rgba(255, 255, 255, 0.5);
         }
 
         .section-title {
@@ -257,7 +266,7 @@
             box-shadow: 0 0 8px rgba(230, 92, 0, 0.35);
         }
 
-        /* Sleek Telemetry Grid (Replacement of table) */
+        /* Sleek Telemetry Grid */
         .telemetry-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -430,60 +439,54 @@
             to { filter: drop-shadow(0 0 30px #d4af37); }
         }
 
-        /* Shutdown Screen Overlay */
-        .shutdown-screen {
+        /* Stadium Lights / Cricket Theme Exit Overlay styling */
+        .stadium-overlay {
             position: fixed;
             top: 0; left: 0; width: 100vw; height: 100vh;
-            background-color: #000;
+            background: radial-gradient(circle at center, #1c0e08 0%, #060302 100%);
             z-index: 100000;
             display: none;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
         }
 
-        .crt-collapse {
-            animation: collapseAnim 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-            background: #fff;
-            width: 100%;
-            height: 100%;
+        .floodlights {
             position: absolute;
+            top: 5%;
+            display: flex;
+            gap: 120px;
+            opacity: 0.25;
+            pointer-events: none;
         }
 
-        @keyframes collapseAnim {
-            0% { transform: scaleY(1) scaleX(1); filter: brightness(1); }
-            45% { transform: scaleY(0.004) scaleX(1.1); filter: brightness(4); }
-            75% { transform: scaleY(0.004) scaleX(0.004); filter: brightness(6); }
-            100% { transform: scaleY(0) scaleX(0); filter: brightness(0); }
-        }
-
-        .phosphor-dot {
-            width: 5px; height: 5px;
-            background: #fff;
+        .light-beam {
+            width: 150px;
+            height: 150px;
+            background: #ff7700;
             border-radius: 50%;
-            box-shadow: 0 0 15px 4px #fff, 0 0 30px 10px var(--srh-orange);
-            opacity: 0;
-            position: relative;
-            z-index: 10;
+            filter: blur(55px);
+            animation: pulseLight 3s infinite alternate;
         }
 
-        .fade-phosphor {
-            animation: phosphorAnim 9.5s ease-out forwards;
+        @keyframes pulseLight {
+            from { transform: scale(1); opacity: 0.2; }
+            to { transform: scale(1.3); opacity: 0.6; }
         }
 
-        @keyframes phosphorAnim {
-            0% { opacity: 0; }
-            8% { opacity: 1; transform: scale(1.5); }
-            20% { opacity: 0.8; transform: scale(1); }
-            100% { opacity: 0; transform: scale(0); }
+        /* LED Stumps / Bails Styling */
+        @keyframes flashLED {
+            0% { fill: #ff4400; filter: drop-shadow(0 0 2px #ff4400); }
+            50% { fill: #ff0033; filter: drop-shadow(0 0 8px #ff0033); }
+            100% { fill: #ffcc00; filter: drop-shadow(0 0 15px #ffcc00); }
         }
 
-        .shutdown-timer-text {
-            position: absolute;
-            bottom: 35px;
-            color: #444;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            font-family: 'JetBrains Mono', monospace;
+        .led-active {
+            animation: flashLED 0.15s infinite alternate;
         }
     </style>
 </head>
@@ -514,11 +517,59 @@
         <p id="celebrateTimer" style="color: #ffaa80; font-size: 0.95rem; font-family: 'JetBrains Mono', monospace; z-index: 10; margin-top: 15px; letter-spacing: 1.5px;"></p>
     </div>
 
-    <!-- Shutdown screen overlay -->
-    <div class="shutdown-screen" id="shutdownScreen">
-        <div class="crt-collapse" id="crtCollapse"></div>
-        <div class="phosphor-dot" id="phosphorDot"></div>
-        <div class="shutdown-timer-text" id="shutdownTimer">SYSTEM OFFLINE. AUTO-BACK IN 10S</div>
+    <!-- Cricket Stadium Exit Overlay -->
+    <div class="stadium-overlay" id="shutdownScreen">
+        <!-- Stadium Lights backglow -->
+        <div class="floodlights">
+            <div class="light-beam"></div>
+            <div class="light-beam"></div>
+        </div>
+
+        <h2 style="color: var(--srh-orange); font-size: 2.2rem; font-weight: 900; letter-spacing: 3px; margin-bottom: 8px; text-shadow: 0 0 15px rgba(255,85,0,0.6);">🏏 INNINGS COMPLETED 🏏</h2>
+        <p style="font-family: 'JetBrains Mono', monospace; color: #ffaa80; font-size: 0.95rem; margin-bottom: 25px; letter-spacing: 1.5px;">STADIUM SYSTEM LOCKDOWN ACTIVE</p>
+
+        <!-- Stumps Flying SVG -->
+        <svg width="220" height="220" viewBox="0 0 200 200" style="margin-bottom: 25px; overflow: visible;">
+            <defs>
+                <filter id="glow-filter" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="3" result="blur" />
+                    <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+            </defs>
+            
+            <!-- Cricket Ball bowling in -->
+            <circle id="cricket-ball" cx="30" cy="145" r="10" fill="#cc0022" stroke="#ffffff" stroke-width="1.5">
+                <animate attributeName="cx" from="30" to="98" dur="0.75s" fill="freeze" keyTimes="0;1" keySplines="0.1 0.8 0.25 1" calcMode="spline" />
+                <animate attributeName="cy" from="145" to="88" dur="0.75s" fill="freeze" keyTimes="0;1" keySplines="0.1 0.8 0.25 1" calcMode="spline" />
+            </circle>
+
+            <!-- Three Wooden Stumps -->
+            <rect id="stump-left" x="78" y="80" width="8" height="90" rx="2" fill="#d49a3b" stroke="#664411" stroke-width="1" />
+            <rect id="stump-middle" x="96" y="80" width="8" height="90" rx="2" fill="#d49a3b" stroke="#664411" stroke-width="1" style="transform-origin: 100px 170px;">
+                <animateTransform attributeName="transform" type="rotate" from="0 100 170" to="16 100 170" begin="0.75s" dur="0.4s" fill="freeze" />
+            </rect>
+            <rect id="stump-right" x="114" y="80" width="8" height="90" rx="2" fill="#d49a3b" stroke="#664411" stroke-width="1" />
+
+            <!-- Flying LED Bails -->
+            <rect id="bail-left" x="80" y="74" width="18" height="5" rx="1.5" fill="#4a2c00" style="transform-origin: 89px 76px;">
+                <animateTransform attributeName="transform" type="translate" from="0 0" to="-22 -40" begin="0.75s" dur="0.55s" fill="freeze" />
+                <animateTransform attributeName="transform" type="rotate" from="0 89 76" to="-55 89 76" begin="0.75s" dur="0.55s" fill="freeze" additive="sum" />
+            </rect>
+            
+            <rect id="bail-right" x="102" y="74" width="18" height="5" rx="1.5" fill="#4a2c00" style="transform-origin: 111px 76px;">
+                <animateTransform attributeName="transform" type="translate" from="0 0" to="26 -50" begin="0.75s" dur="0.55s" fill="freeze" />
+                <animateTransform attributeName="transform" type="rotate" from="0 111 76" to="70 111 76" begin="0.75s" dur="0.55s" fill="freeze" additive="sum" />
+            </rect>
+        </svg>
+
+        <!-- Scoreboard Panel Frame -->
+        <div style="background: rgba(10, 5, 2, 0.9); border: 3px double #d4af37; border-radius: 12px; padding: 18px 30px; min-width: 300px; box-shadow: 0 0 25px rgba(212,175,55,0.25);">
+            <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: #8c735c; margin-bottom: 6px; letter-spacing: 1px;">STADIUM SCOREBOARD AUTO-EXIT</p>
+            <h3 id="scoreboard-text" style="font-family: 'JetBrains Mono', monospace; font-size: 1.6rem; font-weight: bold; color: #ffcc00; text-shadow: 0 0 8px rgba(255,204,0,0.5);">STANDBY IN 10S</h3>
+        </div>
     </div>
 
     <header>
@@ -819,20 +870,6 @@
                 gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.08);
                 osc.start(); osc.stop(this.ctx.currentTime + 0.08);
             }
-            playCRT() {
-                this.init();
-                if(this.ctx.state === 'suspended') this.ctx.resume();
-                const now = this.ctx.currentTime;
-                const osc = this.ctx.createOscillator();
-                const gain = this.ctx.createGain();
-                osc.connect(gain); gain.connect(this.ctx.destination);
-                osc.type = 'sine';
-                osc.frequency.setValueAtTime(1800, now);
-                osc.frequency.exponentialRampToValueAtTime(40, now + 0.8);
-                gain.gain.setValueAtTime(0.08, now);
-                gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.8);
-                osc.start(); osc.stop(now + 0.8);
-            }
             playBeep(freq, duration = 0.1) {
                 this.init();
                 if(this.ctx.state === 'suspended') this.ctx.resume();
@@ -870,6 +907,82 @@
                     gain.gain.exponentialRampToValueAtTime(0.0001, now + index * 0.12 + 0.7);
                     osc.start(); osc.stop(now + index * 0.12 + 0.7);
                 });
+            }
+            
+            // Cricket Synthesized Sounds
+            playStumpHit() {
+                this.init();
+                if(this.ctx.state === 'suspended') this.ctx.resume();
+                const now = this.ctx.currentTime;
+                
+                // 1. Wooden Thwack (descending frequency sweep)
+                const osc = this.ctx.createOscillator();
+                const oscGain = this.ctx.createGain();
+                osc.connect(oscGain); oscGain.connect(this.ctx.destination);
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(350, now);
+                osc.frequency.exponentialRampToValueAtTime(70, now + 0.05);
+                oscGain.gain.setValueAtTime(0.3, now);
+                oscGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.05);
+                osc.start(); osc.stop(now + 0.05);
+
+                // 2. Clattering Rattling Noise (stumps colliding)
+                const bufferSize = this.ctx.sampleRate * 0.35; // 0.35s of noise
+                const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+                const data = buffer.getChannelData(0);
+                for (let i = 0; i < bufferSize; i++) {
+                    data[i] = Math.random() * 2 - 1;
+                }
+                const noiseNode = this.ctx.createBufferSource();
+                noiseNode.buffer = buffer;
+                
+                const filter = this.ctx.createBiquadFilter();
+                filter.type = 'bandpass';
+                filter.frequency.value = 550;
+                filter.Q.value = 2.5;
+
+                const noiseGain = this.ctx.createGain();
+                noiseNode.connect(filter);
+                filter.connect(noiseGain);
+                noiseGain.connect(this.ctx.destination);
+                
+                noiseGain.gain.setValueAtTime(0.18, now);
+                noiseGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.35);
+                
+                noiseNode.start(now); noiseNode.stop(now + 0.35);
+            }
+
+            playCheering(duration = 6.0) {
+                this.init();
+                if(this.ctx.state === 'suspended') this.ctx.resume();
+                const now = this.ctx.currentTime;
+
+                const bufferSize = this.ctx.sampleRate * duration;
+                const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+                const data = buffer.getChannelData(0);
+                for (let i = 0; i < bufferSize; i++) {
+                    data[i] = Math.random() * 2 - 1;
+                }
+                const noiseNode = this.ctx.createBufferSource();
+                noiseNode.buffer = buffer;
+
+                const filter = this.ctx.createBiquadFilter();
+                filter.type = 'lowpass';
+                filter.frequency.setValueAtTime(700, now);
+                filter.frequency.linearRampToValueAtTime(1100, now + duration * 0.4);
+                filter.frequency.exponentialRampToValueAtTime(500, now + duration);
+
+                const gainNode = this.ctx.createGain();
+                noiseNode.connect(filter);
+                filter.connect(gainNode);
+                gainNode.connect(this.ctx.destination);
+
+                gainNode.gain.setValueAtTime(0.001, now);
+                gainNode.gain.linearRampToValueAtTime(0.12, now + 0.6); // Fast volume rise
+                gainNode.gain.setValueAtTime(0.12, now + duration - 1.5);
+                gainNode.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+                noiseNode.start(now); noiseNode.stop(now + duration);
             }
         }
         const sfx = new SoundEffects();
@@ -1099,23 +1212,29 @@
         }
 
         function triggerScreenOff() {
-            sfx.playCRT();
             const screenOverlay = document.getElementById('shutdownScreen');
-            const collapse = document.getElementById('crtCollapse');
-            const phosphor = document.getElementById('phosphorDot');
-            const timer = document.getElementById('shutdownTimer');
+            const scoreboard = document.getElementById('scoreboard-text');
+            const bailLeft = document.getElementById('bail-left');
+            const bailRight = document.getElementById('bail-right');
             
+            // Show Cricket theme shutdown screen
             screenOverlay.style.display = 'flex';
             
+            // At 0.75s, the ball strikes the stumps: play click clatter sound, activate LED bails flash, and trigger crowd cheering
             setTimeout(() => {
-                collapse.style.display = 'none';
-                phosphor.classList.add('fade-phosphor');
-            }, 800);
+                sfx.playStumpHit();
+                sfx.playCheering(7.0);
+                bailLeft.classList.add('led-active');
+                bailRight.classList.add('led-active');
+            }, 750);
 
             let timeLeft = 10;
+            scoreboard.innerText = `STANDBY IN ${timeLeft}S`;
+            
             const timerInterval = setInterval(() => {
                 timeLeft--;
-                timer.innerText = `SYSTEM OFFLINE. AUTO-BACK IN ${timeLeft}S`;
+                sfx.playBeep(850, 0.05); // Play retro scoreboard tick
+                scoreboard.innerText = `STANDBY IN ${timeLeft}S`;
                 if(timeLeft <= 0) {
                     clearInterval(timerInterval);
                     history.back();
