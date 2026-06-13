@@ -41,7 +41,7 @@
 <!-- CHAMGADAR PlayGround System Section -->
 <br>
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=20&color=00ffcc&center=true&vCenter=true&width=550&lines=%F0%9F%8E%AE+CHAMGADAR+PLAYGROUND+SYSTEM+%F0%9F%8E%AE" alt="Chamgadar Playground System" />
+  <img src="playground_header.svg" width="600" alt="Chamgadar Playground System" />
 </div>
 <br>
 

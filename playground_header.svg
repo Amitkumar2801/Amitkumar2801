@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 70" width="600" height="70">
+  <defs>
+    <!-- Glowing filters -->
+    <filter id="neon-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur1" />
+      <feGaussianBlur stdDeviation="6" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    
+    <linearGradient id="cyber-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff0055" />
+      <stop offset="50%" stop-color="#00ffcc" />
+      <stop offset="100%" stop-color="#ffaa00" />
+    </linearGradient>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@800&amp;family=Outfit:wght@900&amp;display=swap');
+      
+      .box-glow {
+        stroke: url(#cyber-grad);
+        stroke-width: 2.5;
+        fill: #0c0908;
+        filter: drop-shadow(0px 0px 10px rgba(0, 255, 204, 0.2));
+        animation: border-pulse 4s infinite alternate;
+      }
+      
+      .text-wrapper {
+        font-family: 'Orbitron', 'Outfit', -apple-system, sans-serif;
+        font-weight: 800;
+        font-size: 19px;
+        fill: #00ffcc;
+        text-anchor: middle;
+        dominant-baseline: middle;
+        letter-spacing: 2px;
+        filter: url(#neon-cyan);
+        clip-path: url(#clip-text);
+      }
+
+      @keyframes type {
+        from { width: 0; }
+        to { width: 600px; }
+      }
+
+      @keyframes border-pulse {
+        0% { opacity: 0.85; filter: drop-shadow(0px 0px 10px rgba(0, 255, 204, 0.25)); }
+        100% { opacity: 1; filter: drop-shadow(0px 0px 16px rgba(255, 0, 85, 0.35)); }
+      }
+
+      #clip-rect {
+        animation: type 2.2s steps(40, end) forwards;
+      }
+    </style>
+    
+    <clipPath id="clip-text">
+      <rect id="clip-rect" x="0" y="0" width="0" height="70" />
+    </clipPath>
+  </defs>
+  
+  <!-- Outer border capsule -->
+  <rect x="3" y="3" width="594" height="64" rx="15" class="box-glow" />
+  
+  <!-- Decorative corner brackets -->
+  <path d="M20 15 L15 15 L15 25" stroke="#ff0055" stroke-width="2" fill="none" />
+  <path d="M580 15 L585 15 L585 25" stroke="#ffaa00" stroke-width="2" fill="none" />
+  <path d="M15 45 L15 55 L20 55" stroke="#ffaa00" stroke-width="2" fill="none" />
+  <path d="M585 45 L585 55 L580 55" stroke="#ff0055" stroke-width="2" fill="none" />
+  
+  <!-- Center Text -->
+  <text x="300" y="36" class="text-wrapper">🎮 CHAMGADAR PLAYGROUND SYSTEM 🎮</text>
+</svg>
