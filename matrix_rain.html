@@ -100,16 +100,78 @@
             caret-color: #00ff66;
             text-shadow: 0 0 3px #fff;
         }
+
+        /* Shutdown screen overlay */
+        .shutdown-screen {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-color: #000;
+            z-index: 100000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .crt-collapse {
+            animation: collapseAnim 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        @keyframes collapseAnim {
+            0% { transform: scaleY(1) scaleX(1); filter: brightness(1); }
+            45% { transform: scaleY(0.004) scaleX(1.1); filter: brightness(4); }
+            75% { transform: scaleY(0.004) scaleX(0.004); filter: brightness(6); }
+            100% { transform: scaleY(0) scaleX(0); filter: brightness(0); }
+        }
+
+        .phosphor-dot {
+            width: 5px; height: 5px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 15px 4px #fff, 0 0 30px 10px #00ff66;
+            opacity: 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .fade-phosphor {
+            animation: phosphorAnim 9.5s ease-out forwards;
+        }
+
+        @keyframes phosphorAnim {
+            0% { opacity: 0; }
+            8% { opacity: 1; transform: scale(1.5); }
+            20% { opacity: 0.8; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0); }
+        }
+
+        .shutdown-timer-text {
+            position: absolute;
+            bottom: 30px;
+            color: #444;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
     </style>
 </head>
 <body>
     <div class="crt"></div>
     <canvas id="matrixCanvas"></canvas>
 
+    <!-- Shutdown screen overlay -->
+    <div class="shutdown-screen" id="shutdownScreen">
+        <div class="crt-collapse" id="crtCollapse"></div>
+        <div class="phosphor-dot" id="phosphorDot"></div>
+        <div class="shutdown-timer-text" id="shutdownTimer">SYSTEM OFFLINE. AUTO-BACK IN 10S</div>
+    </div>
+
     <div class="terminal-container">
         <div class="terminal-header">
-            <span>💻 A.I CHAMGADAR // MATRIX SHELL v1.2</span>
-            <span>SYSTEM STATE: SAFE</span>
+            <span>💻 A.I CHAMGADAR // MATRIX SHELL v2.0</span>
+            <span>SYSTEM STATE: ACTIVE</span>
         </div>
 
         <div class="output-area" id="output">
@@ -187,34 +249,62 @@
             output.scrollTop = output.scrollHeight;
         }
 
+        const jokes = [
+            "Why do programmers wear glasses? Because they need to C#!",
+            "There are 10 types of people in the world: those who understand binary, and those who don't.",
+            "An AI walks into a bar and orders a drink. The bartender says, 'We don't serve your kind here.' The AI replies, 'No problem, I see you serve beer to humans!'",
+            "Why was the JavaScript developer sad? Because he didn't know how to 'resolve' his 'promises'."
+        ];
+
         async function executeCommand(cmd) {
             printLine(`guest@chamgadar:~# ${cmd}`, '#fff');
             
             if (cmd === 'help') {
                 printLine("Available commands:");
-                printLine("  <span style='color: #fff;'>help</span>     - Display help commands");
-                printLine("  <span style='color: #fff;'>scan</span>     - Geolocation and port scan target connection details");
-                printLine("  <span style='color: #fff;'>srh</span>      - Launch Sunrisers Hyderabad Orange Army anthem");
-                printLine("  <span style='color: #fff;'>system</span>   - Inspect Chamgadar AI system architecture status");
-                printLine("  <span style='color: #fff;'>clear</span>    - Clear terminal shell output screen");
+                printLine("  <span style='color: #fff;'>help</span>         - Display help console list");
+                printLine("  <span style='color: #fff;'>scan</span>         - Geolocation and port scan target connection details");
+                printLine("  <span style='color: #fff;'>srh</span>          - Sunrisers Hyderabad Orange Army anthem");
+                printLine("  <span style='color: #fff;'>system</span>       - Inspect Chamgadar AI system status");
+                printLine("  <span style='color: #fff;'>joke</span>         - Print a funny developer/AI joke");
+                printLine("  <span style='color: #fff;'>hack</span>         - Simulate a fake system breach sequence");
+                printLine("  <span style='color: #fff;'>selfdestruct</span> - Trigger emergency system shutdown and exit playground");
+                printLine("  <span style='color: #fff;'>clear</span>        - Clear terminal shell output screen");
             } 
             else if (cmd === 'clear') {
                 output.innerHTML = "";
             } 
             else if (cmd === 'system') {
-                printLine("> INITIALIZING CORE ARCHITECTURE READOUT...", '#00ff66');
-                printLine("  - A.I CHAMGADAR RUNTIME: ONLINE");
-                printLine("  - COGNITIVE NEURAL LINK: DEPLOYED");
-                printLine("  - SIMULATORS INTEGRITY: 100% SECURE");
+                printLine("> CORE CONFIGURATION ACQUIRED:", '#00ff66');
+                printLine(`  - TARGET ENGINE: ${navigator.userAgent.substring(0, 50)}...`);
+                printLine(`  - LOGICAL PROCESSORS: ${navigator.hardwareConcurrency || 8} Threads`);
+                printLine("  - SIMULATORS INTEGRITY: 100% ONLINE");
             } 
             else if (cmd === 'srh') {
                 printLine("🧡 SUNRISERS HYDERABAD - RISE UP! 🧡", '#ff5500');
-                printLine("📢 ORANGE ARMY SQUAD ANTHEM:", '#ff5500');
+                printLine("📢 ORANGE ARMY ANTHEM:", '#ff5500');
                 printLine("   We are the Sunrisers Hyderabad, playing with pride and passion!", '#ffebe0');
                 printLine("   Rising up to conquer the playground of dreams!", '#ffebe0');
             } 
+            else if (cmd === 'joke') {
+                const joke = jokes[Math.floor(Math.random() * jokes.length)];
+                printLine(`⚡ JOKE: ${joke}`, '#00ffcc');
+            } 
+            else if (cmd === 'hack') {
+                printLine("> BREACH PROTOCOL INITIALIZED...", '#ff0055');
+                printLine("  [WARN] COMPROMISING ACCESS LIST...", '#ff0055');
+                printLine("  [WARN] EXTRACTING ROUTER ROOT GATEWAY...", '#ff0055');
+                setTimeout(() => {
+                    printLine("⚡ CONNECTION SECURITY BREACHED. SIMULATION CONCLUDED ⚡", '#00ffcc');
+                }, 1500);
+            }
+            else if (cmd === 'selfdestruct' || cmd === 'abort' || cmd === 'exit') {
+                printLine("⚠️ EMERGENCY SELF-DESTRUCT INITIATED. OFF-LINE PROTOCOL ACTIVE ⚠️", '#ff0055');
+                setTimeout(() => {
+                    triggerScreenOff();
+                }, 2000);
+            } 
             else if (cmd === 'scan') {
-                printLine("> INITIATING RADAR ENDPOINT ANALYSIS...", '#00ff66');
+                printLine("> INITIATING RADAR ANALYSIS...", '#00ff66');
                 const ua = navigator.userAgent;
                 let os = "Unknown OS";
                 if(ua.includes("Windows")) os = "Windows OS";
@@ -223,20 +313,18 @@
                 else if(ua.includes("iPhone")) os = "iPhone Device";
                 
                 printLine(`  - TARGET OS: ${os}`);
-                printLine(`  - CONNECTION: ${navigator.onLine ? 'ONLINE' : 'OFFLINE'}`);
-                printLine(`  - CLIENT CLOCK: ${new Date().toLocaleTimeString()}`);
+                printLine(`  - RESOLUTION: ${screen.width}x${screen.height}`);
                 
                 try {
                     const res = await fetch('https://ipapi.co/json/');
                     if (res.ok) {
                         const data = await res.json();
                         printLine(`  - IP ADDRESS: ${data.ip}`, '#ff0055');
-                        printLine(`  - LOCATION: ${data.city}, ${data.region}, ${data.country_name}`, '#00ffcc');
-                        printLine(`  - ISP: ${data.org}`);
+                        printLine(`  - GEOLOCATION: ${data.city}, ${data.country_name}`, '#00ffcc');
                     }
                 } catch(e) {
-                    printLine("  - IP ADDRESS: 192.168.1.104 (DNS ROOT PASS)");
-                    printLine("  - LOCATION: PATNA, BIHAR, INDIA");
+                    printLine("  - IP ADDRESS: 192.168.1.104 (ROUTER ROOT)");
+                    printLine("  - DNS GEOLOCATION: PATNA, INDIA");
                 }
             } 
             else if (cmd === "") {
@@ -245,6 +333,30 @@
             else {
                 printLine(`Command not found: ${cmd}. Type 'help' for available commands.`, '#ff0055');
             }
+        }
+
+        function triggerScreenOff() {
+            const screenOverlay = document.getElementById('shutdownScreen');
+            const collapse = document.getElementById('crtCollapse');
+            const phosphor = document.getElementById('phosphorDot');
+            const timer = document.getElementById('shutdownTimer');
+            
+            screenOverlay.style.display = 'flex';
+            
+            setTimeout(() => {
+                collapse.style.display = 'none';
+                phosphor.classList.add('fade-phosphor');
+            }, 800);
+
+            let timeLeft = 10;
+            const timerInterval = setInterval(() => {
+                timeLeft--;
+                timer.innerText = `SYSTEM OFFLINE. AUTO-BACK IN ${timeLeft}S`;
+                if(timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    history.back();
+                }
+            }, 1000);
         }
     </script>
 </body>

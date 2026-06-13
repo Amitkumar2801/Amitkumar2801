@@ -64,7 +64,7 @@
 
         .box {
             width: 100%;
-            max-width: 650px;
+            max-width: 680px;
             background: rgba(10, 20, 30, 0.85);
             border: 2px solid var(--accent-color);
             box-shadow: 0 0 25px var(--accent-glow);
@@ -74,6 +74,7 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
+            transition: all 0.5s ease;
         }
 
         .title {
@@ -169,10 +170,72 @@
             box-shadow: 0 0 15px var(--accent-color);
             font-weight: 800;
         }
+
+        /* Shutdown Screen Overlay */
+        .shutdown-screen {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-color: #000;
+            z-index: 100000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .crt-collapse {
+            animation: collapseAnim 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        @keyframes collapseAnim {
+            0% { transform: scaleY(1) scaleX(1); filter: brightness(1); }
+            45% { transform: scaleY(0.004) scaleX(1.1); filter: brightness(4); }
+            75% { transform: scaleY(0.004) scaleX(0.004); filter: brightness(6); }
+            100% { transform: scaleY(0) scaleX(0); filter: brightness(0); }
+        }
+
+        .phosphor-dot {
+            width: 5px; height: 5px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 15px 4px #fff, 0 0 30px 10px var(--danger-color);
+            opacity: 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .fade-phosphor {
+            animation: phosphorAnim 9.5s ease-out forwards;
+        }
+
+        @keyframes phosphorAnim {
+            0% { opacity: 0; }
+            8% { opacity: 1; transform: scale(1.5); }
+            20% { opacity: 0.8; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0); }
+        }
+
+        .shutdown-timer-text {
+            position: absolute;
+            bottom: 30px;
+            color: #444;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
     </style>
 </head>
 <body>
     <div class="crt"></div>
+
+    <!-- Shutdown screen overlay -->
+    <div class="shutdown-screen" id="shutdownScreen">
+        <div class="crt-collapse" id="crtCollapse"></div>
+        <div class="phosphor-dot" id="phosphorDot"></div>
+        <div class="shutdown-timer-text" id="shutdownTimer">SYSTEM OFFLINE. AUTO-BACK IN 10S</div>
+    </div>
 
     <div class="container">
         <div class="box" id="mainBox">
@@ -189,22 +252,37 @@
             </div>
 
             <div class="prank-details" id="detailsBox">
-                <h3>🚨 CORES DECRYPTED SUCCESSFULLY 🚨</h3>
-                <p><strong>INTRUDER SIGNATURE:</strong> <span id="doxUser" style="color: var(--danger-color);"></span></p>
-                <p><strong>CPU CORES DETECTED:</strong> <span id="doxCores"></span> Cores</p>
-                <p><strong>DEVICE PROFILE:</strong> <span id="doxDevice"></span></p>
-                <p><strong>NETWORK VELOCITY:</strong> <span id="doxSpeed"></span></p>
-                <p><strong>INTRUDER CONNECTION PORT:</strong> <span id="doxPort" style="color: var(--danger-color);">192.168.1.254 (COMPROMISED)</span></p>
+                <h3>🚨 DOX SCAN COMPLETED: SECURE REPORT 🚨</h3>
+                <p><strong>INTRUDER ENGINE:</strong> <span id="doxUser" style="color: var(--danger-color);"></span></p>
+                <p><strong>CPU DETECTED:</strong> <span id="doxCores"></span> Cores (${navigator.deviceMemory || 8}GB RAM)</p>
+                <p><strong>SCREEN DETAILS:</strong> <span id="doxScreen"></span> (${screen.colorDepth}-bit color)</p>
+                <p><strong>GPU ACCELERATOR:</strong> <span id="doxGPU" style="color: var(--accent-color);"></span></p>
+                <p><strong>IP & GEOLOCATION:</strong> <span id="doxIP" style="color: var(--danger-color);">Fetching location data...</span></p>
+                <p><strong>NETWORK LATENCY:</strong> <span id="doxSpeed"></span> (Timezone: <span id="doxTimezone"></span>)</p>
                 <br>
                 <p style="color: #fff; text-align: center; font-weight: bold; background: var(--danger-color); padding: 5px; border-radius: 4px;">
-                    WARNING: SYSTEM IS MONITORING YOUR CONNECTION! 😉
+                    ABORT PROTOCOL ENGAGED. SHUTTING DOWN IN 5S...
                 </p>
             </div>
         </div>
     </div>
 
     <script>
-        function startDecryption() {
+        function getGPU() {
+            try {
+                const canvas = document.createElement('canvas');
+                const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+                if (gl) {
+                    const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+                    if (debugInfo) {
+                        return gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+                    }
+                }
+            } catch(e) {}
+            return "Generic Video Controller (Hardware Accel)";
+        }
+
+        async function startDecryption() {
             document.getElementById('actionBlock').style.display = 'none';
             document.getElementById('progContainer').style.display = 'flex';
             
@@ -213,19 +291,19 @@
             const status = document.getElementById('statusText');
             
             const logs = [
-                "Locating network interfaces...",
-                "Reading system environment...",
-                "Decoding browser payload...",
-                "Extracting local hardware details...",
-                "Running telemetry decryption...",
-                "Dox scan completed."
+                "Locating local network nodes...",
+                "Decoding WebGL GPU shaders...",
+                "Accessing hardware context...",
+                "Pinging IP geolocation database...",
+                "Compiling DOX details readout...",
+                "Simulation ready."
             ];
 
             let progress = 0;
             let logIndex = 0;
 
             const interval = setInterval(() => {
-                progress += Math.floor(Math.random() * 8) + 2;
+                progress += Math.floor(Math.random() * 9) + 2;
                 if(progress >= 100) {
                     progress = 100;
                     clearInterval(interval);
@@ -242,12 +320,12 @@
             }, 100);
         }
 
-        function showPrankReport() {
+        async function showPrankReport() {
             document.getElementById('progContainer').style.display = 'none';
             document.getElementById('statusText').style.display = 'none';
             
             const title = document.getElementById('titleText');
-            title.innerText = "🛑 SYSTEM BREACH SIMULATED 🛑";
+            title.innerText = "🛑 BREACH INITIATED: DETAILS DUMPED 🛑";
             title.style.color = "var(--danger-color)";
             title.style.textShadow = "0 0 10px var(--danger-glow)";
             
@@ -257,29 +335,70 @@
 
             // Detect hardware
             const ua = navigator.userAgent;
-            let device = "Desktop PC / Laptop";
-            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua)) {
-                device = "Mobile Handset / Tablet";
-            }
+            let browser = "Google Chrome / Chromium";
+            if(ua.includes("Firefox")) browser = "Mozilla Firefox Core";
+            else if(ua.includes("Safari") && !ua.includes("Chrome")) browser = "Apple Safari Core";
+            else if(ua.includes("Edge")) browser = "Microsoft Edge Core";
+
+            const cores = navigator.hardwareConcurrency || 8;
+            const screenRes = `${screen.width}x${screen.height}`;
+            const gpu = getGPU();
             
-            let browser = "Web Browser Connection";
-            if(ua.includes("Chrome")) browser = "Google Chrome Engine";
-            else if(ua.includes("Firefox")) browser = "Mozilla Firefox Core";
-            else if(ua.includes("Safari")) browser = "Safari Engine";
-            
-            const cores = navigator.hardwareConcurrency || "Multicore (8/16)";
-            
-            let connectionSpeed = "Standard LAN/Wireless";
+            let connectionSpeed = "Active Network (approx 12 Mbps)";
             if(navigator.connection) {
-                connectionSpeed = `${navigator.connection.effectiveType.toUpperCase()} (approx ${navigator.connection.downlink} Mbps)`;
+                connectionSpeed = `${navigator.connection.effectiveType.toUpperCase()} (${navigator.connection.downlink} Mbps)`;
             }
 
             document.getElementById('doxUser').innerText = browser;
             document.getElementById('doxCores').innerText = cores;
-            document.getElementById('doxDevice').innerText = device;
+            document.getElementById('doxScreen').innerText = screenRes;
+            document.getElementById('doxGPU').innerText = gpu;
             document.getElementById('doxSpeed').innerText = connectionSpeed;
+            document.getElementById('doxTimezone').innerText = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
             document.getElementById('detailsBox').style.display = 'block';
+
+            // Geolocation details fetch
+            try {
+                const res = await fetch('https://ipapi.co/json/');
+                if (res.ok) {
+                    const data = await res.json();
+                    document.getElementById('doxIP').innerText = `${data.ip} - ${data.city}, ${data.country_name} (${data.org})`;
+                } else {
+                    document.getElementById('doxIP').innerText = "192.168.1.104 - Patna, India";
+                }
+            } catch(e) {
+                document.getElementById('doxIP').innerText = "192.168.1.104 - Patna, India (DNS pass)";
+            }
+
+            // Trigger shutdown in 5s
+            setTimeout(() => {
+                triggerScreenOff();
+            }, 5000);
+        }
+
+        function triggerScreenOff() {
+            const screenOverlay = document.getElementById('shutdownScreen');
+            const collapse = document.getElementById('crtCollapse');
+            const phosphor = document.getElementById('phosphorDot');
+            const timer = document.getElementById('shutdownTimer');
+            
+            screenOverlay.style.display = 'flex';
+            
+            setTimeout(() => {
+                collapse.style.display = 'none';
+                phosphor.classList.add('fade-phosphor');
+            }, 800);
+
+            let timeLeft = 10;
+            const timerInterval = setInterval(() => {
+                timeLeft--;
+                timer.innerText = `SYSTEM OFFLINE. AUTO-BACK IN ${timeLeft}S`;
+                if(timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    history.back();
+                }
+            }, 1000);
         }
     </script>
 </body>
