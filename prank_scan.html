@@ -245,7 +245,7 @@
     <div class="container" id="mainContainer">
         <div class="terminal">
             <div class="terminal-header">
-                <span>🛡️ INTRUDER RADAR SCANNER v2.0</span>
+                <span>🛡️ INTRUDER RADAR SCANNER v2.1</span>
                 <div class="status-dot"></div>
             </div>
             <div class="console-output" id="console">
@@ -261,7 +261,74 @@
     </div>
 
     <script>
+        // Web Audio Synthesizer Class
+        class SoundEffects {
+            constructor() {
+                this.ctx = null;
+            }
+            init() {
+                if (!this.ctx) {
+                    this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+            }
+            playClick() {
+                this.init();
+                if(this.ctx.state === 'suspended') this.ctx.resume();
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.connect(gain); gain.connect(this.ctx.destination);
+                osc.frequency.setValueAtTime(1000, this.ctx.currentTime);
+                gain.gain.setValueAtTime(0.04, this.ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.08);
+                osc.start(); osc.stop(this.ctx.currentTime + 0.08);
+            }
+            playTick() {
+                this.init();
+                if(this.ctx.state === 'suspended') this.ctx.resume();
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.connect(gain); gain.connect(this.ctx.destination);
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(400 + Math.random() * 300, this.ctx.currentTime);
+                gain.gain.setValueAtTime(0.015, this.ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.03);
+                osc.start(); osc.stop(this.ctx.currentTime + 0.03);
+            }
+            playAlarm(duration = 2.0) {
+                this.init();
+                if(this.ctx.state === 'suspended') this.ctx.resume();
+                const now = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.connect(gain); gain.connect(this.ctx.destination);
+                osc.type = 'sawtooth';
+                for(let t = 0; t < duration; t += 0.4) {
+                    osc.frequency.setValueAtTime(800, now + t);
+                    osc.frequency.setValueAtTime(500, now + t + 0.2);
+                }
+                gain.gain.setValueAtTime(0.02, now);
+                gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+                osc.start(); osc.stop(now + duration);
+            }
+            playCRT() {
+                this.init();
+                if(this.ctx.state === 'suspended') this.ctx.resume();
+                const now = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.connect(gain); gain.connect(this.ctx.destination);
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(1800, now);
+                osc.frequency.exponentialRampToValueAtTime(40, now + 0.8);
+                gain.gain.setValueAtTime(0.08, now);
+                gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.8);
+                osc.start(); osc.stop(now + 0.8);
+            }
+        }
+        const sfx = new SoundEffects();
+
         async function runPrank() {
+            sfx.playClick();
             const btn = document.getElementById('startBtn');
             const con = document.getElementById('console');
             const scanBar = document.getElementById('scanBar');
@@ -276,6 +343,7 @@
             const addLine = (text, color = 'var(--text-color)', delay = 400) => {
                 return new Promise(resolve => {
                     setTimeout(() => {
+                        sfx.playTick();
                         const p = document.createElement('p');
                         p.className = 'console-line';
                         p.style.color = color;
@@ -349,14 +417,26 @@
             }
 
             await addLine("<br>", 'var(--text-color)', 200);
-            await addLine("⚠️ TARGET COMPROMISED. TRIGGERING AUTO-SHUTDOWN IN 3S... ⚠️", 'var(--accent-color)', 1000);
+            sfx.playAlarm(2.5);
+            await addLine("⚠️ TARGET COMPROMISED. READ TIME PROTOCOL RUNNING (10S)... ⚠️", 'var(--accent-color)', 1000);
             
-            setTimeout(() => {
-                triggerScreenOff();
-            }, 3000);
+            // Wait 10 seconds for user to read before trigger shutdown
+            let readTimeLeft = 10;
+            const readInterval = setInterval(() => {
+                readTimeLeft--;
+                const lines = con.querySelectorAll('.console-line');
+                const lastLine = lines[lines.length - 1];
+                lastLine.innerText = `⚠️ TARGET COMPROMISED. READ TIME PROTOCOL RUNNING (${readTimeLeft}S)... ⚠️`;
+                
+                if(readTimeLeft <= 0) {
+                    clearInterval(readInterval);
+                    triggerScreenOff();
+                }
+            }, 1000);
         }
 
         function triggerScreenOff() {
+            sfx.playCRT();
             const screen = document.getElementById('shutdownScreen');
             const collapse = document.getElementById('crtCollapse');
             const phosphor = document.getElementById('phosphorDot');

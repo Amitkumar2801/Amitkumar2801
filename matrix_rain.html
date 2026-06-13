@@ -188,6 +188,72 @@
     </div>
 
     <script>
+        // Web Audio Synthesizer Class
+        class SoundEffects {
+            constructor() {
+                this.ctx = null;
+            }
+            init() {
+                if (!this.ctx) {
+                    this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+            }
+            playClick() {
+                this.init();
+                if(this.ctx.state === 'suspended') this.ctx.resume();
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.connect(gain); gain.connect(this.ctx.destination);
+                osc.frequency.setValueAtTime(1000, this.ctx.currentTime);
+                gain.gain.setValueAtTime(0.04, this.ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.08);
+                osc.start(); osc.stop(this.ctx.currentTime + 0.08);
+            }
+            playTick() {
+                this.init();
+                if(this.ctx.state === 'suspended') this.ctx.resume();
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.connect(gain); gain.connect(this.ctx.destination);
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(500 + Math.random() * 300, this.ctx.currentTime);
+                gain.gain.setValueAtTime(0.015, this.ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.03);
+                osc.start(); osc.stop(this.ctx.currentTime + 0.03);
+            }
+            playAlarm(duration = 2.0) {
+                this.init();
+                if(this.ctx.state === 'suspended') this.ctx.resume();
+                const now = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.connect(gain); gain.connect(this.ctx.destination);
+                osc.type = 'sawtooth';
+                for(let t = 0; t < duration; t += 0.4) {
+                    osc.frequency.setValueAtTime(800, now + t);
+                    osc.frequency.setValueAtTime(500, now + t + 0.2);
+                }
+                gain.gain.setValueAtTime(0.02, now);
+                gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+                osc.start(); osc.stop(now + duration);
+            }
+            playCRT() {
+                this.init();
+                if(this.ctx.state === 'suspended') this.ctx.resume();
+                const now = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.connect(gain); gain.connect(this.ctx.destination);
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(1800, now);
+                osc.frequency.exponentialRampToValueAtTime(40, now + 0.8);
+                gain.gain.setValueAtTime(0.08, now);
+                gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.8);
+                osc.start(); osc.stop(now + 0.8);
+            }
+        }
+        const sfx = new SoundEffects();
+
         // Matrix rain effect
         const canvas = document.getElementById('matrixCanvas');
         const ctx = canvas.getContext('2d');
@@ -234,6 +300,7 @@
         const output = document.getElementById('output');
 
         input.addEventListener('keydown', (e) => {
+            sfx.playTick();
             if (e.key === 'Enter') {
                 const val = input.value.trim().toLowerCase();
                 input.value = "";
@@ -242,6 +309,7 @@
         });
 
         function printLine(text, color = '#00ff66') {
+            sfx.playTick();
             const p = document.createElement('p');
             p.style.color = color;
             p.innerHTML = text;
@@ -298,6 +366,7 @@
                 }, 1500);
             }
             else if (cmd === 'selfdestruct' || cmd === 'abort' || cmd === 'exit') {
+                sfx.playAlarm(2.0);
                 printLine("⚠️ EMERGENCY SELF-DESTRUCT INITIATED. OFF-LINE PROTOCOL ACTIVE ⚠️", '#ff0055');
                 setTimeout(() => {
                     triggerScreenOff();
@@ -336,6 +405,7 @@
         }
 
         function triggerScreenOff() {
+            sfx.playCRT();
             const screenOverlay = document.getElementById('shutdownScreen');
             const collapse = document.getElementById('crtCollapse');
             const phosphor = document.getElementById('phosphorDot');

@@ -260,14 +260,80 @@
                 <p><strong>IP & GEOLOCATION:</strong> <span id="doxIP" style="color: var(--danger-color);">Fetching location data...</span></p>
                 <p><strong>NETWORK LATENCY:</strong> <span id="doxSpeed"></span> (Timezone: <span id="doxTimezone"></span>)</p>
                 <br>
-                <p style="color: #fff; text-align: center; font-weight: bold; background: var(--danger-color); padding: 5px; border-radius: 4px;">
-                    ABORT PROTOCOL ENGAGED. SHUTTING DOWN IN 5S...
+                <p id="countdownMessage" style="color: #fff; text-align: center; font-weight: bold; background: var(--danger-color); padding: 5px; border-radius: 4px;">
+                    ABORT PROTOCOL ENGAGED. SHUTTING DOWN IN 10S...
                 </p>
             </div>
         </div>
     </div>
 
     <script>
+        // Web Audio Synthesizer Class
+        class SoundEffects {
+            constructor() {
+                this.ctx = null;
+            }
+            init() {
+                if (!this.ctx) {
+                    this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+            }
+            playClick() {
+                this.init();
+                if(this.ctx.state === 'suspended') this.ctx.resume();
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.connect(gain); gain.connect(this.ctx.destination);
+                osc.frequency.setValueAtTime(1000, this.ctx.currentTime);
+                gain.gain.setValueAtTime(0.04, this.ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.08);
+                osc.start(); osc.stop(this.ctx.currentTime + 0.08);
+            }
+            playTick() {
+                this.init();
+                if(this.ctx.state === 'suspended') this.ctx.resume();
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.connect(gain); gain.connect(this.ctx.destination);
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(400 + Math.random() * 300, this.ctx.currentTime);
+                gain.gain.setValueAtTime(0.015, this.ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.03);
+                osc.start(); osc.stop(this.ctx.currentTime + 0.03);
+            }
+            playAlarm(duration = 2.5) {
+                this.init();
+                if(this.ctx.state === 'suspended') this.ctx.resume();
+                const now = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.connect(gain); gain.connect(this.ctx.destination);
+                osc.type = 'sawtooth';
+                for(let t = 0; t < duration; t += 0.4) {
+                    osc.frequency.setValueAtTime(800, now + t);
+                    osc.frequency.setValueAtTime(500, now + t + 0.2);
+                }
+                gain.gain.setValueAtTime(0.02, now);
+                gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+                osc.start(); osc.stop(now + duration);
+            }
+            playCRT() {
+                this.init();
+                if(this.ctx.state === 'suspended') this.ctx.resume();
+                const now = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.connect(gain); gain.connect(this.ctx.destination);
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(1800, now);
+                osc.frequency.exponentialRampToValueAtTime(40, now + 0.8);
+                gain.gain.setValueAtTime(0.08, now);
+                gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.8);
+                osc.start(); osc.stop(now + 0.8);
+            }
+        }
+        const sfx = new SoundEffects();
+
         function getGPU() {
             try {
                 const canvas = document.createElement('canvas');
@@ -283,6 +349,7 @@
         }
 
         async function startDecryption() {
+            sfx.playClick();
             document.getElementById('actionBlock').style.display = 'none';
             document.getElementById('progContainer').style.display = 'flex';
             
@@ -303,6 +370,7 @@
             let logIndex = 0;
 
             const interval = setInterval(() => {
+                sfx.playTick();
                 progress += Math.floor(Math.random() * 9) + 2;
                 if(progress >= 100) {
                     progress = 100;
@@ -371,13 +439,25 @@
                 document.getElementById('doxIP').innerText = "192.168.1.104 - Patna, India (DNS pass)";
             }
 
-            // Trigger shutdown in 5s
-            setTimeout(() => {
-                triggerScreenOff();
-            }, 5000);
+            sfx.playAlarm(2.5);
+
+            // Wait 10 seconds for user to read details
+            let readTimeLeft = 10;
+            const countdownMsg = document.getElementById('countdownMessage');
+            
+            const readInterval = setInterval(() => {
+                readTimeLeft--;
+                countdownMsg.innerText = `ABORT PROTOCOL ENGAGED. SHUTTING DOWN IN ${readTimeLeft}S...`;
+                
+                if(readTimeLeft <= 0) {
+                    clearInterval(readInterval);
+                    triggerScreenOff();
+                }
+            }, 1000);
         }
 
         function triggerScreenOff() {
+            sfx.playCRT();
             const screenOverlay = document.getElementById('shutdownScreen');
             const collapse = document.getElementById('crtCollapse');
             const phosphor = document.getElementById('phosphorDot');
