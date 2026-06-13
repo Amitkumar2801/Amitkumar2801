@@ -10,9 +10,13 @@
     <style>
         :root {
             --srh-orange: #ff5500;
-            --srh-glow: rgba(255, 85, 0, 0.4);
-            --bg-color: #0b0705;
+            --srh-orange-rgb: 255, 85, 0;
+            --srh-glow: rgba(255, 85, 0, 0.35);
+            --bg-color: #080504;
+            --card-bg: rgba(18, 10, 5, 0.82);
             --text-color: #ffebe0;
+            --gold: #d4af37;
+            --gold-glow: rgba(212, 175, 55, 0.45);
         }
 
         * {
@@ -29,7 +33,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 30px;
+            padding: 40px 20px;
             overflow-x: hidden;
             position: relative;
         }
@@ -38,9 +42,9 @@
             content: "";
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(255, 85, 0, 0.03) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255, 85, 0, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
+            background: linear-gradient(rgba(255, 85, 0, 0.02) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255, 85, 0, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
             z-index: 1;
             pointer-events: none;
         }
@@ -49,68 +53,122 @@
             position: relative;
             z-index: 10;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .logo-text {
             font-size: 3rem;
             font-weight: 900;
             color: var(--srh-orange);
-            text-shadow: 0 0 15px var(--srh-glow), 0 0 30px rgba(255, 85, 0, 0.2);
-            letter-spacing: 4px;
+            text-shadow: 0 0 20px var(--srh-glow), 0 0 40px rgba(255, 85, 0, 0.15);
+            letter-spacing: 5px;
             text-transform: uppercase;
         }
 
         .subtitle {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 1rem;
-            color: #ff9966;
-            margin-top: 10px;
+            font-size: 0.95rem;
+            color: #ffaa80;
+            margin-top: 12px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 8px rgba(255, 85, 0, 0.2);
+        }
+
+        .btn-celebrate {
+            background: linear-gradient(135deg, #180d07 0%, #291508 100%);
+            color: var(--gold);
+            border: 2px solid var(--gold);
+            padding: 16px 36px;
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 1.15rem;
+            cursor: pointer;
+            border-radius: 40px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 0 20px var(--gold-glow);
+            margin: 25px 0 40px 0;
+            z-index: 10;
+            position: relative;
             letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .btn-celebrate:hover {
+            transform: scale(1.05);
+            background: var(--gold);
+            color: #0b0705;
+            box-shadow: 0 0 35px var(--gold), 0 0 15px rgba(212, 175, 55, 0.4);
         }
 
         .section-title {
             font-size: 1.8rem;
+            font-weight: 700;
             color: var(--srh-orange);
-            margin: 30px 0 15px 0;
+            margin: 40px 0 20px 0;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             position: relative;
             z-index: 10;
-            text-shadow: 0 0 8px var(--srh-glow);
+            text-shadow: 0 0 10px var(--srh-glow);
+            border-bottom: 2px solid rgba(255, 85, 0, 0.15);
+            padding-bottom: 8px;
+            width: 100%;
+            max-width: 1200px;
         }
 
         .grid-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             max-width: 1200px;
             width: 100%;
             position: relative;
             z-index: 10;
+            margin-bottom: 30px;
         }
 
         .player-card {
-            background: rgba(18, 10, 5, 0.85);
-            border: 2px solid var(--srh-orange);
-            box-shadow: 0 0 12px rgba(255, 85, 0, 0.15);
-            border-radius: 12px;
-            width: 260px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 85, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            border-radius: 14px;
+            padding: 25px;
+            text-align: left;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            min-height: 260px;
+            backdrop-filter: blur(8px);
+        }
+
+        .player-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(255, 85, 0, 0.05), transparent 60%);
+            z-index: 0;
+            pointer-events: none;
         }
 
         .player-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 0 20px var(--srh-glow);
-            border-color: #ff884d;
+            transform: translateY(-8px);
+            border-color: var(--srh-orange);
+            box-shadow: 0 10px 25px var(--srh-glow);
+        }
+
+        /* Legend style card */
+        .player-card.legend-card {
+            border-color: rgba(212, 175, 55, 0.25);
+        }
+        .player-card.legend-card::before {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), transparent 60%);
+        }
+        .player-card.legend-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 10px 25px var(--gold-glow);
         }
 
         .player-role {
@@ -120,100 +178,169 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             background: rgba(255, 85, 0, 0.1);
-            padding: 4px 8px;
+            padding: 4px 10px;
             border-radius: 4px;
             display: inline-block;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
+            z-index: 2;
+            align-self: flex-start;
+        }
+
+        .legend-card .player-role {
+            color: #ffe080;
+            background: rgba(212, 175, 55, 0.1);
         }
 
         .player-name {
-            font-size: 1.35rem;
+            font-size: 1.45rem;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            z-index: 2;
         }
 
         .player-quote {
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             font-style: italic;
-            color: #ffcca3;
-            margin-bottom: 15px;
-            line-height: 1.4;
+            color: #ffd1b3;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            z-index: 2;
         }
 
         .player-stat {
             display: flex;
             justify-content: space-between;
             font-size: 0.85rem;
-            color: #dcb;
-            margin-top: 6px;
-            border-top: 1px dashed rgba(255, 85, 0, 0.2);
-            padding-top: 6px;
+            color: #d8c2b5;
+            margin-top: 8px;
+            border-top: 1px dashed rgba(255, 85, 0, 0.15);
+            padding-top: 8px;
+            z-index: 2;
+        }
+
+        .legend-card .player-stat {
+            border-top-color: rgba(212, 175, 55, 0.15);
         }
 
         .stat-value {
             color: var(--srh-orange);
-            font-weight: bold;
+            font-weight: 700;
+        }
+
+        .legend-card .stat-value {
+            color: var(--gold);
         }
 
         .squad-badge {
-            background: #ff5500;
+            background: var(--srh-orange);
             color: #fff;
-            font-weight: 900;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.75rem;
+            font-weight: bold;
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 4px;
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 15px; right: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            z-index: 2;
         }
 
         .squad-badge.legend {
-            background: #d4af37;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            background: var(--gold);
+            color: #0b0705;
+            box-shadow: 0 0 8px var(--gold-glow);
         }
 
-        /* Finals Table Styles */
-        .table-container {
+        .squad-badge.champ {
+            background: #e65c00;
+            box-shadow: 0 0 8px rgba(230, 92, 0, 0.35);
+        }
+
+        /* Sleek Telemetry Grid (Replacement of table) */
+        .telemetry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
             width: 100%;
-            max-width: 800px;
-            background: rgba(18, 10, 5, 0.85);
-            border: 2px solid var(--srh-orange);
+            max-width: 1200px;
+            z-index: 10;
+            margin-bottom: 50px;
+        }
+
+        .telemetry-item {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 85, 0, 0.15);
             border-radius: 12px;
             padding: 20px;
-            margin: 30px 0;
-            z-index: 10;
-            box-shadow: 0 0 15px rgba(255, 85, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.95rem;
+        .telemetry-item:hover {
+            border-color: var(--srh-orange);
+            box-shadow: 0 0 15px rgba(255, 85, 0, 0.1);
         }
 
-        th, td {
-            padding: 12px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 85, 0, 0.2);
+        .telemetry-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px dashed rgba(255, 85, 0, 0.2);
+            padding-bottom: 8px;
         }
 
-        th {
-            color: var(--srh-orange);
-            font-weight: bold;
+        .telemetry-year {
             font-family: 'JetBrains Mono', monospace;
-            border-bottom: 2px solid var(--srh-orange);
+            font-size: 1.35rem;
+            font-weight: bold;
+            color: var(--srh-orange);
         }
 
-        tr:hover {
-            background: rgba(255, 85, 0, 0.05);
+        .telemetry-year.gold-year {
+            color: var(--gold);
+            text-shadow: 0 0 5px var(--gold-glow);
         }
 
-        /* Celebrate Overlay */
+        .telemetry-opponent {
+            font-size: 0.9rem;
+            color: #ffccb3;
+            font-weight: bold;
+        }
+
+        .telemetry-detail {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #cbb;
+        }
+
+        .telemetry-result {
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-align: center;
+            margin-top: 5px;
+            padding: 6px;
+            border-radius: 6px;
+            background: rgba(255, 0, 85, 0.05);
+            color: #ff3377;
+        }
+
+        .telemetry-result.champions {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+        }
+
+        /* Sequential Celebration Overlay */
         .celebrate-overlay {
             position: fixed;
             top: 0; left: 0; width: 100vw; height: 100vh;
-            background: rgba(11, 7, 5, 0.95);
+            background: rgba(8, 5, 4, 0.98);
             z-index: 10000;
             display: none;
             flex-direction: column;
@@ -223,9 +350,73 @@
             text-align: center;
         }
 
+        .celebrate-card {
+            background: rgba(18, 10, 5, 0.95);
+            border: 2px solid var(--srh-orange);
+            box-shadow: 0 0 30px var(--srh-glow);
+            border-radius: 16px;
+            width: 90%;
+            max-width: 600px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 360px;
+            transition: all 0.4s ease-in-out;
+            transform: scale(0.9);
+            opacity: 0;
+            z-index: 10;
+        }
+
+        .celebrate-card.show {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .timeline-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 450px;
+            margin-top: 15px;
+            z-index: 10;
+        }
+
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #24140c;
+            border: 2px solid #5a301a;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-dot.active {
+            background: var(--srh-orange);
+            border-color: #fff;
+            box-shadow: 0 0 12px var(--srh-orange);
+        }
+
+        .timeline-dot.completed {
+            background: var(--gold);
+            border-color: var(--gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+        }
+
+        .timeline-line {
+            flex: 1;
+            height: 3px;
+            background: #24140c;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-line.active {
+            background: linear-gradient(90deg, var(--srh-orange), var(--gold));
+        }
+
         .trophy {
-            width: 150px;
-            height: 150px;
             animation: spin 3s infinite linear, glowTrophy 1.5s infinite alternate;
         }
 
@@ -237,14 +428,6 @@
         @keyframes glowTrophy {
             from { filter: drop-shadow(0 0 10px #d4af37); }
             to { filter: drop-shadow(0 0 30px #d4af37); }
-        }
-
-        .celebrate-title {
-            color: #d4af37;
-            font-size: 2.5rem;
-            font-weight: 900;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-            letter-spacing: 2px;
         }
 
         /* Shutdown Screen Overlay */
@@ -296,60 +479,39 @@
 
         .shutdown-timer-text {
             position: absolute;
-            bottom: 30px;
+            bottom: 35px;
             color: #444;
             font-size: 0.8rem;
             letter-spacing: 2px;
-        }
-
-        .btn-celebrate {
-            background: transparent;
-            color: #d4af37;
-            border: 2px solid #d4af37;
-            padding: 14px 28px;
-            font-family: inherit;
-            font-weight: 900;
-            font-size: 1.1rem;
-            cursor: pointer;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
-            margin-top: 25px;
-            z-index: 10;
-            position: relative;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .btn-celebrate:hover {
-            background: #d4af37;
-            color: #0b0705;
-            box-shadow: 0 0 25px #d4af37;
-        }
-
-        .fire-bg {
-            position: fixed;
-            bottom: 0; left: 0; width: 100%; height: 150px;
-            background: linear-gradient(to top, rgba(255, 69, 0, 0.1), transparent);
-            z-index: 2;
-            pointer-events: none;
+            font-family: 'JetBrains Mono', monospace;
         }
     </style>
 </head>
 <body>
-    <div class="fire-bg"></div>
+    <!-- Canvas backgrounds -->
+    <canvas id="bgCanvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;"></canvas>
 
     <!-- Celebration Screen Overlay -->
     <div class="celebrate-overlay" id="celebrateOverlay">
-        <!-- Golden Trophy SVG -->
-        <svg class="trophy" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5">
-            <path d="M6 9H4.5a2.5 2.5 0 010-5H6M18 9h1.5a2.5 2.5 0 000-5H18" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M4 22h16M10 14.66V17c0 .55-.45 1-1 1H4v3h16v-3h-5c-.55 0-1-.45-1-1v-2.34" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 2a6 6 0 00-6 6v3.2c0 .87.35 1.7 1 2.3l2.25 2.1c.42.4.98.6 1.55.6s1.13-.2 1.55-.6L17 13.5c.65-.6.9-1.43.9-2.3V8a6 6 0 00-6-6z" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <div class="celebrate-title">🏆 CHAMPIONS OF 2016 🏆</div>
-        <p style="font-size: 1.2rem; color: #fff; font-family: 'JetBrains Mono', monospace;">SUNRISERS HYDERABAD - RISE AND CONQUER!</p>
-        <p id="celebrateTimer" style="color: #888; font-size: 0.9rem;">Auto-shutdown in 10s</p>
+        <canvas id="confettiCanvas" style="position: absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1;"></canvas>
+        
+        <!-- Sequential Celebration Card -->
+        <div class="celebrate-card" id="celebrateCard">
+            <!-- Dynamically updated stages -->
+        </div>
+        
+        <!-- Playoff Progress Dots -->
+        <div class="timeline-container" id="timelineContainer">
+            <div class="timeline-dot" id="dot-eliminator"></div>
+            <div class="timeline-line" id="line-1"></div>
+            <div class="timeline-dot" id="dot-qualifier"></div>
+            <div class="timeline-line" id="line-2"></div>
+            <div class="timeline-dot" id="dot-final"></div>
+            <div class="timeline-line" id="line-3"></div>
+            <div class="timeline-dot" id="dot-trophy"></div>
+        </div>
+        
+        <p id="celebrateTimer" style="color: #ffaa80; font-size: 0.95rem; font-family: 'JetBrains Mono', monospace; z-index: 10; margin-top: 15px; letter-spacing: 1.5px;"></p>
     </div>
 
     <!-- Shutdown screen overlay -->
@@ -368,6 +530,7 @@
 
     <div class="section-title">🧡 ROSTER & HERO DIALOGS</div>
     <div class="grid-container">
+        
         <!-- Pat Cummins -->
         <div class="player-card">
             <span class="squad-badge">CAPT</span>
@@ -387,7 +550,7 @@
             <div class="player-role">BATSMAN</div>
             <div>
                 <div class="player-name">ABHISHEK SHARMA</div>
-                <div class="player-quote">"If you see the ball, hit it into the orbit! Feareless boundary hitting is the code."</div>
+                <div class="player-quote">"If you see the ball, hit it into the orbit! Fearless boundary hitting is the code."</div>
             </div>
             <div>
                 <div class="player-stat"><span>Strike Rate</span><span class="stat-value">168.5</span></div>
@@ -418,6 +581,118 @@
             <div>
                 <div class="player-stat"><span>Avg Score</span><span class="stat-value">41.2</span></div>
                 <div class="player-stat"><span>Strike Rate</span><span class="stat-value">185.8</span></div>
+            </div>
+        </div>
+
+        <!-- David Warner -->
+        <div class="player-card legend-card">
+            <span class="squad-badge legend">2016 CAPT</span>
+            <div class="player-role">BATSMAN</div>
+            <div>
+                <div class="player-name">DAVID WARNER</div>
+                <div class="player-quote">"Leading from the front. The Orange Cap belongs in Hyderabad. The 2016 spirit lives forever."</div>
+            </div>
+            <div>
+                <div class="player-stat"><span>Runs (IPL)</span><span class="stat-value">6565</span></div>
+                <div class="player-stat"><span>2016 Runs</span><span class="stat-value">848 (9 Fifties)</span></div>
+            </div>
+        </div>
+
+        <!-- Kane Williamson -->
+        <div class="player-card legend-card">
+            <span class="squad-badge legend">LEGEND</span>
+            <div class="player-role">BATSMAN</div>
+            <div>
+                <div class="player-name">KANE WILLIAMSON</div>
+                <div class="player-quote">"Cool heads win games. Play the situation, trust the process, and lift the trophy."</div>
+            </div>
+            <div>
+                <div class="player-stat"><span>Runs (IPL)</span><span class="stat-value">2101</span></div>
+                <div class="player-stat"><span>Highest Score</span><span class="stat-value">89</span></div>
+            </div>
+        </div>
+
+        <!-- Yuvraj Singh -->
+        <div class="player-card legend-card">
+            <span class="squad-badge legend">2016 CHAMP</span>
+            <div class="player-role">ALL-ROUNDER</div>
+            <div>
+                <div class="player-name">YUVRAJ SINGH</div>
+                <div class="player-quote">"Hitting sixes in pressure situations is in our blood. 2016 Champions forever!"</div>
+            </div>
+            <div>
+                <div class="player-stat"><span>Strike Rate</span><span class="stat-value">137.8</span></div>
+                <div class="player-stat"><span>2016 Final Run</span><span class="stat-value">38 (23 balls)</span></div>
+            </div>
+        </div>
+
+        <!-- Shikhar Dhawan -->
+        <div class="player-card legend-card">
+            <span class="squad-badge legend">2016 CHAMP</span>
+            <div class="player-role">BATSMAN</div>
+            <div>
+                <div class="player-name">SHIKHAR DHAWAN</div>
+                <div class="player-quote">"Gabbar is here to slash boundaries and build the solid foundation of victory."</div>
+            </div>
+            <div>
+                <div class="player-stat"><span>Runs (SRH)</span><span class="stat-value">2518</span></div>
+                <div class="player-stat"><span>Fifties (SRH)</span><span class="stat-value">19</span></div>
+            </div>
+        </div>
+
+        <!-- Bhuvneshwar Kumar -->
+        <div class="player-card legend-card">
+            <span class="squad-badge legend">2016 CHAMP</span>
+            <div class="player-role">BOWLER</div>
+            <div>
+                <div class="player-name">B. KUMAR</div>
+                <div class="player-quote">"The King of Swing. Making the ball dance both ways is a language I speak best."</div>
+            </div>
+            <div>
+                <div class="player-stat"><span>Wickets (IPL)</span><span class="stat-value">170</span></div>
+                <div class="player-stat"><span>Purple Caps</span><span class="stat-value">2 (Back to Back)</span></div>
+            </div>
+        </div>
+
+        <!-- Mustafizur Rahman -->
+        <div class="player-card legend-card">
+            <span class="squad-badge champ">2016 CHAMP</span>
+            <div class="player-role">BOWLER</div>
+            <div>
+                <div class="player-name">MUSTAFIZUR R.</div>
+                <div class="player-quote">"The Fizz is here. Those deceptive cutters will leave the batsman searching for answers."</div>
+            </div>
+            <div>
+                <div class="player-stat"><span>2016 Wickets</span><span class="stat-value">17 Wkts</span></div>
+                <div class="player-stat"><span>Econ Rate</span><span class="stat-value">6.90</span></div>
+            </div>
+        </div>
+
+        <!-- Ben Cutting -->
+        <div class="player-card legend-card">
+            <span class="squad-badge champ">2016 CHAMP</span>
+            <div class="player-role">ALL-ROUNDER</div>
+            <div>
+                <div class="player-name">BEN CUTTING</div>
+                <div class="player-quote">"Unleashing raw power at the death and picking up crucial wickets when the team needs it."</div>
+            </div>
+            <div>
+                <div class="player-stat"><span>Final MVP</span><span class="stat-value">39* (15) & 2 Wkts</span></div>
+                <div class="player-stat"><span>Strike Rate</span><span class="stat-value">189.3</span></div>
+            </div>
+        </div>
+
+        <!-- Moises Henriques -->
+        <div class="player-card legend-card">
+            <span class="squad-badge champ">2016 CHAMP</span>
+            <div class="player-role">ALL-ROUNDER</div>
+            <div>
+                <div class="player-name">M. HENRIQUES</div>
+                <div class="player-quote">"Balancing the team's engine with clinical batting and crucial breakthroughs in the middle."</div>
+            </div>
+            <div>
+                <div class="player-stat"><span>SRH Runs</span><span class="stat-value">969</span></div>
+                <div class="player-stat"><span>SRH Wickets</span><span class="stat-value">28 Wkts</span></div>
             </div>
         </div>
 
@@ -460,71 +735,66 @@
             </div>
         </div>
 
-        <!-- Bhuvneshwar Kumar -->
-        <div class="player-card">
-            <span class="squad-badge legend">LEGEND</span>
-            <div class="player-role">BOWLER</div>
-            <div>
-                <div class="player-name">B. KUMAR</div>
-                <div class="player-quote">"The King of Swing. Making the ball dance both ways is a language I speak best."</div>
-            </div>
-            <div>
-                <div class="player-stat"><span>Wickets (IPL)</span><span class="stat-value">170</span></div>
-                <div class="player-stat"><span>Purple Caps</span><span class="stat-value">2 (Back to Back)</span></div>
-            </div>
-        </div>
-
-        <!-- David Warner -->
-        <div class="player-card">
-            <span class="squad-badge legend">LEGEND</span>
-            <div class="player-role">BATSMAN</div>
-            <div>
-                <div class="player-name">DAVID WARNER</div>
-                <div class="player-quote">"Leading from the front. The Orange Cap belongs in Hyderabad. The 2016 spirit lives forever."</div>
-            </div>
-            <div>
-                <div class="player-stat"><span>Runs (IPL)</span><span class="stat-value">6565</span></div>
-                <div class="player-stat"><span>Highest Score</span><span class="stat-value">126</span></div>
-            </div>
-        </div>
     </div>
 
-    <div class="section-title">🏆 IPL FINALS HISTORY</div>
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>YEAR</th>
-                    <th>CAPTAIN</th>
-                    <th>OPPONENT</th>
-                    <th>VENUE</th>
-                    <th>RESULT</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="color: #d4af37; font-weight: bold;">2016</td>
-                    <td>David Warner</td>
-                    <td>Royal Challengers Bangalore (RCB)</td>
-                    <td>Chinnaswamy, Bengaluru</td>
-                    <td style="color: #00ffcc; font-weight: bold;">🏆 CHAMPIONS (Won by 8 runs)</td>
-                </tr>
-                <tr>
-                    <td>2018</td>
-                    <td>Kane Williamson</td>
-                    <td>Chennai Super Kings (CSK)</td>
-                    <td>Wankhede, Mumbai</td>
-                    <td style="color: #ff0055; font-weight: bold;">🥈 Runners-up (Lost by 8 wickets)</td>
-                </tr>
-                <tr>
-                    <td>2024</td>
-                    <td>Pat Cummins</td>
-                    <td>Kolkata Knight Riders (KKR)</td>
-                    <td>Chepauk, Chennai</td>
-                    <td style="color: #ff0055; font-weight: bold;">🥈 Runners-up (Lost by 8 wickets)</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="section-title">🏆 IPL FINALS TELEMETRY</div>
+    <div class="telemetry-grid">
+        <!-- 2016 -->
+        <div class="telemetry-item">
+            <div class="telemetry-header-row">
+                <span class="telemetry-year gold-year">2016</span>
+                <span class="telemetry-opponent">vs RCB</span>
+            </div>
+            <div class="telemetry-detail">
+                <span>Captain</span>
+                <span style="font-weight: bold; color: #fff;">David Warner</span>
+            </div>
+            <div class="telemetry-detail">
+                <span>Venue</span>
+                <span>Chinnaswamy Stadium, Bengaluru</span>
+            </div>
+            <div class="telemetry-result champions">
+                🏆 CHAMPIONS (Won by 8 runs)
+            </div>
+        </div>
+
+        <!-- 2018 -->
+        <div class="telemetry-item">
+            <div class="telemetry-header-row">
+                <span class="telemetry-year">2018</span>
+                <span class="telemetry-opponent">vs CSK</span>
+            </div>
+            <div class="telemetry-detail">
+                <span>Captain</span>
+                <span style="font-weight: bold; color: #fff;">Kane Williamson</span>
+            </div>
+            <div class="telemetry-detail">
+                <span>Venue</span>
+                <span>Wankhede Stadium, Mumbai</span>
+            </div>
+            <div class="telemetry-result">
+                🥈 RUNNERS-UP (Lost by 8 wickets)
+            </div>
+        </div>
+
+        <!-- 2024 -->
+        <div class="telemetry-item">
+            <div class="telemetry-header-row">
+                <span class="telemetry-year">2024</span>
+                <span class="telemetry-opponent">vs KKR</span>
+            </div>
+            <div class="telemetry-detail">
+                <span>Captain</span>
+                <span style="font-weight: bold; color: #fff;">Pat Cummins</span>
+            </div>
+            <div class="telemetry-detail">
+                <span>Venue</span>
+                <span>M. A. Chidambaram Stadium, Chennai</span>
+            </div>
+            <div class="telemetry-result">
+                🥈 RUNNERS-UP (Lost by 8 wickets)
+            </div>
+        </div>
     </div>
 
     <script>
@@ -563,45 +833,269 @@
                 gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.8);
                 osc.start(); osc.stop(now + 0.8);
             }
+            playBeep(freq, duration = 0.1) {
+                this.init();
+                if(this.ctx.state === 'suspended') this.ctx.resume();
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.connect(gain); gain.connect(this.ctx.destination);
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+                gain.gain.setValueAtTime(0.04, this.ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + duration);
+                osc.start(); osc.stop(this.ctx.currentTime + duration);
+            }
+            playStageAdvance() {
+                this.init();
+                if(this.ctx.state === 'suspended') this.ctx.resume();
+                this.playBeep(523.25, 0.15); // C5
+                setTimeout(() => {
+                    this.playBeep(659.25, 0.20); // E5
+                }, 120);
+            }
             playTrophyTune() {
                 this.init();
                 if(this.ctx.state === 'suspended') this.ctx.resume();
                 const now = this.ctx.currentTime;
-                const notes = [261.63, 329.63, 392.00, 523.25, 659.25, 783.99, 1046.50]; // C Major Arpeggio
+                // C Major Arpeggio Fanfare
+                const notes = [261.63, 329.63, 392.00, 523.25, 659.25, 783.99, 1046.50, 1318.51]; 
                 notes.forEach((freq, index) => {
                     const osc = this.ctx.createOscillator();
                     const gain = this.ctx.createGain();
                     osc.connect(gain); gain.connect(this.ctx.destination);
-                    osc.type = 'sine';
-                    osc.frequency.setValueAtTime(freq, now + index * 0.15);
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(freq, now + index * 0.12);
                     gain.gain.setValueAtTime(0, now);
-                    gain.gain.linearRampToValueAtTime(0.05, now + index * 0.15 + 0.05);
-                    gain.gain.exponentialRampToValueAtTime(0.0001, now + index * 0.15 + 0.6);
-                    osc.start(); osc.stop(now + index * 0.15 + 0.6);
+                    gain.gain.linearRampToValueAtTime(0.06, now + index * 0.12 + 0.04);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, now + index * 0.12 + 0.7);
+                    osc.start(); osc.stop(now + index * 0.12 + 0.7);
                 });
             }
         }
         const sfx = new SoundEffects();
 
+        // Canvas Embers
+        const bgCanvas = document.getElementById('bgCanvas');
+        const bgCtx = bgCanvas.getContext('2d');
+        let bgWidth = bgCanvas.width = window.innerWidth;
+        let bgHeight = bgCanvas.height = window.innerHeight;
+        const particles = [];
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * bgWidth;
+                this.y = bgHeight + Math.random() * 100;
+                this.size = Math.random() * 3 + 1;
+                this.speedY = Math.random() * 1.5 + 0.5;
+                this.speedX = Math.random() * 0.6 - 0.3;
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+            update() {
+                this.y -= this.speedY;
+                this.x += this.speedX;
+                if (this.y < -10) {
+                    this.y = bgHeight + 20;
+                    this.x = Math.random() * bgWidth;
+                }
+            }
+            draw() {
+                bgCtx.fillStyle = `rgba(255, 85, 0, ${this.opacity})`;
+                bgCtx.beginPath();
+                bgCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                bgCtx.fill();
+            }
+        }
+        for (let i = 0; i < 45; i++) {
+            particles.push(new Particle());
+        }
+        function animateBg() {
+            bgCtx.clearRect(0, 0, bgWidth, bgHeight);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animateBg);
+        }
+        animateBg();
+
+        // Confetti Particle Effect
+        const confCanvas = document.getElementById('confettiCanvas');
+        const confCtx = confCanvas.getContext('2d');
+        let confWidth = confCanvas.width = window.innerWidth;
+        let confHeight = confCanvas.height = window.innerHeight;
+        const confParticles = [];
+
+        class Confetti {
+            constructor() {
+                this.x = Math.random() * confWidth;
+                this.y = -20;
+                this.size = Math.random() * 8 + 4;
+                this.speedY = Math.random() * 3 + 2;
+                this.speedX = Math.random() * 2 - 1;
+                this.color = `hsl(${Math.random() * 30 + 35}, 100%, 55%)`; // Orange, Gold, Yellow
+                this.rotation = Math.random() * 360;
+                this.rotationSpeed = Math.random() * 4 - 2;
+            }
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+                this.rotation += this.rotationSpeed;
+                if (this.y > confHeight) {
+                    this.y = -20;
+                    this.x = Math.random() * confWidth;
+                }
+            }
+            draw() {
+                confCtx.save();
+                confCtx.translate(this.x, this.y);
+                confCtx.rotate(this.rotation * Math.PI / 180);
+                confCtx.fillStyle = this.color;
+                confCtx.fillRect(-this.size/2, -this.size/2, this.size, this.size);
+                confCtx.restore();
+            }
+        }
+
+        let runConfettiLoop = false;
+        function triggerConfetti() {
+            runConfettiLoop = true;
+            confParticles.length = 0;
+            for(let i=0; i<85; i++) {
+                confParticles.push(new Confetti());
+            }
+        }
+        function animateConfetti() {
+            confCtx.clearRect(0, 0, confWidth, confHeight);
+            if (runConfettiLoop) {
+                confParticles.forEach(p => { p.update(); p.draw(); });
+            }
+            requestAnimationFrame(animateConfetti);
+        }
+        animateConfetti();
+
+        window.addEventListener('resize', () => {
+            bgWidth = bgCanvas.width = window.innerWidth;
+            bgHeight = bgCanvas.height = window.innerHeight;
+            confWidth = confCanvas.width = window.innerWidth;
+            confHeight = confCanvas.height = window.innerHeight;
+        });
+
+        // Celebration Slideshow Logic
+        let activeInterval = null;
+
         function launchCelebration() {
             sfx.playClick();
-            sfx.playTrophyTune();
+            runConfettiLoop = false;
             
             const overlay = document.getElementById('celebrateOverlay');
+            const card = document.getElementById('celebrateCard');
             overlay.style.display = 'flex';
             
-            let timeLeft = 10;
-            const timer = document.getElementById('celebrateTimer');
-            
-            const interval = setInterval(() => {
-                timeLeft--;
-                timer.innerText = `Auto-shutdown in ${timeLeft}s`;
-                if(timeLeft <= 0) {
-                    clearInterval(interval);
-                    overlay.style.display = 'none';
-                    triggerScreenOff();
+            // Playoff stages data
+            const stages = [
+                {
+                    title: "🏆 PLAYOFFS: ELIMINATOR 🏆",
+                    match: "SUNRISERS HYDERABAD vs KOLKATA KNIGHT RIDERS",
+                    score: "SRH: 162/8 (Yuvraj 44) &bull; KKR: 140/8",
+                    result: "SRH WON BY 22 RUNS!",
+                    sub: "QUALIFIED FOR QUALIFIER 2 &rarr;",
+                    dotId: "dot-eliminator",
+                    lineId: "line-1"
+                },
+                {
+                    title: "⚡ PLAYOFFS: QUALIFIER 2 ⚡",
+                    match: "SUNRISERS HYDERABAD vs GUJARAT LIONS",
+                    score: "GL: 162/7 &bull; SRH: 163/6 (Warner 93*)",
+                    result: "SRH WON BY 4 WICKETS!",
+                    sub: "QUALIFIED FOR THE GRAND FINAL &rarr;",
+                    dotId: "dot-qualifier",
+                    lineId: "line-2"
+                },
+                {
+                    title: "🔥 THE GRAND FINAL 🔥",
+                    match: "SUNRISERS HYDERABAD vs ROYAL CHALLENGERS BANGALORE",
+                    score: "SRH: 208/7 (Warner 69, Cutting 39*) &bull; RCB: 200/7",
+                    result: "SRH WON BY 8 RUNS!",
+                    sub: "🏆 SUNRISERS HYDERABAD ARE THE CHAMPIONS! 🏆",
+                    dotId: "dot-final",
+                    lineId: "line-3"
                 }
-            }, 1000);
+            ];
+
+            let stageIdx = 0;
+
+            function runStage() {
+                if (stageIdx < stages.length) {
+                    const stage = stages[stageIdx];
+                    
+                    sfx.playStageAdvance();
+                    
+                    document.getElementById(stage.dotId).classList.add('active');
+                    if (stageIdx > 0) {
+                        document.getElementById(stages[stageIdx-1].dotId).classList.add('completed');
+                    }
+                    if (stage.lineId) {
+                        document.getElementById(stage.lineId).classList.add('active');
+                    }
+
+                    card.classList.remove('show');
+                    setTimeout(() => {
+                        card.innerHTML = `
+                            <h2 style="color: var(--srh-orange); font-size: 1.8rem; font-weight: 900; margin-bottom: 15px; letter-spacing: 2px; text-shadow: 0 0 10px var(--srh-glow);">${stage.title}</h2>
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; color: #ffbb99; margin-bottom: 25px;">${stage.match}</p>
+                            <div style="background: rgba(255, 85, 0, 0.05); border: 1px dashed var(--srh-orange); padding: 20px; border-radius: 8px; width: 100%; margin-bottom: 20px;">
+                                <p style="font-size: 1.25rem; font-weight: bold; color: #fff; margin-bottom: 10px;">${stage.score}</p>
+                                <p style="font-size: 1.4rem; font-weight: 900; color: #00ffcc; text-shadow: 0 0 8px rgba(0, 255, 204, 0.4);">${stage.result}</p>
+                            </div>
+                            <p style="font-size: 0.95rem; font-style: italic; color: #ffaa80;">${stage.sub}</p>
+                        `;
+                        card.classList.add('show');
+                    }, 200);
+
+                    stageIdx++;
+                    setTimeout(runStage, 3500);
+                } else {
+                    // Final Cup lift stage
+                    triggerConfetti();
+                    sfx.playTrophyTune();
+                    
+                    document.getElementById('dot-final').classList.add('completed');
+                    document.getElementById('dot-trophy').classList.add('active');
+                    
+                    card.classList.remove('show');
+                    setTimeout(() => {
+                        card.innerHTML = `
+                            <svg class="trophy" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5" style="width: 120px; height: 120px; margin-bottom: 20px;">
+                                <path d="M6 9H4.5a2.5 2.5 0 010-5H6M18 9h1.5a2.5 2.5 0 000-5H18" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4 22h16M10 14.66V17c0 .55-.45 1-1 1H4v3h16v-3h-5c-.55 0-1-.45-1-1v-2.34" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 2a6 6 0 00-6 6v3.2c0 .87.35 1.7 1 2.3l2.25 2.1c.42.4.98.6 1.55.6s1.13-.2 1.55-.6L17 13.5c.65-.6.9-1.43.9-2.3V8a6 6 0 00-6-6z" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <h2 style="color: var(--gold); font-size: 2rem; font-weight: 900; margin-bottom: 10px; text-shadow: 0 0 20px rgba(212, 175, 55, 0.6); letter-spacing: 3px;">🏆 CHAMPIONS OF 2016 🏆</h2>
+                            <p style="font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; color: #fff; margin-bottom: 15px; letter-spacing: 1px;">SUNRISERS HYDERABAD - RISE & CONQUER!</p>
+                            <p style="font-size: 0.9rem; color: #ffaa80; max-width: 450px; line-height: 1.6; margin-bottom: 10px;">
+                                Defeating KKR in the Eliminator, GL in Qualifier 2, and RCB in their own den in the Grand Final. The spirit of 2016 lives forever!
+                            </p>
+                        `;
+                        card.classList.add('show');
+                    }, 200);
+
+                    let timeLeft = 10;
+                    const timer = document.getElementById('celebrateTimer');
+                    timer.innerText = `Auto-shutdown in ${timeLeft}s`;
+                    
+                    activeInterval = setInterval(() => {
+                        timeLeft--;
+                        timer.innerText = `Auto-shutdown in ${timeLeft}s`;
+                        if (timeLeft <= 0) {
+                            clearInterval(activeInterval);
+                            overlay.style.display = 'none';
+                            triggerScreenOff();
+                        }
+                    }, 1000);
+                }
+            }
+
+            // Reset dots classes
+            document.querySelectorAll('.timeline-dot').forEach(el => el.className = 'timeline-dot');
+            document.querySelectorAll('.timeline-line').forEach(el => el.className = 'timeline-line');
+            
+            runStage();
         }
 
         function triggerScreenOff() {

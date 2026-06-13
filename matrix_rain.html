@@ -101,15 +101,68 @@
             text-shadow: 0 0 3px #fff;
         }
 
-        /* Shutdown screen overlay */
+        .btn-exit:hover {
+            background: #ff0055 !important;
+            color: #000 !important;
+            box-shadow: 0 0 15px #ff0055 !important;
+            text-shadow: none !important;
+        }
+
+        .flash-red {
+            animation: redAlert 0.4s infinite alternate;
+        }
+
+        @keyframes redAlert {
+            from { background-color: #000; }
+            to { background-color: #1a0006; }
+        }
+
+        /* Hacker-style System Meltdown screen overlay */
         .shutdown-screen {
             position: fixed;
             top: 0; left: 0; width: 100vw; height: 100vh;
             background-color: #000;
             z-index: 100000;
             display: none;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            color: #ff0055;
+            padding: 40px;
+            font-family: inherit;
+        }
+
+        .meltdown-box {
+            width: 100%;
+            max-width: 700px;
+            border: 2px solid #ff0055;
+            box-shadow: 0 0 30px rgba(255, 0, 85, 0.3);
+            background: rgba(10, 0, 5, 0.9);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .meltdown-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff0055;
+            text-shadow: 0 0 10px rgba(255, 0, 85, 0.5);
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .meltdown-code-scroll {
+            height: 200px;
+            overflow-y: hidden;
+            font-size: 0.85rem;
+            color: #ff99bb;
+            border: 1px solid rgba(255, 0, 85, 0.2);
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
         }
 
         .crt-collapse {
@@ -118,6 +171,8 @@
             width: 100%;
             height: 100%;
             position: absolute;
+            z-index: 100005;
+            display: none;
         }
 
         @keyframes collapseAnim {
@@ -131,10 +186,10 @@
             width: 5px; height: 5px;
             background: #fff;
             border-radius: 50%;
-            box-shadow: 0 0 15px 4px #fff, 0 0 30px 10px #00ff66;
+            box-shadow: 0 0 15px 4px #fff, 0 0 30px 10px #ff0055;
             opacity: 0;
-            position: relative;
-            z-index: 10;
+            position: absolute;
+            z-index: 100006;
         }
 
         .fade-phosphor {
@@ -148,12 +203,32 @@
             100% { opacity: 0; transform: scale(0); }
         }
 
-        .shutdown-timer-text {
-            position: absolute;
-            bottom: 30px;
-            color: #444;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
+        .terminal-off-state {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: #000;
+            z-index: 100010;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #00ff66;
+            font-size: 1rem;
+            padding: 30px;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 15px;
+            background: #00ff66;
+            margin-left: 5px;
+            animation: blink 0.8s infinite alternate;
+        }
+
+        @keyframes blink {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -161,17 +236,37 @@
     <div class="crt"></div>
     <canvas id="matrixCanvas"></canvas>
 
-    <!-- Shutdown screen overlay -->
+    <!-- Hacker System Meltdown Screen Overlay -->
     <div class="shutdown-screen" id="shutdownScreen">
-        <div class="crt-collapse" id="crtCollapse"></div>
-        <div class="phosphor-dot" id="phosphorDot"></div>
-        <div class="shutdown-timer-text" id="shutdownTimer">SYSTEM OFFLINE. AUTO-BACK IN 10S</div>
+        <div class="meltdown-box">
+            <div class="meltdown-title">⚠️ SYSTEM MELTDOWN INITIALIZED ⚠️</div>
+            <div class="meltdown-code-scroll" id="meltdownScroll">
+                <!-- Hacking lines scroll -->
+            </div>
+            <p style="text-align: center; font-weight: bold; color: #ff3377;" id="countdownMsg">
+                ERASING FILE CACHE NODES... SHUTDOWN IN 10S
+            </p>
+        </div>
+    </div>
+
+    <!-- CRT collapse and TV off state -->
+    <div class="crt-collapse" id="crtCollapse"></div>
+    <div class="phosphor-dot" id="phosphorDot"></div>
+    <div class="terminal-off-state" id="terminalOffState">
+        <div style="text-align: left; max-width: 600px; line-height: 1.8;">
+            <p id="typerText1"></p>
+            <p id="typerText2"></p>
+            <p id="typerText3"><span class="cursor"></span></p>
+        </div>
     </div>
 
     <div class="terminal-container">
         <div class="terminal-header">
-            <span>💻 A.I CHAMGADAR // MATRIX SHELL v2.0</span>
-            <span>SYSTEM STATE: ACTIVE</span>
+            <span>💻 A.I CHAMGADAR // MATRIX SHELL v2.1</span>
+            <span style="display: flex; align-items: center; gap: 15px;">
+                <span style="font-size: 0.85rem; opacity: 0.85;">SYSTEM STATE: ACTIVE</span>
+                <button onclick="triggerSelfDestruct()" class="btn-exit" style="background: transparent; border: 1px solid #ff0055; color: #ff0055; padding: 2px 8px; cursor: pointer; font-family: inherit; font-size: 0.75rem; font-weight: bold; border-radius: 4px; text-shadow: 0 0 5px #ff0055; box-shadow: 0 0 8px rgba(255,0,85,0.2); transition: all 0.3s ease;">[ EXIT_SHELL ]</button>
+            </span>
         </div>
 
         <div class="output-area" id="output">
@@ -366,11 +461,7 @@
                 }, 1500);
             }
             else if (cmd === 'selfdestruct' || cmd === 'abort' || cmd === 'exit') {
-                sfx.playAlarm(2.0);
-                printLine("⚠️ EMERGENCY SELF-DESTRUCT INITIATED. OFF-LINE PROTOCOL ACTIVE ⚠️", '#ff0055');
-                setTimeout(() => {
-                    triggerScreenOff();
-                }, 2000);
+                triggerSelfDestruct();
             } 
             else if (cmd === 'scan') {
                 printLine("> INITIATING RADAR ANALYSIS...", '#00ff66');
@@ -404,29 +495,97 @@
             }
         }
 
-        function triggerScreenOff() {
-            sfx.playCRT();
+        function triggerSelfDestruct() {
+            sfx.playAlarm(3.0);
+            printLine("⚠️ EMERGENCY EXIT PROTOCOL INITIATED. OFF-LINE SYSTEM MELTDOWN ACTIVE ⚠️", '#ff0055');
+            setTimeout(() => {
+                triggerMeltdown();
+            }, 1500);
+        }
+
+        // Meltdown visual script
+        function triggerMeltdown() {
+            document.body.classList.add('flash-red');
+            sfx.playAlarm(10.0);
             const screenOverlay = document.getElementById('shutdownScreen');
-            const collapse = document.getElementById('crtCollapse');
-            const phosphor = document.getElementById('phosphorDot');
-            const timer = document.getElementById('shutdownTimer');
+            const scroll = document.getElementById('meltdownScroll');
+            const countdownMsg = document.getElementById('countdownMsg');
             
             screenOverlay.style.display = 'flex';
             
-            setTimeout(() => {
-                collapse.style.display = 'none';
-                phosphor.classList.add('fade-phosphor');
-            }, 800);
+            const hackLines = [
+                "CRITICAL FAILURE: SYSTEM KERNEL DUMPED",
+                "INTRUSION ALERT: DETECTING NETWORK FOOTPRINTS...",
+                "SECURE PROTOCOL BYPASSED - GATEWAY EXPOSED",
+                "ERASING TARGET LOCAL HOST GEOLOCATION INFO...",
+                "UNMOUNTING ROOT FILE DIRECTORIES...",
+                "WIPING CHROME/FIREFOX CACHE STORES...",
+                "PURGING HARDWARE CONCURRENCY LOG REGISTERS...",
+                "CORRUPTING GRUB SECTOR LOADER BOOT BLOCKS...",
+                "DISABLING SECURE SOCKET CONNECTIONS...",
+                "ERASING REPOSITORY REFERENCES IN TARGET SHELL...",
+                "MELTDOWN TRIGGER: D-CORE POWER TERMINATION INITIATED",
+                "DELETING RAM REGISTERS 0xFFE04A to 0xFFFFFA..."
+            ];
+
+            let lineIndex = 0;
+            const scrollInterval = setInterval(() => {
+                sfx.playTick();
+                const p = document.createElement('p');
+                p.innerText = `[FATAL_ERROR] ${hackLines[lineIndex % hackLines.length]}`;
+                scroll.appendChild(p);
+                scroll.scrollTop = scroll.scrollHeight;
+                lineIndex++;
+            }, 100);
 
             let timeLeft = 10;
             const timerInterval = setInterval(() => {
                 timeLeft--;
-                timer.innerText = `SYSTEM OFFLINE. AUTO-BACK IN ${timeLeft}S`;
+                countdownMsg.innerText = `ERASING FILE CACHE NODES... SYSTEM POWER SHUTDOWN IN ${timeLeft}S`;
                 if(timeLeft <= 0) {
+                    clearInterval(scrollInterval);
                     clearInterval(timerInterval);
-                    history.back();
+                    triggerCRTCollapse();
                 }
             }, 1000);
+        }
+
+        function triggerCRTCollapse() {
+            sfx.playCRT();
+            const collapse = document.getElementById('crtCollapse');
+            const phosphor = document.getElementById('phosphorDot');
+            const offState = document.getElementById('terminalOffState');
+            
+            collapse.style.display = 'block';
+            
+            setTimeout(() => {
+                collapse.style.display = 'none';
+                phosphor.classList.add('fade-phosphor');
+                offState.style.display = 'flex';
+                
+                // Start typing console off messages
+                typeWriter("ChamgadarAI: Connection aborted.", "typerText1", 0, () => {
+                    typeWriter("D-Core: Power offline.", "typerText2", 0, () => {
+                        typeWriter("System: Returning to repository...", "typerText3", 0, () => {
+                            setTimeout(() => {
+                                history.back();
+                            }, 1500);
+                        });
+                    });
+                });
+            }, 800);
+        }
+
+        function typeWriter(text, elementId, index, callback) {
+            if (index < text.length) {
+                sfx.playTick();
+                document.getElementById(elementId).innerHTML += text.charAt(index);
+                setTimeout(() => {
+                    typeWriter(text, elementId, index + 1, callback);
+                }, 40);
+            } else if (callback) {
+                callback();
+            }
         }
     </script>
 </body>
