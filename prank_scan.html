@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.I CHAMGADAR // INTRUDER DOX DETECTOR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b060d;
+            --accent-color: #ff0055;
+            --accent-glow: rgba(255, 0, 85, 0.4);
+            --success-color: #00ffcc;
+            --success-glow: rgba(0, 255, 204, 0.4);
+            --text-color: #f3e8ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'JetBrains Mono', monospace;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 9999;
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+        }
+
+        .crt {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, transparent 55%, rgba(0,0,0,0.85) 100%);
+            z-index: 9998;
+            pointer-events: none;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .terminal {
+            width: 100%;
+            max-width: 700px;
+            background: rgba(18, 10, 25, 0.85);
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 0 20px var(--accent-glow);
+            border-radius: 8px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: all 0.5s ease;
+        }
+
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 0, 85, 0.3);
+            padding-bottom: 10px;
+            color: var(--accent-color);
+            font-weight: bold;
+            letter-spacing: 1.5px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--accent-color);
+            animation: pulse 1s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        .console-output {
+            min-height: 200px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .console-line {
+            opacity: 0;
+            transform: translateY(5px);
+            animation: showLine 0.4s forwards;
+        }
+
+        @keyframes showLine {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .btn-action {
+            display: inline-block;
+            background: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            padding: 12px 24px;
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 0, 85, 0.1);
+        }
+
+        .btn-action:hover {
+            background: var(--accent-color);
+            color: #fff;
+            box-shadow: 0 0 15px var(--accent-color);
+            text-shadow: 0 0 5px #fff;
+        }
+
+        .red-alert {
+            animation: screenFlicker 0.1s infinite alternate;
+        }
+
+        @keyframes screenFlicker {
+            0% { background-color: rgba(255, 0, 85, 0.05); }
+            100% { background-color: rgba(255, 0, 85, 0.15); }
+        }
+
+        .scan-bar {
+            width: 100%;
+            height: 4px;
+            background: var(--accent-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+            box-shadow: 0 0 10px var(--accent-color);
+            animation: scanMove 4s infinite linear;
+            z-index: 100;
+            display: none;
+        }
+
+        @keyframes scanMove {
+            0% { top: 0%; }
+            50% { top: 100%; }
+            100% { top: 0%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="crt"></div>
+    <div class="scan-bar" id="scanBar"></div>
+
+    <div class="container" id="mainContainer">
+        <div class="terminal">
+            <div class="terminal-header">
+                <span>🛡️ INTRUDER RADAR SCANNER</span>
+                <div class="status-dot"></div>
+            </div>
+            <div class="console-output" id="console">
+                <p class="console-line">> SYSTEM STATE: IDLE</p>
+                <p class="console-line">> READY FOR SCAN PROTOCOL</p>
+                <br>
+                <p class="console-line" style="color: var(--success-color);">[WARNING] THIS PROGRAM WILL SCAN LOGS TO RESOLVE CONNECTION ENDPOINTS</p>
+            </div>
+            <div style="text-align: center; margin-top: 15px;">
+                <button class="btn-action" id="startBtn" onclick="runPrank()">INITIALIZE ENCRYPTION SCAN</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function runPrank() {
+            const btn = document.getElementById('startBtn');
+            const con = document.getElementById('console');
+            const scanBar = document.getElementById('scanBar');
+            const container = document.getElementById('mainContainer');
+            
+            btn.style.display = 'none';
+            scanBar.style.display = 'block';
+            container.classList.add('red-alert');
+
+            con.innerHTML = "";
+            
+            const addLine = (text, color = 'var(--text-color)', delay = 500) => {
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        const p = document.createElement('p');
+                        p.className = 'console-line';
+                        p.style.color = color;
+                        p.innerHTML = text;
+                        con.appendChild(p);
+                        resolve();
+                    }, delay);
+                });
+            };
+
+            await addLine("> CONNECTING TO RADAR CENTRAL...", 'var(--accent-color)', 200);
+            await addLine("> PINNING SYSTEM PORTS...", 'var(--text-color)', 400);
+            await addLine("> DECRYPTING TARGET SIGNATURE...", 'var(--text-color)', 300);
+            
+            // Get browser details
+            const ua = navigator.userAgent;
+            let browser = "Unknown Browser";
+            if(ua.includes("Chrome")) browser = "Google Chrome";
+            else if(ua.includes("Firefox")) browser = "Mozilla Firefox";
+            else if(ua.includes("Safari")) browser = "Apple Safari";
+            else if(ua.includes("Edge")) browser = "Microsoft Edge";
+            
+            let os = "Unknown OS";
+            if(ua.includes("Windows")) os = "Windows OS";
+            else if(ua.includes("Macintosh")) os = "macOS";
+            else if(ua.includes("Linux")) os = "Linux";
+            else if(ua.includes("Android")) os = "Android Mobile";
+            else if(ua.includes("iPhone")) os = "iOS Mobile";
+
+            await addLine(`> TARGET PLATFORM: ${os} (${browser})`, 'var(--success-color)', 500);
+            await addLine(`> SCREEN TELEMETRY: ${screen.width}x${screen.height} @ ${screen.colorDepth}-bit`, 'var(--text-color)', 400);
+            
+            // Time and timezone
+            const time = new Date().toLocaleTimeString();
+            const zone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            await addLine(`> SYSTEM CLOCK: ${time} (ZONE: ${zone})`, 'var(--text-color)', 400);
+
+            // Battery details if available
+            try {
+                if(navigator.getBattery) {
+                    const bat = await navigator.getBattery();
+                    const batLevel = Math.round(bat.level * 100);
+                    const isCharging = bat.charging ? "CHARGING" : "DISCHARGING";
+                    await addLine(`> POWER CELL STATUS: ${batLevel}% (${isCharging})`, 'var(--success-color)', 400);
+                }
+            } catch(e) {}
+
+            // Try to fetch IP and location details
+            await addLine("> ACQUIRING GEOLOCATION COORDINATES...", 'var(--accent-color)', 500);
+            
+            let ipData = null;
+            try {
+                const res = await fetch('https://ipapi.co/json/');
+                if (res.ok) {
+                    ipData = await res.json();
+                }
+            } catch(e) {}
+
+            if(ipData) {
+                await addLine(`> PUBLIC IP ADDRESS: ${ipData.ip}`, 'var(--accent-color)', 600);
+                await addLine(`> LOCATION: ${ipData.city}, ${ipData.region}, ${ipData.country_name}`, 'var(--success-color)', 500);
+                await addLine(`> LATITUDE/LONGITUDE: ${ipData.latitude} / ${ipData.longitude}`, 'var(--text-color)', 400);
+                await addLine(`> ISP/NETWORK ORGANISATION: ${ipData.org}`, 'var(--text-color)', 400);
+            } else {
+                await addLine("> PUBLIC IP PIN: 192.168.1.104 (LOCAL ROUTER PASS)", 'var(--accent-color)', 600);
+                await addLine("> DNS GEOLOCATION: PATNA, BIHAR, INDIA", 'var(--success-color)', 500);
+                await addLine("> NETWORK NODES LOGGED SECURELY.", 'var(--text-color)', 400);
+            }
+
+            await addLine("<br>", 'var(--text-color)', 200);
+            await addLine("⚠️ TARGET GEOLOCATION ACQUIRED & DOX PROTOCOL COMPLETED! ⚠️", 'var(--accent-color)', 800);
+            await addLine("⚡ TARGET DECRYPTION DECLARED SAFE - SIMULATION CLOSED ⚡", 'var(--success-color)', 600);
+        }
+    </script>
+</body>
+</html>

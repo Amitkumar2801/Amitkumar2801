@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.I CHAMGADAR // DOX ENCRYPTION SYSTEM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #05080c;
+            --accent-color: #00ffcc;
+            --accent-glow: rgba(0, 255, 204, 0.4);
+            --danger-color: #ff0055;
+            --danger-glow: rgba(255, 0, 85, 0.4);
+            --text-color: #e6f1ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'JetBrains Mono', monospace;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(0, 255, 0, 0.06), rgba(0, 0, 255, 0.02), rgba(255, 0, 0, 0.06));
+            z-index: 9999;
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+        }
+
+        .crt {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, transparent 55%, rgba(0,0,0,0.85) 100%);
+            z-index: 9998;
+            pointer-events: none;
+        }
+
+        .container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .box {
+            width: 100%;
+            max-width: 650px;
+            background: rgba(10, 20, 30, 0.85);
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 0 25px var(--accent-glow);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .title {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 25px;
+            border: 1px solid var(--accent-color);
+            background: rgba(0, 255, 204, 0.05);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--accent-color);
+            box-shadow: 0 0 15px var(--accent-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: width 0.1s linear;
+        }
+
+        .progress-text {
+            position: relative;
+            z-index: 20;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #fff;
+            text-shadow: 0 0 4px #000;
+        }
+
+        .status {
+            min-height: 40px;
+            font-size: 0.95rem;
+            color: var(--accent-color);
+        }
+
+        .prank-details {
+            display: none;
+            background: rgba(255, 0, 85, 0.05);
+            border: 1px solid var(--danger-color);
+            box-shadow: 0 0 15px var(--danger-glow);
+            padding: 20px;
+            border-radius: 6px;
+            text-align: left;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            animation: showBlock 0.5s ease forwards;
+        }
+
+        @keyframes showBlock {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .prank-details h3 {
+            color: var(--danger-color);
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            text-shadow: 0 0 8px var(--danger-glow);
+            letter-spacing: 1px;
+        }
+
+        .btn-play {
+            background: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            padding: 12px 28px;
+            font-family: inherit;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-play:hover {
+            background: var(--accent-color);
+            color: #05080c;
+            box-shadow: 0 0 15px var(--accent-color);
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <div class="crt"></div>
+
+    <div class="container">
+        <div class="box" id="mainBox">
+            <div class="title" id="titleText">🔒 DECRYPTION INTRUDER PROTOCOL</div>
+            <div class="status" id="statusText">AWAITING CONNECTION INITIATION...</div>
+            
+            <div id="actionBlock">
+                <button class="btn-play" onclick="startDecryption()">START DOX DECRYPTOR</button>
+            </div>
+
+            <div class="progress-container" id="progContainer" style="display: none;">
+                <div class="progress-bar" id="progressBar"></div>
+                <div class="progress-text" id="progressVal">0%</div>
+            </div>
+
+            <div class="prank-details" id="detailsBox">
+                <h3>🚨 CORES DECRYPTED SUCCESSFULLY 🚨</h3>
+                <p><strong>INTRUDER SIGNATURE:</strong> <span id="doxUser" style="color: var(--danger-color);"></span></p>
+                <p><strong>CPU CORES DETECTED:</strong> <span id="doxCores"></span> Cores</p>
+                <p><strong>DEVICE PROFILE:</strong> <span id="doxDevice"></span></p>
+                <p><strong>NETWORK VELOCITY:</strong> <span id="doxSpeed"></span></p>
+                <p><strong>INTRUDER CONNECTION PORT:</strong> <span id="doxPort" style="color: var(--danger-color);">192.168.1.254 (COMPROMISED)</span></p>
+                <br>
+                <p style="color: #fff; text-align: center; font-weight: bold; background: var(--danger-color); padding: 5px; border-radius: 4px;">
+                    WARNING: SYSTEM IS MONITORING YOUR CONNECTION! 😉
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function startDecryption() {
+            document.getElementById('actionBlock').style.display = 'none';
+            document.getElementById('progContainer').style.display = 'flex';
+            
+            const bar = document.getElementById('progressBar');
+            const val = document.getElementById('progressVal');
+            const status = document.getElementById('statusText');
+            
+            const logs = [
+                "Locating network interfaces...",
+                "Reading system environment...",
+                "Decoding browser payload...",
+                "Extracting local hardware details...",
+                "Running telemetry decryption...",
+                "Dox scan completed."
+            ];
+
+            let progress = 0;
+            let logIndex = 0;
+
+            const interval = setInterval(() => {
+                progress += Math.floor(Math.random() * 8) + 2;
+                if(progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    showPrankReport();
+                }
+                
+                bar.style.width = progress + '%';
+                val.innerText = progress + '%';
+
+                if(progress > (logIndex + 1) * 16 && logIndex < logs.length) {
+                    status.innerText = logs[logIndex];
+                    logIndex++;
+                }
+            }, 100);
+        }
+
+        function showPrankReport() {
+            document.getElementById('progContainer').style.display = 'none';
+            document.getElementById('statusText').style.display = 'none';
+            
+            const title = document.getElementById('titleText');
+            title.innerText = "🛑 SYSTEM BREACH SIMULATED 🛑";
+            title.style.color = "var(--danger-color)";
+            title.style.textShadow = "0 0 10px var(--danger-glow)";
+            
+            const box = document.getElementById('mainBox');
+            box.style.borderColor = "var(--danger-color)";
+            box.style.boxShadow = "0 0 25px var(--danger-glow)";
+
+            // Detect hardware
+            const ua = navigator.userAgent;
+            let device = "Desktop PC / Laptop";
+            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua)) {
+                device = "Mobile Handset / Tablet";
+            }
+            
+            let browser = "Web Browser Connection";
+            if(ua.includes("Chrome")) browser = "Google Chrome Engine";
+            else if(ua.includes("Firefox")) browser = "Mozilla Firefox Core";
+            else if(ua.includes("Safari")) browser = "Safari Engine";
+            
+            const cores = navigator.hardwareConcurrency || "Multicore (8/16)";
+            
+            let connectionSpeed = "Standard LAN/Wireless";
+            if(navigator.connection) {
+                connectionSpeed = `${navigator.connection.effectiveType.toUpperCase()} (approx ${navigator.connection.downlink} Mbps)`;
+            }
+
+            document.getElementById('doxUser').innerText = browser;
+            document.getElementById('doxCores').innerText = cores;
+            document.getElementById('doxDevice').innerText = device;
+            document.getElementById('doxSpeed').innerText = connectionSpeed;
+
+            document.getElementById('detailsBox').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="54" viewBox="0 0 260 54">
+  <defs>
+    <!-- Glowing filters -->
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Button border with glow -->
+  <rect x="2" y="2" width="256" height="50" rx="8" fill="#120c1f" stroke="#e67e22" stroke-width="3" filter="url(#neon-glow)" />
+  
+  <!-- Glossy overlay reflection -->
+  <path d="M4 4 h252 v15 c-10 10 -242 10 -252 0 z" fill="#ffffff" opacity="0.08" />
+
+  <!-- Play icon triangle (glowing neon orange) -->
+  <polygon points="26,18 26,36 42,27" fill="#e67e22" filter="url(#neon-glow)" />
+
+  <!-- Play Text -->
+  <text x="54" y="33" fill="#ffffff" font-family="'Courier New', Courier, monospace" font-size="14" font-weight="900" letter-spacing="1">PLAY: RADAR SCAN</text>
+</svg>
