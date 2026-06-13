@@ -75,9 +75,9 @@
         }
 
         .btn-celebrate {
-            background: linear-gradient(135deg, #ff5500 0%, #d42a00 100%);
-            color: #ffffff;
-            border: 3px solid #ffcc00;
+            background: rgba(18, 10, 5, 0.82);
+            color: #ffcc00;
+            border: 2px solid #ffcc00;
             padding: 15px 35px;
             font-family: inherit;
             font-weight: 900;
@@ -85,7 +85,7 @@
             cursor: pointer;
             border-radius: 50px;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 0 20px rgba(255, 85, 0, 0.5), inset 0 2px 4px rgba(255,255,255,0.4);
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.2), inset 0 0 10px rgba(255, 204, 0, 0.1);
             margin: 25px 0 40px 0;
             z-index: 10;
             position: relative;
@@ -96,16 +96,17 @@
         }
 
         @keyframes pulseBtn {
-            0% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 85, 0, 0.5); }
-            50% { transform: scale(1.04); box-shadow: 0 0 35px rgba(255, 85, 0, 0.7), 0 0 15px rgba(255, 204, 0, 0.3); }
-            100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 85, 0, 0.5); }
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 204, 0, 0.2); }
+            50% { transform: scale(1.04); box-shadow: 0 0 35px rgba(255, 204, 0, 0.45), 0 0 15px rgba(255, 204, 0, 0.2); }
+            100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 204, 0, 0.2); }
         }
 
         .btn-celebrate:hover {
             transform: scale(1.06) translateY(-3px);
-            background: linear-gradient(135deg, #ffaa00 0%, #ff5500 100%);
+            background: #ffcc00;
+            color: #080504;
             border-color: #ffffff;
-            box-shadow: 0 0 40px #ffaa00, 0 0 20px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 30px #ffcc00, 0 0 15px rgba(255, 255, 255, 0.5);
         }
 
         /* Dashboard Exit Button */
@@ -499,30 +500,7 @@
             animation: pulseLight 3s infinite alternate;
         }
 
-        /* Cinematic Intro Overlay */
-        .intro-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            background: #080504;
-            z-index: 150000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            transition: opacity 0.5s ease;
-        }
 
-        .intro-box {
-            border: 2px solid var(--srh-orange);
-            background: rgba(18, 10, 5, 0.95);
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 0 30px var(--srh-glow);
-            max-width: 500px;
-            width: 100%;
-        }
 
         /* Screen Shake Animation */
         @keyframes shake {
@@ -541,14 +519,7 @@
     </style>
 </head>
 <body id="mainBody">
-    <!-- Cinematic Intro Overlay (Autoplay click-unlocker) -->
-    <div class="intro-overlay" id="introOverlay">
-        <div class="intro-box">
-            <h2 style="color: var(--srh-orange); font-size: 2.1rem; font-weight: 900; margin-bottom: 12px; letter-spacing: 2px; text-shadow: 0 0 10px var(--srh-glow);">🧡 ORANGE ARMY ARENA 🧡</h2>
-            <p style="font-family: 'JetBrains Mono', monospace; color: #ffaa80; font-size: 0.9rem; margin-bottom: 30px; letter-spacing: 1px;">SUNRISERS HYDERABAD NEURAL TRANSMISSION</p>
-            <button onclick="startTransmission()" style="background: linear-gradient(135deg, #ff5500 0%, #d42a00 100%); color: #fff; border: 2px solid #ffcc00; padding: 15px 35px; font-family: inherit; font-weight: 900; font-size: 1.15rem; cursor: pointer; border-radius: 30px; text-transform: uppercase; box-shadow: 0 0 20px rgba(255,85,0,0.4); transition: all 0.3s ease; animation: pulseBtn 1.5s infinite; letter-spacing: 1.5px;">⚡ START TRANSMISSION ⚡</button>
-        </div>
-    </div>
+
 
     <!-- Canvas backgrounds -->
     <canvas id="bgCanvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;"></canvas>
@@ -639,7 +610,7 @@
         <div class="subtitle">// SUNRISERS HYDERABAD OPERATIONAL DATABASE</div>
     </header>
 
-    <button class="btn-celebrate" onclick="launchCelebration()">🏆 REPLAY 2016 CHAMPIONS SHOW 🏆</button>
+    <button class="btn-celebrate" onclick="launchCelebration()">🏆 CELEBRATE 2016 IPL CUP WIN 🏆</button>
 
     <div class="section-title">🧡 ROSTER & HERO DIALOGS</div>
     <div class="grid-container">
@@ -1237,24 +1208,17 @@
             confHeight = confCanvas.height = window.innerHeight;
         });
 
-        // Autoplay Transmission Start
-        function startTransmission() {
-            sfx.init();
-            sfx.playClick();
-            
-            const intro = document.getElementById('introOverlay');
-            intro.style.opacity = '0';
-            setTimeout(() => {
-                intro.style.display = 'none';
-            }, 500);
-            
-            launchCelebration();
-        }
-
         // Celebration Slideshow Logic
         let activeInterval = null;
 
         function launchCelebration() {
+            // Initialize AudioContext on user gesture
+            sfx.init();
+            if (sfx.ctx && sfx.ctx.state === 'suspended') {
+                sfx.ctx.resume();
+            }
+            sfx.playClick();
+
             runConfettiLoop = false;
             if(activeInterval) clearInterval(activeInterval);
             
