@@ -86,7 +86,7 @@
             border-radius: 50px;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 0 20px rgba(255, 204, 0, 0.2), inset 0 0 10px rgba(255, 204, 0, 0.1);
-            margin: 25px 0 40px 0;
+            margin: 0;
             z-index: 10;
             position: relative;
             letter-spacing: 2px;
@@ -107,6 +107,66 @@
             color: #080504;
             border-color: #ffffff;
             box-shadow: 0 0 30px #ffcc00, 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Celebrate Button Wrapper & Guiding Arrow Indicator */
+        .celebrate-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0 40px 0;
+            z-index: 10;
+            position: relative;
+        }
+
+        .press-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 900;
+            font-size: 0.95rem;
+            color: #ffcc00;
+            background: rgba(255, 85, 0, 0.08);
+            border: 1px solid rgba(255, 85, 0, 0.35);
+            padding: 10px 18px;
+            border-radius: 30px;
+            text-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
+            box-shadow: 0 0 15px rgba(255, 85, 0, 0.1);
+            animation: bounceArrow 1.2s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 10;
+            letter-spacing: 1.5px;
+        }
+
+        .press-indicator svg {
+            color: var(--srh-orange);
+            filter: drop-shadow(0 0 5px var(--srh-orange));
+            transition: transform 0.3s ease;
+        }
+
+        @keyframes bounceArrow {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(8px); }
+        }
+
+        @keyframes bounceArrowDown {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(6px); }
+        }
+
+        @media (max-width: 600px) {
+            .celebrate-wrapper {
+                flex-direction: column !important;
+                gap: 12px !important;
+            }
+            .press-indicator {
+                animation: bounceArrowDown 1.2s infinite ease-in-out;
+            }
+            .press-indicator svg {
+                transform: rotate(90deg);
+            }
         }
 
         /* Dashboard Exit Button */
@@ -610,7 +670,16 @@
         <div class="subtitle">// SUNRISERS HYDERABAD OPERATIONAL DATABASE</div>
     </header>
 
-    <button class="btn-celebrate" onclick="launchCelebration()">🏆 CELEBRATE 2016 IPL CUP WIN 🏆</button>
+    <div class="celebrate-wrapper">
+        <div class="press-indicator">
+            <span>PRESS</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </div>
+        <button class="btn-celebrate" onclick="launchCelebration()">🏆 CELEBRATE 2016 IPL CUP WIN 🏆</button>
+    </div>
 
     <div class="section-title">🧡 ROSTER & HERO DIALOGS</div>
     <div class="grid-container">
