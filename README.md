@@ -40,36 +40,20 @@
   <img src="agent_dashboard.svg" width="100%" alt="A.I Chamgadar Skill Dashboard" />
 <!-- CHAMGADAR PlayGround System Section -->
 <br>
-<div style="background-color: #24292e; border: 1px solid #d0d7de; border-radius: 8px; padding: 35px; text-align: center; box-sizing: border-box;">
-  <font color="#00ffcc" size="4" face="Courier New"><b>🎮 CHAMGADAR PLAYGROUND SYSTEM 🎮</b></font>
-  <br><br>
-  <!-- Row 1: Original Simulators -->
-  <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/glitch.html" style="text-decoration: none;">
-    <img src="button_overclock.svg" height="46" alt="Play Overclock" />
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/meltdown.html" style="text-decoration: none;">
-    <img src="button_meltdown.svg" height="46" alt="Play Meltdown" />
-  </a>
-  <br><br>
-  <!-- Row 2: Radar and Dox Scanner Prank -->
-  <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/prank_scan.html" style="text-decoration: none;">
-    <img src="button_prank_scan.svg" height="46" alt="Play Radar Scan" />
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/dox_decrypt.html" style="text-decoration: none;">
-    <img src="button_dox_decrypt.svg" height="46" alt="Play Dox Scanner" />
-  </a>
-  <br><br>
-  <!-- Row 3: SRH Arena and Matrix Rain Shell -->
-  <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/srh_arena.html" style="text-decoration: none;">
-    <img src="button_srh.svg" height="46" alt="Play Orange Army" />
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/matrix_rain.html" style="text-decoration: none;">
-    <img src="button_matrix.svg" height="46" alt="Play Matrix Shell" />
-  </a>
+<div align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=20&color=00ffcc&center=true&vCenter=true&width=550&lines=%F0%9F%8E%AE+CHAMGADAR+PLAYGROUND+SYSTEM+%F0%9F%8E%AE" alt="Chamgadar Playground System" />
 </div>
+<br>
+
+<div align="center">
+
+| 🚀 SYSTEM SIMULATORS | 🔍 DETECTORS & SCANS | 📡 SANDBOX ARENAS |
+| :---: | :---: | :---: |
+| <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/glitch.html" style="text-decoration: none;"><img src="button_overclock.svg" width="220" alt="Play Overclock" /></a> | <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/prank_scan.html" style="text-decoration: none;"><img src="button_prank_scan.svg" width="220" alt="Play Radar Scan" /></a> | <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/srh_arena.html" style="text-decoration: none;"><img src="button_srh.svg" width="220" alt="Play Orange Army" /></a> |
+| <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/meltdown.html" style="text-decoration: none;"><img src="button_meltdown.svg" width="220" alt="Play Meltdown" /></a> | <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/dox_decrypt.html" style="text-decoration: none;"><img src="button_dox_decrypt.svg" width="220" alt="Play Dox Scanner" /></a> | <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/matrix_rain.html" style="text-decoration: none;"><img src="button_matrix.svg" width="220" alt="Play Matrix Shell" /></a> |
+
+</div>
+<br>
 </div>
 
 <br><br>
