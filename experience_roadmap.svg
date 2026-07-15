@@ -297,8 +297,9 @@
     <!-- Card Text -->
     <rect x="60" y="442" width="110" height="20" rx="4" fill="#451a03" />
     <text x="66" y="456" class="tech-font" font-size="10" fill="#fbbf24" font-weight="700">2027 - 2029</text>
-    <text x="60" y="480" class="tech-font" font-size="15" fill="#ffffff" font-weight="700">B.Tech (CSE)</text>
-    
+    <text x="60" y="480" class="tech-font" font-size="15" fill="#ffffff" font-weight="700">B.Tech (CSE - AI &amp; DS)</text>
+    <text x="60" y="498" class="body-font" font-size="12" fill="#fbbf24" font-weight="600">Advanced AI Research Spec.</text>
+    <text x="60" y="516" class="body-font" font-size="11" fill="#94a3b8">LLMs Fine-tuning · Multi-Agent Orchs</text>
     <text x="320" y="457" class="tech-font" font-size="9" fill="#f59e0b" font-weight="700">NEXT STEP</text>
   </g>
 
@@ -360,7 +361,7 @@
     <!-- Card Text -->
     <rect x="680" y="42" width="90" height="20" rx="4" fill="#500724" />
     <text x="686" y="56" class="tech-font" font-size="10" fill="#f472b6" font-weight="700">2030 &amp; BEYOND</text>
-    <text x="680" y="80" class="tech-font" font-size="16" fill="#ffffff" font-weight="700">Principal AI  &amp; Founder</text>
+    <text x="680" y="80" class="tech-font" font-size="16" fill="#ffffff" font-weight="700">Principal AI Scientist &amp; Founder</text>
     <text x="680" y="98" class="body-font" font-size="12" fill="#f472b6" font-weight="600">Cognitive AI Systems · Startup Labs</text>
     <text x="680" y="116" class="body-font" font-size="11" fill="#fbcfe8">Next-Gen Agentic Runtimes · Decentralized Swarms</text>
     <text x="1080" y="57" class="tech-font" font-size="9" fill="#ff00a0" font-weight="700" style="filter: drop-shadow(0px 0px 4px #ff00a0);">TARGET GOAL</text>
