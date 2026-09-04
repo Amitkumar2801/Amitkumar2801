@@ -26,18 +26,22 @@
 <br><br>
 
 <div align="center">
-  <table bgcolor="#080710" border="0" cellspacing="0" cellpadding="24" width="100%">
+  <table bgcolor="#080710" border="0" cellspacing="0" cellpadding="20" width="100%">
     <tr>
       <td align="center" bgcolor="#080710">
-        <font color="#a78bfa" size="4" face="Courier New"><b>⚡ TOTAL PROFILE VISITS ⚡</b></font>
+        <img src="https://img.shields.io/badge/⚡%20GLOBAL%20VISIT%20TELEMETRY-080710?style=for-the-badge&labelColor=8b5cf6&color=111" height="28" alt="Global Visit Telemetry" />
         <br><br>
         <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/live_visitors.html">
-          <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&color=8b5cf6&style=for-the-badge&label=⚡%20TOTAL%20VISITS%20⚡" alt="Total Profile Visits" />
+          <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&color=8b5cf6&style=for-the-badge&label=⚡%20TOTAL%20VISITS%20⚡" height="28" alt="Total Profile Visits" />
         </a>
-        &nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;
+        <img src="https://img.shields.io/badge/TELEMETRY-ONLINE%20●%2024%2F7-10b981?style=for-the-badge&labelColor=064e3b" height="28" alt="Status Online" />
+        &nbsp;&nbsp;&nbsp;
         <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/live_visitors.html">
           <img src="button_live_visitors.svg" height="28" alt="Live Visitors Radar" />
         </a>
+        <br><br>
+        <code>● 24/7 CLOUD SYNCHRONIZED · CLICK RADAR TO LAUNCH REAL-TIME TELEMETRY</code>
       </td>
     </tr>
   </table>
