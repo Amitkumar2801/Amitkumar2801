@@ -1,31 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="260" height="54" viewBox="0 0 260 54">
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="60" viewBox="0 0 300 60">
   <defs>
-    <!-- Glowing filters -->
-    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+    <!-- 3D Shadow & Glow Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur stdDeviation="3" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
-    <linearGradient id="btn-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#120c1f" />
-      <stop offset="100%" stop-color="#080710" />
+    <linearGradient id="btn-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1f153a" />
+      <stop offset="50%" stop-color="#140d28" />
+      <stop offset="100%" stop-color="#0b0716" />
+    </linearGradient>
+    <linearGradient id="cyan-glow-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ffcc" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#00ffcc" />
     </linearGradient>
   </defs>
 
-  <!-- Button border with neon cyan glow -->
-  <rect x="2" y="2" width="256" height="50" rx="8" fill="url(#btn-gradient)" stroke="#00ffcc" stroke-width="2.5" filter="url(#neon-glow)" />
+  <!-- 3D Bottom Drop Shadow -->
+  <rect x="6" y="8" width="288" height="48" rx="10" fill="#000000" opacity="0.6" />
   
-  <!-- Glossy overlay reflection for real button 3D depth -->
-  <path d="M4 4 h252 v16 c-10 8 -242 8 -252 0 z" fill="#ffffff" opacity="0.12" />
+  <!-- 3D Base Edge (for physical button press look) -->
+  <rect x="4" y="6" width="292" height="50" rx="10" fill="#00b386" />
 
-  <!-- Glowing Radar Play Icon -->
-  <polygon points="24,18 24,36 40,27" fill="#00ffcc" filter="url(#neon-glow)" />
+  <!-- Main Button Body -->
+  <rect x="4" y="4" width="292" height="48" rx="9" fill="url(#btn-grad)" stroke="url(#cyan-glow-grad)" stroke-width="2.5" filter="url(#glow)" />
 
-  <!-- Main Button Text -->
-  <text x="50" y="29" fill="#ffffff" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="13" font-weight="900" letter-spacing="1">LIVE VISITOR RADAR</text>
+  <!-- Glossy Glass Reflection Top Half -->
+  <path d="M 6 6 L 294 6 L 294 22 Q 150 28 6 22 Z" fill="#ffffff" opacity="0.12" />
+
+  <!-- Left Pulsing Green "LIVE" Indicator Dot -->
+  <circle cx="24" cy="28" r="6" fill="#00ffcc" filter="url(#glow)" />
+  <circle cx="24" cy="28" r="3" fill="#ffffff" />
+
+  <!-- Click Pointer Finger / Radar Play Icon -->
+  <text x="40" y="34" font-size="18">👉</text>
+
+  <!-- Button Action Text -->
+  <text x="70" y="27" fill="#ffffff" font-family="'JetBrains Mono', 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="900" letter-spacing="1">CLICK TO OPEN LIVE RADAR</text>
   
-  <!-- Interactive Call-To-Action subtext -->
-  <text x="50" y="42" fill="#00ffcc" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" letter-spacing="1.5">● CLICK TO LAUNCH APP ↗</text>
+  <!-- Sub-callout -->
+  <text x="70" y="42" fill="#00ffcc" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="800" letter-spacing="1">▶ REAL-TIME RUNNING PEOPLE ⚡</text>
 </svg>

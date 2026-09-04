@@ -28,20 +28,20 @@
 <br><br>
 
 <div align="center">
-  <table bgcolor="#080710" border="0" cellspacing="0" cellpadding="22" width="100%">
+  <table bgcolor="#080710" border="0" cellspacing="0" cellpadding="24" width="100%">
     <tr>
       <td align="center" bgcolor="#080710">
         <img src="https://img.shields.io/badge/⚡%20GLOBAL%20VISIT%20TELEMETRY-080710?style=for-the-badge&labelColor=8b5cf6&color=111" height="28" alt="Global Visit Telemetry" />
         <br><br>
         <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/live_visitors.html">
-          <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&color=8b5cf6&style=for-the-badge&label=⚡%20TOTAL%20VISITS%20⚡" height="38" alt="Total Profile Visits" />
+          <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&color=8b5cf6&style=for-the-badge&label=⚡%20TOTAL%20VISITS%20⚡" height="44" alt="Total Profile Visits" />
         </a>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/live_visitors.html">
-          <img src="button_live_visitors.svg" height="40" alt="Live Visitors Radar" />
+          <img src="button_live_visitors.svg" height="48" alt="Click To Open Live Visitor Radar" />
         </a>
         <br><br>
-        <code>● 24/7 CLOUD SYNCHRONIZED · CLICK RADAR BUTTON TO LAUNCH INTERACTIVE APP</code>
+        <code>● 24/7 CLOUD SYNCHRONIZED · CLICK THE BUTTON ABOVE TO OPEN LIVE RADAR</code>
       </td>
     </tr>
   </table>
