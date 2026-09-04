@@ -8,6 +8,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&height=200&section=header&text=AMIT%20KUMAR&fontSize=70&fontAlignY=38&fontColor=a78bfa&desc=AI%20ENGINEER%20%E2%80%A2%20MACHINE%20LEARNING%20%E2%80%A2%20FULL%20STACK&descAlignY=62&descSize=16&color=gradient&customColorList=0,2,4&animation=fadeIn" />
+  <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=waving&height=200&section=header&text=AMIT%20KUMAR&fontSize=70&fontAlignY=38&fontColor=6a5acd&desc=AI%20ENGINEER%20%E2%80%A2%20MACHINE%20LEARNING%20%E2%80%A2%20FULL%20STACK&descAlignY=62&descSize=16&color=gradient&customColorList=12,20,25&animation=fadeIn" />
   <img src="https://capsule-render.vercel.app/api?type=waving&height=200&section=header&text=AMIT%20KUMAR&fontSize=70&fontAlignY=38&fontColor=a78bfa&desc=AI%20ENGINEER%20%E2%80%A2%20MACHINE%20LEARNING%20%E2%80%A2%20FULL%20STACK&descAlignY=62&descSize=16&color=gradient&customColorList=0,2,4&animation=fadeIn" alt="Header" />
 </picture>
 
@@ -15,6 +16,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=15&pause=1000&color=a78bfa&center=true&vCenter=true&width=600&lines=%E2%97%8F+ONLINE+%7C+PATNA%2C+INDIA+%7C+GOVT+POLYTECHNIC+BARH+%7C+2024+%E2%80%94+2027" />
+  <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=15&pause=1000&color=6a5acd&center=true&vCenter=true&width=600&lines=%E2%97%8F+ONLINE+%7C+PATNA%2C+INDIA+%7C+GOVT+POLYTECHNIC+BARH+%7C+2024+%E2%80%94+2027" />
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=15&pause=1000&color=a78bfa&center=true&vCenter=true&width=600&lines=%E2%97%8F+ONLINE+%7C+PATNA%2C+INDIA+%7C+GOVT+POLYTECHNIC+BARH+%7C+2024+%E2%80%94+2027" alt="Status" />
 </picture>
 
@@ -26,22 +28,20 @@
 <br><br>
 
 <div align="center">
-  <table bgcolor="#080710" border="0" cellspacing="0" cellpadding="20" width="100%">
+  <table bgcolor="#080710" border="0" cellspacing="0" cellpadding="22" width="100%">
     <tr>
       <td align="center" bgcolor="#080710">
         <img src="https://img.shields.io/badge/⚡%20GLOBAL%20VISIT%20TELEMETRY-080710?style=for-the-badge&labelColor=8b5cf6&color=111" height="28" alt="Global Visit Telemetry" />
         <br><br>
         <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/live_visitors.html">
-          <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&color=8b5cf6&style=for-the-badge&label=⚡%20TOTAL%20VISITS%20⚡" height="28" alt="Total Profile Visits" />
+          <img src="https://komarev.com/ghpvc/?username=Amitkumar2801&color=8b5cf6&style=for-the-badge&label=⚡%20TOTAL%20VISITS%20⚡" height="38" alt="Total Profile Visits" />
         </a>
-        &nbsp;&nbsp;&nbsp;
-        <img src="https://img.shields.io/badge/TELEMETRY-ONLINE%20●%2024%2F7-10b981?style=for-the-badge&labelColor=064e3b" height="28" alt="Status Online" />
-        &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;
         <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/live_visitors.html">
-          <img src="button_live_visitors.svg" height="28" alt="Live Visitors Radar" />
+          <img src="button_live_visitors.svg" height="40" alt="Live Visitors Radar" />
         </a>
         <br><br>
-        <code>● 24/7 CLOUD SYNCHRONIZED · CLICK RADAR TO LAUNCH REAL-TIME TELEMETRY</code>
+        <code>● 24/7 CLOUD SYNCHRONIZED · CLICK RADAR BUTTON TO LAUNCH INTERACTIVE APP</code>
       </td>
     </tr>
   </table>
@@ -72,11 +72,16 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://activity-graph.vercel.app/graph?username=Amitkumar2801&bg_color=080710&color=a78bfa&line=8b5cf6&point=00ffcc&area=true&hide_border=true&title_color=a78bfa" />
+  <source media="(prefers-color-scheme: light)" srcset="https://activity-graph.vercel.app/graph?username=Amitkumar2801&bg_color=ffffff&color=7b61ff&line=3b82f6&point=f9a826&area=true&hide_border=true&title_color=6a5acd" />
   <img src="https://activity-graph.vercel.app/graph?username=Amitkumar2801&bg_color=080710&color=a78bfa&line=8b5cf6&point=00ffcc&area=true&hide_border=true&title_color=a78bfa" alt="Activity Graph" />
 </picture>
 
 <br>
-<img src="https://streak-stats.demolab.com/?user=Amitkumar2801&theme=tokyonight&background=080710&ring=8b5cf6&fire=00ffcc&currStreakLabel=a78bfa&sideLabels=94a3b8&dates=64748b" alt="GitHub Streak" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=Amitkumar2801&theme=tokyonight&background=080710&ring=8b5cf6&fire=00ffcc&currStreakLabel=a78bfa&sideLabels=94a3b8&dates=64748b" />
+  <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com/?user=Amitkumar2801&theme=light&background=ffffff&ring=6a5acd&fire=ec4899&currStreakLabel=6a5acd&sideLabels=64748b&dates=64748b" />
+  <img src="https://streak-stats.demolab.com/?user=Amitkumar2801&theme=tokyonight&background=080710&ring=8b5cf6&fire=00ffcc&currStreakLabel=a78bfa&sideLabels=94a3b8&dates=64748b" alt="GitHub Streak" />
+</picture>
 <br><br>
 <img src="https://img.shields.io/badge/TOTAL%20COMMITS-47-8b5cf6?style=for-the-badge&labelColor=1e1b4b" />&nbsp;&nbsp;&nbsp;
 <img src="https://img.shields.io/badge/PEAK%20DAY-9-ec4899?style=for-the-badge&labelColor=4a044e" />&nbsp;&nbsp;&nbsp;
