@@ -77,9 +77,9 @@
   <use href="#image-0" x="204" y="0" class="welcome-digit" style="animation-delay: 0.24s;" />
   <use href="#image-0" x="272" y="0" class="welcome-digit" style="animation-delay: 0.32s;" />
   <use href="#image-0" x="340" y="0" class="welcome-digit" style="animation-delay: 0.40s;" />
-  <use href="#image-1" x="408" y="0" class="digit" style="animation-delay: 0.48s;" />
-  <use href="#image-0" x="476" y="0" class="digit" style="animation-delay: 0.56s;" />
-  <use href="#image-2" x="544" y="0" class="digit" style="animation-delay: 0.64s;" />
-  <use href="#image-7" x="612" y="0" class="last-digit" style="animation-delay: 0.82s;" />
+  <use href="#image-0" x="408" y="0" class="welcome-digit" style="animation-delay: 0.48s;" />
+  <use href="#image-9" x="476" y="0" class="digit" style="animation-delay: 0.56s;" />
+  <use href="#image-1" x="544" y="0" class="digit" style="animation-delay: 0.64s;" />
+  <use href="#image-6" x="612" y="0" class="last-digit" style="animation-delay: 0.82s;" />
 
 </svg>

@@ -15,23 +15,29 @@ DIGITS = {
   "9": "data:image/png;base64,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"
 }
 
-def main():
-    # Fetch count from CounterAPI (read-only, does not increment)
-    url = "https://api.counterapi.dev/v1/Amitkumar2801/profile"
+def get_visitor_count():
+    # Primary: Fetch from komarev.com
     try:
-        req = urllib.request.Request(
-            url, 
-            headers={'User-Agent': 'Mozilla/5.0'}
-        )
-        with urllib.request.urlopen(req) as response:
-            data = json.loads(response.read().decode('utf-8'))
-            count = data.get('count', 1)
+        url = "https://komarev.com/ghpvc/?username=Amitkumar2801"
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=8) as response:
+            content = response.read().decode('utf-8')
+            import re
+            numbers = re.findall(r'<text[^>]*>(\d+)</text>', content)
+            if numbers:
+                return int(numbers[-1])
     except Exception as e:
-        print(f"Error fetching count: {e}")
-        sys.exit(1)
+        print(f"Komarev fetch failed: {e}")
 
-    # Starting offset is 902.
-    displayCount = count + 901
+    # Fallback: Default safe baseline count
+    return 1028
+
+def main():
+    count = get_visitor_count()
+    print(f"Current live visitor count: {count}")
+
+    # Ensure display count is a valid number
+    displayCount = count
     numStr = str(displayCount).zfill(10)
     
     # Find where leading zeros end

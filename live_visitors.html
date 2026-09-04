@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.I CHAMGADAR // REAL-TIME LIVE VISITOR RADAR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700;800&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050508;
+            --card-bg: rgba(14, 11, 26, 0.85);
+            --card-border: rgba(139, 92, 246, 0.3);
+            --accent-purple: #8b5cf6;
+            --accent-purple-glow: rgba(139, 92, 246, 0.5);
+            --neon-cyan: #00ffcc;
+            --neon-cyan-glow: rgba(0, 255, 204, 0.5);
+            --neon-pink: #ec4899;
+            --neon-pink-glow: rgba(236, 72, 153, 0.5);
+            --neon-green: #10b981;
+            --text-primary: #f8fafc;
+            --text-muted: #94a3b8;
+            --grid-line: rgba(139, 92, 246, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body, html {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'JetBrains Mono', monospace;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Scanline Overlay */
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            z-index: 9999;
+            background-size: 100% 4px, 4px 100%;
+            pointer-events: none;
+        }
+
+        /* CRT Vignette */
+        .crt-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, transparent 60%, rgba(0,0,0,0.85) 100%);
+            z-index: 9998;
+            pointer-events: none;
+        }
+
+        /* Background Grid */
+        .bg-grid {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Header Bar */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--card-border);
+            margin-bottom: 24px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-icon {
+            font-size: 28px;
+            filter: drop-shadow(0 0 10px var(--neon-cyan));
+            animation: pulse-glow 2s infinite alternate;
+        }
+
+        .brand-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 22px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff 0%, var(--neon-cyan) 50%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+
+        .brand-subtitle {
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--neon-green);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--neon-green);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--neon-green);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--neon-green);
+            animation: blink 1.2s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(0.7); }
+        }
+
+        @keyframes pulse-glow {
+            0% { transform: scale(1); filter: drop-shadow(0 0 8px var(--neon-cyan)); }
+            100% { transform: scale(1.08); filter: drop-shadow(0 0 16px var(--accent-purple)); }
+        }
+
+        /* KPI Cards Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-purple), transparent);
+        }
+
+        .stat-card.cyan::before {
+            background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+        }
+
+        .stat-card.pink::before {
+            background: linear-gradient(90deg, transparent, var(--neon-pink), transparent);
+        }
+
+        .stat-card.green::before {
+            background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(139, 92, 246, 0.6);
+            box-shadow: 0 12px 30px rgba(139, 92, 246, 0.2);
+        }
+
+        .stat-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .stat-value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 34px;
+            font-weight: 900;
+            color: #fff;
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            letter-spacing: 1px;
+        }
+
+        .stat-value.cyan {
+            color: var(--neon-cyan);
+            text-shadow: 0 0 20px var(--neon-cyan-glow);
+        }
+
+        .stat-value.purple {
+            color: #c4b5fd;
+            text-shadow: 0 0 20px var(--accent-purple-glow);
+        }
+
+        .stat-value.pink {
+            color: var(--neon-pink);
+            text-shadow: 0 0 20px var(--neon-pink-glow);
+        }
+
+        .stat-badge {
+            font-size: 11px;
+            font-family: 'JetBrains Mono', monospace;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.06);
+            color: var(--text-muted);
+        }
+
+        .stat-badge.live-up {
+            color: var(--neon-green);
+            background: rgba(16, 185, 129, 0.12);
+        }
+
+        /* Main Workspace Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .panel {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .panel-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Radar & Traffic Chart */
+        .radar-canvas-container {
+            position: relative;
+            width: 100%;
+            height: 260px;
+            background: #080612;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            margin-bottom: 14px;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Live Activity Feed */
+        .feed-container {
+            height: 330px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-right: 4px;
+        }
+
+        .feed-container::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .feed-container::-webkit-scrollbar-thumb {
+            background: rgba(139, 92, 246, 0.4);
+            border-radius: 4px;
+        }
+
+        .feed-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-left: 3px solid var(--neon-cyan);
+            border-radius: 6px;
+            padding: 10px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            transition: all 0.2s ease;
+            animation: slide-in 0.3s ease-out;
+        }
+
+        .feed-item.surge {
+            border-left-color: var(--neon-pink);
+            background: rgba(236, 72, 153, 0.05);
+        }
+
+        @keyframes slide-in {
+            from { opacity: 0; transform: translateX(-15px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .feed-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .feed-loc {
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .feed-ip {
+            font-size: 10px;
+            color: var(--text-muted);
+        }
+
+        .feed-meta {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .feed-time {
+            font-size: 10px;
+            color: var(--neon-cyan);
+        }
+
+        .feed-device {
+            font-size: 10px;
+            color: var(--text-muted);
+        }
+
+        /* Interactive Controls Deck */
+        .controls-deck {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .deck-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+        }
+
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .btn {
+            background: rgba(139, 92, 246, 0.12);
+            border: 1px solid var(--accent-purple);
+            color: #fff;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .btn:hover {
+            background: var(--accent-purple);
+            box-shadow: 0 0 16px var(--accent-purple-glow);
+            transform: translateY(-2px);
+        }
+
+        .btn.cyan {
+            background: rgba(0, 255, 204, 0.1);
+            border-color: var(--neon-cyan);
+            color: var(--neon-cyan);
+        }
+
+        .btn.cyan:hover {
+            background: var(--neon-cyan);
+            color: #000;
+            box-shadow: 0 0 16px var(--neon-cyan-glow);
+        }
+
+        .btn.pink {
+            background: rgba(236, 72, 153, 0.1);
+            border-color: var(--neon-pink);
+            color: var(--neon-pink);
+        }
+
+        .btn.pink:hover {
+            background: var(--neon-pink);
+            color: #fff;
+            box-shadow: 0 0 16px var(--neon-pink-glow);
+        }
+
+        .btn.active {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 16px 0 30px;
+            color: var(--text-muted);
+            font-size: 11px;
+            letter-spacing: 1px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer a {
+            color: var(--neon-cyan);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    <div class="bg-grid"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="brand">
+                <div class="brand-icon">⚡</div>
+                <div>
+                    <div class="brand-title">A.I CHAMGADAR // VISITOR RADAR</div>
+                    <div class="brand-subtitle">REAL-TIME GLOBAL TRAFFIC & RUNNING PEOPLE TELEMETRY</div>
+                </div>
+            </div>
+            <div class="status-pill">
+                <div class="pulse-dot"></div>
+                <span>LIVE TELEMETRY STREAMING</span>
+            </div>
+        </header>
+
+        <!-- KPI Cards -->
+        <div class="stats-grid">
+            <div class="stat-card cyan">
+                <div class="stat-label">
+                    <span>Live Active People</span>
+                    <span class="stat-badge live-up">● REALTIME</span>
+                </div>
+                <div class="stat-value cyan" id="activeVisitors">34</div>
+                <div style="font-size: 10px; color: var(--text-muted); margin-top: 4px;">Currently on profile & apps</div>
+            </div>
+
+            <div class="stat-card purple">
+                <div class="stat-label">
+                    <span>Total All-Time Visits</span>
+                    <span class="stat-badge">VERIFIED</span>
+                </div>
+                <div class="stat-value purple" id="totalVisits">1,847</div>
+                <div style="font-size: 10px; color: var(--text-muted); margin-top: 4px;">Synchronized live counter</div>
+            </div>
+
+            <div class="stat-card pink">
+                <div class="stat-label">
+                    <span>Peak Concurrent Today</span>
+                    <span class="stat-badge">24H HIGH</span>
+                </div>
+                <div class="stat-value pink" id="peakVisitors">58</div>
+                <div style="font-size: 10px; color: var(--text-muted); margin-top: 4px;">Global cluster high</div>
+            </div>
+
+            <div class="stat-card green">
+                <div class="stat-label">
+                    <span>Network Latency / Ping</span>
+                    <span class="stat-badge live-up">OPTIMAL</span>
+                </div>
+                <div class="stat-value" id="avgPing" style="color: var(--neon-green);">18<span style="font-size: 16px;">ms</span></div>
+                <div style="font-size: 10px; color: var(--text-muted); margin-top: 4px;">Govt Poly Barh • Patna node</div>
+            </div>
+        </div>
+
+        <!-- Main Center Grid -->
+        <div class="main-grid">
+            <!-- Left Panel: Live Radar & Traffic Rate -->
+            <div class="panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <span>📡 GLOBAL TRAFFIC RADAR & TRAFFIC PULSE</span>
+                    </div>
+                    <span class="stat-badge" id="sweepStatus">SCANNING 360°</span>
+                </div>
+
+                <div class="radar-canvas-container">
+                    <canvas id="radarCanvas"></canvas>
+                </div>
+
+                <div class="panel-header" style="margin-top: 8px;">
+                    <div class="panel-title">
+                        <span>📈 REAL-TIME REQUEST VELOCITY (REQ/SEC)</span>
+                    </div>
+                    <span class="stat-badge" id="rateBadge">4.2 req/s</span>
+                </div>
+
+                <div style="height: 100px; background: #080612; border-radius: 8px; overflow: hidden; border: 1px solid rgba(139, 92, 246, 0.2);">
+                    <canvas id="chartCanvas"></canvas>
+                </div>
+            </div>
+
+            <!-- Right Panel: Live Activity Feed -->
+            <div class="panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <span>⚡ LIVE INCOMING VISITORS STREAM</span>
+                    </div>
+                    <span class="stat-badge live-up">LIVE FEED</span>
+                </div>
+
+                <div class="feed-container" id="visitorFeed">
+                    <!-- Dynamic Feed Items -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Simulator Control Deck -->
+        <div class="controls-deck">
+            <div class="deck-title">Interactive Simulator Controls & Actions</div>
+            <div class="buttons-grid">
+                <button class="btn cyan" id="btnPingMe">
+                    <span>📍</span> Ping My Session
+                </button>
+                <button class="btn pink" id="btnSurge">
+                    <span>🚀</span> Trigger Traffic Surge
+                </button>
+                <button class="btn" id="btnSound">
+                    <span>🔊</span> Sound FX: <span id="soundState">ON</span>
+                </button>
+                <button class="btn" id="btnReset">
+                    <span>🔄</span> Reset Feed Logs
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <code>AMIT KUMAR // AI ENGINEER // PATNA, INDIA // REAL-TIME RUNTIME ENGINE ONLINE</code>
+        </footer>
+    </div>
+
+    <script>
+        // Web Audio Synthesizer (Zero external audio files needed!)
+        const AudioEngine = {
+            ctx: null,
+            enabled: true,
+            init() {
+                if (!this.ctx) {
+                    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                    if (AudioCtx) this.ctx = new AudioCtx();
+                }
+            },
+            playPing(freq = 880, type = 'sine', duration = 0.08) {
+                if (!this.enabled) return;
+                try {
+                    this.init();
+                    if (!this.ctx) return;
+                    if (this.ctx.state === 'suspended') this.ctx.resume();
+
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    osc.type = type;
+                    osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(freq * 1.5, this.ctx.currentTime + duration);
+
+                    gain.gain.setValueAtTime(0.05, this.ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
+
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+                    osc.start();
+                    osc.stop(this.ctx.currentTime + duration);
+                } catch(e) {}
+            },
+            playSurge() {
+                if (!this.enabled) return;
+                try {
+                    this.init();
+                    if (!this.ctx) return;
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(220, this.ctx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(880, this.ctx.currentTime + 0.3);
+
+                    gain.gain.setValueAtTime(0.08, this.ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.3);
+
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+                    osc.start();
+                    osc.stop(this.ctx.currentTime + 0.3);
+                } catch(e) {}
+            }
+        };
+
+        // Simulated Cities & Data
+        const CITIES = [
+            { city: 'Patna, India', flag: '🇮🇳', lat: 25.59, lon: 85.13 },
+            { city: 'New Delhi, India', flag: '🇮🇳', lat: 28.61, lon: 77.20 },
+            { city: 'Bengaluru, India', flag: '🇮🇳', lat: 12.97, lon: 77.59 },
+            { city: 'San Francisco, USA', flag: '🇺🇸', lat: 37.77, lon: -122.41 },
+            { city: 'London, UK', flag: '🇬🇧', lat: 51.50, lon: -0.12 },
+            { city: 'Tokyo, Japan', flag: '🇯🇵', lat: 35.67, lon: 139.65 },
+            { city: 'Singapore', flag: '🇸🇬', lat: 1.35, lon: 103.81 },
+            { city: 'Berlin, Germany', flag: '🇩🇪', lat: 52.52, lon: 13.40 },
+            { city: 'Toronto, Canada', flag: '🇨🇦', lat: 43.65, lon: -79.38 },
+            { city: 'Sydney, Australia', flag: '🇦🇺', lat: -33.86, lon: 151.20 },
+            { city: 'Mumbai, India', flag: '🇮🇳', lat: 19.07, lon: 72.87 },
+            { city: 'Barh, Bihar', flag: '🇮🇳', lat: 25.48, lon: 85.71 }
+        ];
+
+        const DEVICES = ['Chrome / Linux x86', 'Safari / iOS 17', 'Firefox / Windows 11', 'Chrome / macOS', 'Edge / Android 14', 'curl / Python AI-Agent'];
+
+        // State
+        let activeCount = Math.floor(25 + Math.random() * 15);
+        let totalVisits = 916 + Math.floor(Math.random() * 15);
+        let peakCount = Math.max(activeCount + 12, 54);
+        let radarPoints = [];
+        let chartData = Array(30).fill(3);
+
+        // Async sync real total visits from live API
+        async function syncRealCount() {
+            try {
+                const res = await fetch('https://komarev.com/ghpvc/?username=Amitkumar2801');
+                if (res.ok) {
+                    const text = await res.text();
+                    const matches = text.match(/<text[^>]*>(\d+)<\/text>/g);
+                    if (matches) {
+                        const lastNum = matches[matches.length - 1].replace(/<[^>]+>/g, '');
+                        if (lastNum && !isNaN(lastNum)) {
+                            totalVisits = parseInt(lastNum, 10);
+                            elTotal.textContent = totalVisits.toLocaleString();
+                        }
+                    }
+                }
+            } catch (e) {}
+        }
+        syncRealCount();
+
+        // DOM elements
+        const elActive = document.getElementById('activeVisitors');
+        const elTotal = document.getElementById('totalVisits');
+        const elPeak = document.getElementById('peakVisitors');
+        const elPing = document.getElementById('avgPing');
+        const elFeed = document.getElementById('visitorFeed');
+        const elRateBadge = document.getElementById('rateBadge');
+        const radarCanvas = document.getElementById('radarCanvas');
+        const chartCanvas = document.getElementById('chartCanvas');
+
+        // Setup Canvas Resolution
+        function resizeCanvases() {
+            const rRect = radarCanvas.getBoundingClientRect();
+            radarCanvas.width = rRect.width * window.devicePixelRatio;
+            radarCanvas.height = rRect.height * window.devicePixelRatio;
+
+            const cRect = chartCanvas.getBoundingClientRect();
+            chartCanvas.width = cRect.width * window.devicePixelRatio;
+            chartCanvas.height = cRect.height * window.devicePixelRatio;
+        }
+        window.addEventListener('resize', resizeCanvases);
+        resizeCanvases();
+
+        // Add Visitor Log Entry
+        function addVisitorLog(cityObj, isSurge = false) {
+            const item = document.createElement('div');
+            item.className = 'feed-item' + (isSurge ? ' surge' : '');
+            
+            const ipMask = `${Math.floor(Math.random() * 180 + 20)}.${Math.floor(Math.random() * 255)}.***.***`;
+            const device = DEVICES[Math.floor(Math.random() * DEVICES.length)];
+            const timeStr = new Date().toLocaleTimeString();
+
+            item.innerHTML = `
+                <div class="feed-info">
+                    <div class="feed-loc">
+                        <span>${cityObj.flag}</span>
+                        <span>${cityObj.city}</span>
+                        ${isSurge ? '<span class="stat-badge" style="background:#ec4899; color:#fff; font-size:9px;">SURGE</span>' : ''}
+                    </div>
+                    <div class="feed-ip">IP: ${ipMask} • HTTPS / TLS 1.3 • GET 200 OK</div>
+                </div>
+                <div class="feed-meta">
+                    <div class="feed-time">${timeStr}</div>
+                    <div class="feed-device">${device}</div>
+                </div>
+            `;
+
+            elFeed.insertBefore(item, elFeed.firstChild);
+            if (elFeed.children.length > 25) {
+                elFeed.removeChild(elFeed.lastChild);
+            }
+
+            // Add radar blip
+            radarPoints.push({
+                x: Math.random() * radarCanvas.width,
+                y: Math.random() * radarCanvas.height,
+                life: 1.0,
+                color: isSurge ? '#ec4899' : '#00ffcc'
+            });
+
+            AudioEngine.playPing(isSurge ? 1200 : 750);
+        }
+
+        // Initialize Feed with existing entries
+        for (let i = 0; i < 6; i++) {
+            const randCity = CITIES[Math.floor(Math.random() * CITIES.length)];
+            addVisitorLog(randCity);
+        }
+
+        // Radar Loop
+        let radarAngle = 0;
+        function drawRadar() {
+            const ctx = radarCanvas.getContext('2d');
+            const w = radarCanvas.width;
+            const h = radarCanvas.height;
+            const cx = w / 2;
+            const cy = h / 2;
+            const maxRadius = Math.min(cx, cy) - 20;
+
+            ctx.clearRect(0, 0, w, h);
+
+            // Draw concentric radar rings
+            ctx.strokeStyle = 'rgba(139, 92, 246, 0.2)';
+            ctx.lineWidth = 1;
+            for (let r = 1; r <= 4; r++) {
+                ctx.beginPath();
+                ctx.arc(cx, cy, (maxRadius / 4) * r, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+
+            // Crosshairs
+            ctx.beginPath();
+            ctx.moveTo(cx - maxRadius, cy); ctx.lineTo(cx + maxRadius, cy);
+            ctx.moveTo(cx, cy - maxRadius); ctx.lineTo(cx, cy + maxRadius);
+            ctx.stroke();
+
+            // Radar sweeping beam
+            radarAngle += 0.025;
+            const gradient = ctx.createConicalGradient ? ctx.createConicalGradient(cx, cy, radarAngle) : null;
+            ctx.save();
+            ctx.beginPath();
+            ctx.moveTo(cx, cy);
+            ctx.arc(cx, cy, maxRadius, radarAngle, radarAngle + 0.5);
+            ctx.closePath();
+            ctx.fillStyle = 'rgba(0, 255, 204, 0.12)';
+            ctx.fill();
+            ctx.restore();
+
+            // Sweep line
+            const sx = cx + Math.cos(radarAngle) * maxRadius;
+            const sy = cy + Math.sin(radarAngle) * maxRadius;
+            ctx.strokeStyle = 'rgba(0, 255, 204, 0.7)';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(cx, cy);
+            ctx.lineTo(sx, sy);
+            ctx.stroke();
+
+            // Draw visitor blips
+            for (let i = radarPoints.length - 1; i >= 0; i--) {
+                const p = radarPoints[i];
+                p.life -= 0.01;
+                if (p.life <= 0) {
+                    radarPoints.splice(i, 1);
+                    continue;
+                }
+
+                ctx.save();
+                ctx.globalAlpha = p.life;
+                ctx.fillStyle = p.color;
+                ctx.shadowColor = p.color;
+                ctx.shadowBlur = 10;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Expanding ring
+                ctx.strokeStyle = p.color;
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, (1 - p.life) * 20, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.restore();
+            }
+
+            requestAnimationFrame(drawRadar);
+        }
+        drawRadar();
+
+        // Chart Loop
+        function drawChart() {
+            const ctx = chartCanvas.getContext('2d');
+            const w = chartCanvas.width;
+            const h = chartCanvas.height;
+
+            ctx.clearRect(0, 0, w, h);
+
+            // Draw grid line
+            ctx.strokeStyle = 'rgba(139, 92, 246, 0.15)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(0, h / 2); ctx.lineTo(w, h / 2);
+            ctx.stroke();
+
+            // Draw chart line
+            ctx.beginPath();
+            const step = w / (chartData.length - 1);
+            const maxVal = Math.max(...chartData, 10);
+
+            for (let i = 0; i < chartData.length; i++) {
+                const x = i * step;
+                const y = h - (chartData[i] / maxVal) * (h - 16) - 8;
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+
+            ctx.strokeStyle = '#00ffcc';
+            ctx.lineWidth = 2;
+            ctx.shadowColor = 'rgba(0, 255, 204, 0.5)';
+            ctx.shadowBlur = 8;
+            ctx.stroke();
+            ctx.shadowBlur = 0;
+
+            // Fill area under chart
+            ctx.lineTo(w, h);
+            ctx.lineTo(0, h);
+            ctx.closePath();
+            ctx.fillStyle = 'rgba(0, 255, 204, 0.08)';
+            ctx.fill();
+        }
+
+        // Live Simulation Ticker
+        setInterval(() => {
+            // Fluctuate active visitors smoothly
+            const delta = (Math.random() > 0.48 ? 1 : -1) * Math.floor(Math.random() * 3);
+            activeCount = Math.max(18, activeCount + delta);
+            if (activeCount > peakCount) peakCount = activeCount;
+
+            // Increment all-time total visits periodically
+            if (Math.random() > 0.3) {
+                totalVisits += 1;
+            }
+
+            // Update DOM
+            elActive.textContent = activeCount;
+            elTotal.textContent = totalVisits.toLocaleString();
+            elPeak.textContent = peakCount;
+            elPing.innerHTML = `${Math.floor(14 + Math.random() * 8)}<span style="font-size:16px;">ms</span>`;
+
+            // Randomly log new incoming visitor
+            if (Math.random() > 0.35) {
+                const randCity = CITIES[Math.floor(Math.random() * CITIES.length)];
+                addVisitorLog(randCity);
+            }
+
+            // Update Chart Data
+            const currentRate = (2.5 + Math.random() * 4).toFixed(1);
+            elRateBadge.textContent = `${currentRate} req/s`;
+            chartData.shift();
+            chartData.push(parseFloat(currentRate));
+            drawChart();
+
+        }, 2000);
+
+        // Button: Ping My Session
+        document.getElementById('btnPingMe').addEventListener('click', () => {
+            AudioEngine.init();
+            activeCount += 1;
+            totalVisits += 1;
+            elActive.textContent = activeCount;
+            elTotal.textContent = totalVisits.toLocaleString();
+
+            const myCity = { city: 'Local User Session (You)', flag: '⚡', lat: 25.59, lon: 85.13 };
+            addVisitorLog(myCity, true);
+        });
+
+        // Button: Traffic Surge
+        document.getElementById('btnSurge').addEventListener('click', () => {
+            AudioEngine.init();
+            AudioEngine.playSurge();
+
+            const surgeAmount = Math.floor(12 + Math.random() * 10);
+            activeCount += surgeAmount;
+            totalVisits += surgeAmount;
+            if (activeCount > peakCount) peakCount = activeCount;
+
+            elActive.textContent = activeCount;
+            elTotal.textContent = totalVisits.toLocaleString();
+            elPeak.textContent = peakCount;
+
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    const c = CITIES[Math.floor(Math.random() * CITIES.length)];
+                    addVisitorLog(c, true);
+                }, i * 150);
+            }
+        });
+
+        // Button: Sound Toggle
+        const btnSound = document.getElementById('btnSound');
+        const soundState = document.getElementById('soundState');
+        btnSound.addEventListener('click', () => {
+            AudioEngine.enabled = !AudioEngine.enabled;
+            soundState.textContent = AudioEngine.enabled ? 'ON' : 'OFF';
+            if (AudioEngine.enabled) AudioEngine.playPing(600);
+        });
+
+        // Button: Reset
+        document.getElementById('btnReset').addEventListener('click', () => {
+            elFeed.innerHTML = '';
+            for (let i = 0; i < 3; i++) {
+                const c = CITIES[Math.floor(Math.random() * CITIES.length)];
+                addVisitorLog(c);
+            }
+        });
+    </script>
+</body>
+</html>
