@@ -38,10 +38,10 @@
         </a>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <a href="https://htmlpreview.github.io/?https://github.com/Amitkumar2801/Amitkumar2801/blob/main/live_visitors.html">
-          <img src="button_live_visitors.svg" height="48" alt="Click To Open Live Visitor Radar" />
+          <img src="button_live_visitors.svg" height="48" alt="Click / Hit For Live Radar" />
         </a>
         <br><br>
-        <code>● 24/7 CLOUD SYNCHRONIZED · CLICK THE BUTTON ABOVE TO OPEN LIVE RADAR</code>
+        <code>● 24/7 CLOUD SYNCHRONIZED · CLICK / HIT THE BUTTON ABOVE TO OPEN LIVE RADAR</code>
       </td>
     </tr>
   </table>
