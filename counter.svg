@@ -80,6 +80,6 @@
   <use href="#image-0" x="408" y="0" class="welcome-digit" style="animation-delay: 0.48s;" />
   <use href="#image-9" x="476" y="0" class="digit" style="animation-delay: 0.56s;" />
   <use href="#image-3" x="544" y="0" class="digit" style="animation-delay: 0.64s;" />
-  <use href="#image-3" x="612" y="0" class="last-digit" style="animation-delay: 0.82s;" />
+  <use href="#image-4" x="612" y="0" class="last-digit" style="animation-delay: 0.82s;" />
 
 </svg>
